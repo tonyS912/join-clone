@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: Inter-Regular;
 }
 
 .webpage {
@@ -77,7 +78,6 @@ body {
 }
 
 .menu a {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -112,7 +112,6 @@ body {
 }
 
 .legal a {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -153,7 +152,6 @@ body {
     left: 116px;
     color: black;
     font-size: 21px;
-    font-family: 'Inter';
     line-height: 120%
 }
 
@@ -230,7 +228,6 @@ body {
 .text_summary {
     width: 315px;
     height: 73px;
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 61px;
@@ -245,11 +242,65 @@ body {
 }
 
 .text_everything {
-    width: 304px;
+    width: 310px;
     height: 32px;
-    font-family: 'Inter';
     font-style: normal;
     font-size: 27px;
     line-height: 32px;
+    color: #2A3647;
+}
+
+.main_info {
+    width: 580px;
+    height: 540px;
+    padding-left: 123px;
+    padding-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.main_tasks {
+    width: 580px;
+    height: 170px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.cont_task {
+    width: 170px;
+    height: 170px;
+    border-radius: 30px;
+    gap: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cont_task a {
+    width: 40px;
+    height: 77px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+    text-align: center;
+    color: #000000;
+}
+
+.cont_task span {
+    width: 87px;
+    height: 50px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
     color: #2A3647;
 }
