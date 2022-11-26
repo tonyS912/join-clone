@@ -16,7 +16,7 @@
 <body>
 
 
-  <img class="logo" src="assets/img/join-logo.svg"></img>
+  <img class="logo" src="assests/img/join-logo.svg"></img>
   <div class="signup-btn">
     <span>not a join user</span>
     <button onclick="showSignup()">sign up</button>
@@ -24,9 +24,13 @@
   
   <div class="login-container">
     <div class="login-box">
-      <h1>Log In</h1>
+      <h1>Sign up</h1>
       <div class="line"></div>
-      <form onsubmit="log-In">
+      <form onsubmit="signUp()">
+        <div class="form-style">
+            <input required type="email" placeholder="Benutzername" id="email-login">
+            <img src="assests/img/user.svg" alt="">
+        </div>
         <div class="form-style">
           <input required type="email" placeholder="Email" id="email-login">
           <img src="assests/img/letter.svg" alt="">
@@ -35,18 +39,9 @@
           <input required type="password" name="" id="password-login" minlength="6">
           <img src="assests/img/lock.svg" alt="">
         </div>
-        <div class="password-note">
-          <div class="remember-password">
-            <input type="checkbox">
-            <span>Remember me</span>
-          </div>
-          <div class="forgot-password">
-            <a onclick="showFormToResetPassword">Forgot my password</a>
-          </div>
-        </div>
+        
         <div class="login-btns">
-          <button class="login-user">Log in</button>
-          <button onclick="loginAsGuest()" class="login-guest">Guest Log in</button>
+          <button class="signup-user">Sign up</button>
         </div>
       </form>
     </div>

@@ -1,0 +1,139 @@
+/**login style*/
+body{
+    position: relative;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+}
+.login-container{
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.logo{
+    position: absolute;
+    z-index: 11;
+    left: 50px;
+    top: 25px;
+    width: 101px;
+    height: 122px;
+}
+.signup-btn{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    height: 435px;
+    width: 582px;
+}
+
+.login-box h1{
+    font-size: 48px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+.line{
+    width: 150px;
+    height: 35px;
+    border-top: 3px solid #29abe2;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-style{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 47px;
+    width: 422px;
+    margin-bottom: 50px;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+}
+.form-style input{
+    border: none;
+    width: 86%;
+    height: 43px;
+    outline: none;
+}
+.password-note{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 12.5px;
+    width: calc(161px * 2 + 12.5px * 2);
+}
+.remember-password input{
+    margin-right: 20px;
+    height: 16px;
+    width: 16px;
+}
+
+.forgot-password a{
+    color: #29ABE2 !important;
+    cursor: pointer;
+}
+.login-user{
+    height: 51px;
+    width: 161px;
+    font-size: 21px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-right: 12.5px;
+    box-shadow: none;
+    background-color: #091931;
+    border: 1px solid #091931;
+    cursor: pointer;
+}
+
+.login-user:hover{
+   background-color: #29abe2;
+   border: none;
+}
+
+.login-guest{
+    height: 51px;
+    width: 161px;
+    font-size: 21px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #091931;
+    font-weight: bold;
+    border: 1px solid #091931;
+    margin-left: 12.5px;
+    cursor: pointer;
+}
+
+.login-guest:hover{
+    color: #29abe2;
+    border: #29abe2 solid 1px;
+}
+
+.signup-user{
+        height: 47px;
+        width: 145px;
+        font-size: 21px;
+        border-radius: 8px;
+        color: #FFFFFF;
+        font-weight: bold;
+        background-color: #091931;
+        border: 1px solid #091931;
+}
