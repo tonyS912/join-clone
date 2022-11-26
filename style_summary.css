@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+}
+
+.webpage {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    background: #F6F7F8;
+}
+
+/*menu left*/
+.left {
+    position: absolute;
+    width: 232px;
+    height: 1024px;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 103px;
+    background-color: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+.logo {
+    width: 100.03px;
+    height: 121.97px;
+    padding-top: 66px;
+    padding-left: 65.98px;
+    padding-right: 65.98px;
+}
+
+.menu_left {
+    width: 232px;
+    height: 229px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.menu {
+    width: 232px;
+    height: 46px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.logo_summary {
+    width: 22px;
+    height: 26px;
+    padding-left: 53px;
+}
+
+.logo_board {
+    width: 22px;
+    height: 26px;
+    padding-left: 53px;
+}
+
+.logo_task {
+    width: 26px;
+    height: 26px;
+    padding-left: 49px;
+}
+
+.logo_contacts {
+    width: 19.5px;
+    height: 22px;
+    padding-left: 53px;
+}
+
+.menu a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2;
+    color: #FFFFFF;
+}
+
+.impressum {
+    width: 160px;
+    height: 289px;
+    left: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.legal {
+    width: 160px;
+    height: 46px;
+    top: 243px;
+    padding: 8px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.legal img {
+    width: 18px;
+    height: 18px;
+}
+
+.legal a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CDCDCD;
+}
+
+/*website right*/
+.right {
+    width: 1440px;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px, 36px, 20px, 348px;
+}
+
+/*header*/
+.header {
+    position: absolute;
+    width: 1208px;
+    height: 89px;
+    left: 232px;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 34px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kanban {
+    position: absolute;
+    width: 335px;
+    height: 25px;
+    top: 32px;
+    left: 116px;
+    color: black;
+    font-size: 21px;
+    font-family: 'Inter';
+    line-height: 120%
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 36px;
+    gap: 26px;
+    width: 106px;
+    height: 49px;
+}
+
+.help {
+    width: 31px;
+    height: 31px;
+    
+}
+
+.cont_foto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    isolation: isolate;
+    width: 46.12px;
+    height: 46.12px;
+    left: 1.44px;
+    top: 47.56px;
+    background: #2A3647;
+    border-radius: 559px;
+}
+
+.border_white {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 559px;
+}
+
+.foto {
+    width: 49px;
+    height: 49px;
+    border-radius: 559px;
+    background: url(assests/img/foto_user.jpg);
+}
+
+/*contain right*/
+
+.main {
+    width: 1208px;
+    height: 935px;
+    top: 89px;
+    left: 232px;
+    position: absolute;
+}
+
+.main_summary {
+    width: 679px;
+    height: 73px;
+    padding-top: 82px;
+    padding-left: 123px;
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_summary {
+    width: 315px;
+    height: 73px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 73px;
+    color: #000000;
+}
+
+.line_blue {
+    width: 0px;
+    height: 59px;
+    border: 3px solid #29ABE2;
+}
+
+.text_everything {
+    width: 304px;
+    height: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 27px;
+    line-height: 32px;
+    color: #2A3647;
+}
