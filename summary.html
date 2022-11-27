@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="style_summary.css">
   <link rel="stylesheet" href="./assests/fonts/fonts.css">
 
+  <script src="assests/js/script_summary.js"></script>
+
 </head>
 
 <body>
@@ -21,19 +23,19 @@
       </div>
 
       <div class="menu_left">
-        <div class="menu">
-          <img class="logo_summary" src="assests/img/summary.svg">
+        <div class="menu" id="summary" onclick="summary()">
+          <img class="logo_summary" src="assests/img/summary.svg" >
           <a>Summary</a>
         </div>
-        <div class="menu">
+        <div class="menu" id="board" onclick="board()">
           <img class="logo_board" src="assests/img/board.svg">
           <a>Board</a>
         </div>
-        <div class="menu">
+        <div class="menu" id="addTask" onclick="addTask()">
           <img class="logo_task" src="assests/img/add_task.svg">
           <a>Add Task</a>
         </div>
-        <div class="menu">
+        <div class="menu" id="contacts" onclick="contacts()">
           <img class="logo_contacts" src="assests/img/contacts.svg">
           <a>Contacts</a>
         </div>
@@ -80,7 +82,7 @@
               </div>
               <div class="cont_task">
                 <a>2</a>
-                <span>Tasks In Progress</spana>
+                <span style="font-family: Open Sans;">Tasks In Progress</spana>
               </div>
               <div class="cont_task">
                 <a>2</a>
@@ -105,8 +107,7 @@
 
             <div class="todo">
               <div class="todo_box">
-                <div class="icon">
-                  <img src="assests/img/pencil.svg">
+                <div class="pencil">
                 </div>
                 <div class="todo_info">
                   <a>1</a>
@@ -114,8 +115,7 @@
                 </div>
               </div>
               <div class="todo_box">
-                <div class="icon">
-                  <img src="assests/img/correct.svg">
+                <div class="done">
                 </div>
                 <div class="todo_info">
                   <a>1</a>

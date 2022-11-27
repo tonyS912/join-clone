@@ -51,6 +51,11 @@ body {
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.menu_dark {
+    background-color: #091931;
 }
 
 .logo_summary {
@@ -104,6 +109,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
 }
 
 .legal img {
@@ -168,7 +174,7 @@ body {
 .help {
     width: 31px;
     height: 31px;
-    
+    cursor: pointer;
 }
 
 .cont_foto {
@@ -176,15 +182,16 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 1px;
     gap: 10px;
     isolation: isolate;
-    width: 46.12px;
-    height: 46.12px;
-    left: 1.44px;
-    top: 47.56px;
-    background: #2A3647;
+    width: 49px;
+    height: 49px;
+    left: 0px;
+    top: 0px;
+    border: 3px solid #2A3647;
     border-radius: 559px;
+    cursor: pointer;
 }
 
 .border_white {
@@ -286,6 +293,16 @@ body {
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+
+.cont_task:hover {
+    width: 180px;
+    height: 180px;
+    background: #2A3647;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .cont_task a {
@@ -296,7 +313,6 @@ body {
     font-size: 64px;
     line-height: 77px;
     text-align: center;
-    color: #000000;
 }
 
 .cont_task span {
@@ -307,7 +323,6 @@ body {
     font-size: 21px;
     line-height: 25px;
     text-align: center;
-    color: #2A3647;
 }
 
 .urgent {
@@ -321,6 +336,16 @@ body {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
+    color: #2A3647;
+}
+
+.urgent:hover {
+    width: 590px;
+    height: 160px;
+    background-color: #2A3647;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .urgent_left {
@@ -355,7 +380,6 @@ body {
     font-size: 47px;
     line-height: 56px;
     text-align: center;
-    color: #000000;
 }
 
 .number_urgent span {
@@ -365,7 +389,6 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #2A3647;
 }
 
 .line_gray {
@@ -385,22 +408,20 @@ body {
     gap: 13px;
 }
 
-.urgent_right a{
+.urgent_right a {
     height: 25px;
     font-style: normal;
     font-weight: 700;
     font-size: 21px;
     line-height: 25px;
-    color: #2A3647;
 }
 
-.urgent_right span{
+.urgent_right span {
     height: 19px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #2A3647;
 }
 
 .todo {
@@ -423,11 +444,40 @@ body {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
+    color: #2A3647;
 }
 
-.icon img {
+.todo_box:hover {
+    width: 282.5px;
+    height: 160px;
+    background-color: #2A3647;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.pencil {
+    width: 70px;
+    height: 70px;
+    background: url(assests/img/pencil.svg)
+}
+
+.pencil:hover {
     width: 69px;
     height: 69px;
+    background: url(assests/img/pencil_3.svg);
+}
+
+.done {
+    width: 70px;
+    height: 70px;
+    background: url(assests/img/correct.svg)
+}
+
+.done:hover {
+    width: 69px;
+    height: 69px;
+    background: url(assests/img/correct2.svg);
 }
 
 .todo_info {
@@ -446,7 +496,6 @@ body {
     font-size: 64px;
     line-height: 77px;
     text-align: center;
-    color: #000000;
 }
 
 .todo_info span {
@@ -457,7 +506,6 @@ body {
     font-size: 21px;
     line-height: 25px;
     text-align: center;
-    color: #2A3647;
 }
 
 .main_user {
@@ -472,7 +520,7 @@ body {
     gap: 3px;
 }
 
-.main_user a{
+.main_user a {
     height: 56px;
     font-style: normal;
     font-weight: 500;
@@ -481,7 +529,7 @@ body {
     color: #2A3647;
 }
 
-.main_user span{
+.main_user span {
     height: 77px;
     font-style: normal;
     font-weight: 700;
