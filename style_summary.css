@@ -86,7 +86,6 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 19.2;
     color: #FFFFFF;
 }
 
@@ -455,28 +454,6 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
-.todo_box {
-    width: 272.5px;
-    height: 150px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    color: #2A3647;
-}
-
-.todo_box:hover {
-    width: 282.5px;
-    height: 160px;
-    background-color: #2A3647;
-    color: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-}
 
 .pencil {
     width: 70px;
@@ -484,9 +461,7 @@ body {
     background: url(assests/img/pencil.svg)
 }
 
-.pencil:hover {
-    width: 69px;
-    height: 69px;
+.todo_box:hover .pencil {
     background: url(assests/img/pencil_3.svg);
 }
 
@@ -496,9 +471,7 @@ body {
     background: url(assests/img/correct.svg)
 }
 
-.done:hover {
-    width: 69px;
-    height: 69px;
+.todo_box:hover .done {
     background: url(assests/img/correct2.svg);
 }
 
