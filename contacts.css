@@ -16,6 +16,7 @@
     background-clip: content-box;
     display: flex;
     justify-content: center;
+    width: 1000px
 }
 
 .contacts--addContact__leftBox {
