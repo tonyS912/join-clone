@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contacts.css">
+    <title>New Contact</title>
+</head>
+
+<body>
+    <div class="id-body" id="body__css">
+        <div class="contacts--addContact" id="id-contacts--addContact">
+            <div class="contacts--addContact__leftBox" id="id-contacts--addContact__leftBox">
+                <img src="assests/img/join-logo-white.svg" class="contacts--addContact__leftBox--image" />
+                <span class="id-contacts--addContact__leftBox--textLine1">Add contact</span>
+                <span class="id-contacts--addContact__leftBox--textLine2">Tasks are better with a team!</span>
+                <svg>
+                    <line x1="0" y1="0" x2="100" y2="0" style="stroke:#29ABE2;stroke-width: 2;" />
+                </svg>
+            </div>
+
+            <div class="contacts--addContact__rightBox" id="id-contacts--addContact__rightBox">
+
+                <div class="contacts--addContact__rightBox--oben" id="id-contacts--addContact__rightBox--oben">
+                    <img class="close" src="/assests/img/close.svg" />
+                </div>
+
+                <div class="contacts--addContact__rightBox--mitte" id="id-contacts--addContact__rightBox--mitte">
+
+                    <img class="contacts--addContact__rightBox--userPic" src="/assests/img/user-white.svg">
+
+                    <div>
+                        <form onsubmit="addContact()">
+                            <div class="contacts--addContact__rightBox--input"><span
+                                    class="addContact__rightBox-input--icons">
+                                    <i class="fa-solid fa-user"></i></span>
+                                <input class="contacts--addContact__rightBox--input__name" id="id-newContact__name"
+                                    type="text" size="40" placeholder="Name" required="" />
+                                <input class="contacts--addContact__rightBox--input__email" id="id-newContact__email"
+                                    type="text" size="40" placeholder="Email" required="" />
+                                <input class="contacts--addContact__rightBox--input__phone" id="id-newContact__phone"
+                                    type="text" size="40" placeholder="Phone" required="" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="contacts--addContact__rightBox--unten" id="id-contacts--addContact__rightBox--unten">
+                    <button class="contacts--addContact__rightBox--closePopup" onclick="closePopup()">Cancel<img
+                            class="margin-5" src="/assests/img/close2.svg" /></button>
+                    <button class="contacts--addContact__rightBox--createContact" type="submit">Create
+                        contact<img class="margin-5" src="/assests/img/create.png" /></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
