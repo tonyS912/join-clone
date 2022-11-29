@@ -90,6 +90,12 @@ body {
     margin-top: 25px;
 }
 
+.close:hover {
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
 .contacts--addContact__rightBox--mitte {
     display: flex;
     width: 100%;
@@ -264,12 +270,12 @@ form {
 }
 
 .contacts--main__right {
-    position: fixed;
+    position: relative;
     overflow: hidden;
     top: 0px;
-    margin-left: 440px;
+    left: 0px;
     display: flex;
-    width: 100vH;
+    width: 100%;
     height: 100%;
     flex-direction: column;
     align-items: center;
@@ -277,11 +283,11 @@ form {
 }
 
 .contacts--main__rightTop {
+    padding-left: 100px;
     font-size: 3em;
     gap: 20px;
     display: flex;
     width: 100%;
-    justify-content: center;
     align-items: center;
     background-color: #F6F7F8;
 }
