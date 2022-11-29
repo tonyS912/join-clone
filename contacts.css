@@ -1,21 +1,7 @@
-
-/*
-* {
-    box-sizing: border-box;
-    background: rgb(0 100 0 / 0.1) !important;
+body {
+    font-family: 'Inter-Regular';
+    font-style: normal;
 }
-*/
-
-
-
-
-/*
-
-.id-body {
-    width: 80%;
-}
-
-*/
 
 .dp-flex {
     display: flex;
@@ -34,14 +20,14 @@
 }
 
 .padding-30 {
-    padding:30px;
+    padding: 30px;
 }
 
 .contacts--addContact {
     background-clip: content-box;
     display: flex;
     justify-content: center;
-    width: 1000px
+    width: 1000px;
 }
 
 .contacts--addContact__leftBox {
@@ -49,8 +35,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 5%;
     background-color: #2A3647;
+    padding: 50px;
     width: 33%;
     color: white;
     border-top-left-radius: 30px;
@@ -62,20 +48,23 @@
 }
 
 .contacts--addContact__leftBox--textLine1 {
-    font-family: 'Inter';
+    font-family: 'Inter-Regular';
     font-style: normal;
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 3.1rem;
     line-height: 120%;
     color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .contacts--addContact__leftBox--textLine2 {
-    font-family: 'Inter';
+    font-family: 'Inter-Regular';
     font-style: normal;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 1.3rem;
     line-height: 120%;
+    margin-bottom: 10px;
     color: #FFFFFF;
 }
 
@@ -97,7 +86,7 @@
 }
 
 .close {
-    margin-right: 25px;
+    margin-right: 50px;
     margin-top: 25px;
 }
 
@@ -122,7 +111,6 @@ form {
     border: solid 2px white;
 }
 
-
 .contacts--addContact__rightBox--unten {
     display: flex;
     width: 100%;
@@ -136,7 +124,6 @@ form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 29px;
     width: 422px;
     height: 271px;
@@ -144,9 +131,15 @@ form {
     top: 129px;
 }
 
+.contacts--inputFields {
+    border: 0px;
+    background-color: #F5F5F5;
+    outline: none;
+}
+
 .contacts--addContact__rightBox--input__name {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
     padding: 13px 21px;
     gap: 10px;
@@ -182,7 +175,8 @@ form {
 .contacts--addContact__rightBox--createContact {
     padding: 10px;
     gap: 10px;
-    width: 250px;
+    width: 200px;
+    height: 50px;
     background: #2A3647;
     color: white;
     border-radius: 10px;
@@ -191,19 +185,23 @@ form {
     align-items: center;
     font-size: 1.1rem;
     border: 0px;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
 
 .contacts--addContact__rightBox--createContact:hover {
     background: #29ABE2;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.25);
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
-
 
 .contacts--addContact__rightBox--closePopup {
     padding: 10px;
     gap: 10px;
     width: 140px;
+    height: 50px;
     color: #2A3647;
     border-radius: 10px;
     display: flex;
@@ -211,22 +209,24 @@ form {
     align-items: center;
     font-size: 1.1rem;
     border: 1px solid #2A3647;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
-
 
 .contacts--addContact__rightBox--closePopup:hover {
     color: #29ABE2;
     border: 1px solid #29ABE2;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.25);
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
-
-
 
 .contacts--editContact__rightBox--editContact {
     padding: 10px;
     gap: 10px;
     width: 140px;
+    height: 50px;
     background: #2A3647;
     color: white;
     border-radius: 10px;
@@ -235,12 +235,16 @@ form {
     align-items: center;
     font-size: 1.1rem;
     border: 0px;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
 
 .contacts--editContact__rightBox--editContact:hover {
     background: #29ABE2;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.25);
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
 }
 
 .id-body--main {
@@ -252,7 +256,7 @@ form {
 .contacts--main__left {
     position: relative;
     overflow: scroll;
-    left:0;
+    left: 0;
     display: flex;
     width: 440px;
     background: #FFFFFF;
@@ -282,7 +286,7 @@ form {
     background-color: #F6F7F8;
 }
 
-.contacts--main__rightBottom {
+.contacts--main__rightCenter {
     width: 100%;
     height: 100%;
     background-color: #F6F7F8;
@@ -298,11 +302,11 @@ form {
 
 }
 
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
     border: 2px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
@@ -310,4 +314,40 @@ form {
     background-color: darkgrey;
 }
 
-/* Bei 950 skalieren */
+.contacts--editContact__leftBox--textLine1 {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.1rem;
+    line-height: 120%;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.contacts--main__rightBox--newContactButton {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    background: #2A3647;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    border: 0px;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+}
+
+.contacts--main__rightBox--newContactButton:hover {
+    background: #29ABE2;
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.25);
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+}
