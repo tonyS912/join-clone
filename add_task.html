@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="style_tony.css">
-  <link rel="stylesheet" href="./assests/fonts/fonts.css">
-  <title>Add Task</title>
-</head>
-<body>
-
-  <div class="add-task">
-    <h1>Add Task</h1>
-  </div>
-
-</body>
+    <link rel="stylesheet" href="style_tony.css" />
+    <link rel="stylesheet" href="./assests/fonts/fonts.css" />
+    <title>Add Task</title>
+  </head>
+  <body>
+    <div class="add-task">
+      <div>
+        <h1>Add Task</h1>
+      </div>
+      <div class="left-container">
+        <div>
+          <h4 class="size light title">Title</h4>
+          <input class="title-input size light" type="text" placeholder="Enter a title" />
+        </div>
+        <div>
+          <h4 class="size light title">Description</h4>
+          <textarea class="size light description-area" name="Description" id="" placeholder="Enter a Description"></textarea>
+        </div>
+        <div>
+          <h4 class="size light title">Category</h4>
+          <button class="size light category-btn">Select task Category <img class="popup-arrow" src="./assests/img/dropdown-arrow.svg"></button>
+        </div>
+        <div>
+          <h4 class="size light title">Assigned to</h4>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
