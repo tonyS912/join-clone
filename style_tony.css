@@ -17,7 +17,7 @@ body {
 
 .add-task {
     width: 1116px;
-    height: 700px;
+    height: 750px;
     border-radius: 30px;
     background-color: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
@@ -72,9 +72,12 @@ body {
     padding-right: 21px;
     background-color: transparent;
     text-align: left;
+    cursor: pointer;
 }
 
 .popup-arrow {
     height: 10px;
-    margin-left: 150px;
+    display: flex;
+    float: right;
+    margin-top: 9px;
 }
