@@ -31,7 +31,9 @@ body {
 }
 
 .left-container {
-    margin-left: 74px;
+    margin-left: 84px;
+    border-right: 2px solid #d1d1d1;
+    padding-right: 65px;
 }
 
 .title {
@@ -80,4 +82,13 @@ body {
     display: flex;
     float: right;
     margin-top: 9px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-container {
+    margin-left: 66px;
 }

@@ -14,22 +14,48 @@
       <div>
         <h1>Add Task</h1>
       </div>
-      <div class="left-container">
-        <div>
-          <h4 class="size light title">Title</h4>
-          <input class="title-input size light" type="text" placeholder="Enter a title" />
+      <div class="input-container">
+        <div class="left-container">
+          <div>
+            <h4 class="size light title">Title</h4>
+            <input
+              class="title-input size light"
+              type="text"
+              placeholder="Enter a title"
+            />
+          </div>
+          <div>
+            <h4 class="size light title">Description</h4>
+            <textarea
+              class="size light description-area"
+              name="Description"
+              id=""
+              placeholder="Enter a Description"
+            ></textarea>
+          </div>
+          <div>
+            <h4 class="size light title">Category</h4>
+            <button class="size light category-btn">
+              Select task Category
+              <img class="popup-arrow" src="./assests/img/dropdown-arrow.svg" />
+            </button>
+          </div>
+          <div>
+            <h4 class="size light title">Assigned to</h4>
+            <button class="size light category-btn">
+              Select contacts to assign
+              <img class="popup-arrow" src="./assests/img/dropdown-arrow.svg" />
+            </button>
+          </div>
         </div>
-        <div>
-          <h4 class="size light title">Description</h4>
-          <textarea class="size light description-area" name="Description" id="" placeholder="Enter a Description"></textarea>
-        </div>
-        <div>
-          <h4 class="size light title">Category</h4>
-          <button class="size light category-btn">Select task Category <img class="popup-arrow" src="./assests/img/dropdown-arrow.svg"></button>
-        </div>
-        <div>
-          <h4 class="size light title">Assigned to</h4>
-          <button class="size light category-btn">Select contacts to assign <img class="popup-arrow" src="./assests/img/dropdown-arrow.svg"></button>
+        <div class="right-container">
+          <div>
+            <h4 class="size light title">Due date</h4>
+            <input class="size light title-input" type="date" name="" id="" placeholder="dd/mm/yyyy">
+          </div>
+          <div>
+            <h4 class="size light title">Prio</h4>
+          </div>
         </div>
       </div>
     </div>
