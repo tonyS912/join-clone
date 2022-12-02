@@ -16,10 +16,11 @@
     <div class="id-body" id="body__css">
         <div class="contacts--addContact" id="id-contacts--addContact">
             <div class="contacts--addContact__leftBox" id="id-contacts--addContact__leftBox">
+                <img src="/assests/img/close-white.svg" class="closeMobile" onclick="closePopup()">
                 <img src="assests/img/join-logo-white.svg" class="contacts--addContact__leftBox--image" />
                 <span class="contacts--addContact__leftBox--textLine1">Add contact</span>
                 <span class="contacts--addContact__leftBox--textLine2">Tasks are better with a team!</span>
-                <svg>
+                <svg class="contacts--svg__line">
                     <line x1="0" y1="0" x2="75" y2="0" style="stroke:#29ABE2;stroke-width: 5;" />
                 </svg>
             </div>
@@ -35,7 +36,7 @@
                     <img class="contacts--addContact__rightBox--userPic" src="/assests/img/user-white.svg">
 
                     <div>
-                        <form onsubmit="addContact()">
+                        <form class="contacts--editContact__Form" id="addContactForm" onsubmit="addContact()">
                             <div class="contacts--addContact__rightBox--input"><span
                                     class="addContact__rightBox-input--icons">
                                     <i class="fa-solid fa-user"></i></span>
@@ -44,11 +45,11 @@
                                         placeholder="Name" required="" /><img src="/assests/img/user.svg" alt></div>
                                 <div class="contacts--addContact__rightBox--input__name"><input
                                         class="contacts--inputFields" id="id-newContact__email"
-                                        type="text" size="40" placeholder="Email" required="" /><img
+                                        type="email" size="40" placeholder="Email" required="" /><img
                                         src="/assests/img/mail.png" alt></div>
                                 <div class="contacts--addContact__rightBox--input__name"><input
                                         class="contacts--inputFields" id="id-newContact__phone"
-                                        type="text" size="40" placeholder="Phone" required="" /><img
+                                        type="tel" size="40" placeholder="Phone" required="" /><img
                                         src="/assests/img/phone.png" alt></div>
                             </div>
                         </form>
@@ -58,7 +59,7 @@
                 <div class="contacts--addContact__rightBox--unten" id="id-contacts--addContact__rightBox--unten">
                     <button class="contacts--addContact__rightBox--closePopup" onclick="closePopup()">Cancel<img
                             class="padding-5" src="/assests/img/close2.svg" /></button>
-                    <button class="contacts--addContact__rightBox--createContact" type="submit">Create
+                    <button class="contacts--addContact__rightBox--createContact" type="submit" form="addContactForm">Create
                         contact<img class="padding-5" src="/assests/img/create.png" /></button>
                 </div>
             </div>
