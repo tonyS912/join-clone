@@ -4,6 +4,7 @@ function summary() {
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
     document.getElementById('contacts').classList.remove('menu_dark');
+    window.location.href = 'summary.html';
 }
 
 
@@ -13,6 +14,7 @@ function board() {
     document.getElementById('summary').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
     document.getElementById('contacts').classList.remove('menu_dark');
+    window.location.href = 'board.html';
 }
 
 
@@ -22,6 +24,7 @@ function addTask() {
     document.getElementById('summary').classList.remove('menu_dark');
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('contacts').classList.remove('menu_dark');
+    window.location.href = 'add_task.html';
 }
 
 
@@ -31,4 +34,5 @@ function contacts() {
     document.getElementById('summary').classList.remove('menu_dark');
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
+    window.location.href = 'contacts.html';
 }
