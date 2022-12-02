@@ -104,4 +104,11 @@ body {
 .prio-btns {
     display: flex;
     justify-content: space-between;
+    width: 424px;
+}
+
+.subtask-img {
+    position: relative;
+    left: -40px;
+    cursor: pointer;
 }
