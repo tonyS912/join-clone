@@ -4,8 +4,8 @@ body {
 }
 
 .webpage {
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     position: relative;
     background: #F6F7F8;
 }
@@ -126,19 +126,15 @@ body {
 
 /*website right*/
 .right {
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px, 36px, 20px, 348px;
 }
 
 /*header*/
 .header {
-    position: absolute;
-    width: 1208px;
     height: 89px;
-    left: 232px;
     top: 0;
     display: flex;
     flex-direction: row;
@@ -150,11 +146,10 @@ body {
 }
 
 .kanban {
-    position: absolute;
     width: 335px;
     height: 25px;
     top: 32px;
-    left: 116px;
+    padding-left: 348px;
     color: black;
     font-size: 21px;
     line-height: 120%
@@ -212,11 +207,9 @@ body {
 /*contain right*/
 
 .main {
-    width: 1208px;
     height: 935px;
     top: 89px;
-    left: 232px;
-    position: absolute;
+    padding-left: 232px;
 }
 
 .main_summary {
