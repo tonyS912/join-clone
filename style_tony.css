@@ -7,6 +7,11 @@ body {
     background-color: #F5F5F5;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+}
+
 .size {
     font-size: 21px;
 }
@@ -15,19 +20,34 @@ body {
     font-family: Inter-Light;
 }
 
+.regul {
+    font-family: Inter-Regular;
+}
+
+.transp {
+    background-color: transparent;
+}
+
 .add-task {
     width: 1116px;
     height: 914px;
+    font-family: Inter-Bold;
+}
+
+.pop-up {
     border-radius: 30px;
     background-color: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-    font-family: Inter-Bold;
 }
 
 .add-task h1 {
     font-size: 61px;
     margin-top: 74px;
     margin-left: 74px;
+}
+
+.padding-10 {
+    padding-left: 10px;
 }
 
 .left-container {
@@ -74,7 +94,7 @@ body {
 
 .btn {
     cursor: pointer;
-    background-color: transparent;
+    background-color: white;
     border: unset;
     border: 1px solid #d1d1d1;
     height: 51px;
@@ -95,6 +115,9 @@ body {
 
 .right-container {
     margin-left: 66px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .prio {
@@ -111,4 +134,35 @@ body {
     position: relative;
     left: -40px;
     cursor: pointer;
+}
+
+.btn-box {
+    display: flex;
+    height: 61px;
+    width: 422px;
+    justify-content: flex-end;
+}
+
+.window-btn {
+    border: unset;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    margin-left: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.ok-btn {
+    background-color: #2A3647;
+    color: white;
+}
+
+.subtasks {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox {
+    width: 16px;
 }
