@@ -166,3 +166,7 @@ body {
 .checkbox {
     width: 16px;
 }
+
+.prio-btns button:hover {
+    transform: scale(1.05);
+}
