@@ -201,7 +201,7 @@ body {
     width: 49px;
     height: 49px;
     border-radius: 559px;
-    background: url(assests/img/foto_user.jpg);
+    background: url(assets/img/foto_user.jpg);
 }
 
 /*contain right*/
@@ -451,21 +451,21 @@ body {
 .pencil {
     width: 70px;
     height: 70px;
-    background: url(assests/img/pencil.svg)
+    background: url(assets/img/pencil.svg)
 }
 
 .todo_box:hover .pencil {
-    background: url(assests/img/pencil_3.svg);
+    background: url(assets/img/pencil_3.svg);
 }
 
 .done {
     width: 70px;
     height: 70px;
-    background: url(assests/img/correct.svg)
+    background: url(assets/img/correct.svg)
 }
 
 .todo_box:hover .done {
-    background: url(assests/img/correct2.svg);
+    background: url(assets/img/correct2.svg);
 }
 
 .todo_info {
