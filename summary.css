@@ -210,6 +210,9 @@ body {
     height: 935px;
     top: 89px;
     padding-left: 232px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .main_summary {
