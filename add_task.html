@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="style_tony.css" />
+        <script src="./assets/js/add_task.js"></script>
+        <script src="./assets/js/mini_backend.js"></script>
+        <script src="./script.js"></script>
         <link rel="stylesheet" href="summary.css" />
         <script src="assets/js/summary.js"></script>
         <link rel="stylesheet" href="./assets/fonts/fonts.css" />
         <title>Add Task</title>
     </head>
-    <body>
+    <body onload="loadTasks()">
         <div class="webpage">
             <div class="left">
                 <div class="logo">
@@ -75,11 +78,12 @@
                         <div>
                             <h1>Add Task</h1>
                         </div>
-                        <div class="input-container">
+                        <div onsubmit="addTask()" class="input-container">
                             <div class="left-container">
                                 <div>
                                     <h4 class="size light title">Title</h4>
                                     <input
+                                        id="title"
                                         class="title-input size light"
                                         type="text"
                                         placeholder="Enter a title"
@@ -92,8 +96,8 @@
                                     </h4>
                                     <textarea
                                         class="size light description-area"
-                                        name="Description"
-                                        id=""
+                                        name="description"
+                                        id="description"
                                         placeholder="Enter a Description"
                                         required
                                     ></textarea>
@@ -112,13 +116,14 @@
                                     <h4 class="size light title">
                                         Assigned to
                                     </h4>
-                                    <button class="size light category-btn btn">
+                                    <button onclick="expandCategory()" class="size light category-btn btn">
                                         Select contacts to assign
                                         <img
                                             class="popup-arrow"
                                             src="./assets/img/dropdown-arrow.svg"
                                         />
                                     </button>
+                                    
                                 </div>
                             </div>
                             <div class="right-container">
@@ -195,6 +200,7 @@
                                     <button
                                         class="size regul window-btn ok-btn"
                                         type="submit"
+                                        onclick="addingTask()"
                                     >
                                         Add Task<img
                                             class="padding-10"
