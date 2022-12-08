@@ -267,8 +267,8 @@ form {
 
 .id-body--main {
     display: flex;
-    height: 100vH;
     justify-content: flex-start;
+    padding-left: 232px;
 }
 
 .contacts--main__left {
