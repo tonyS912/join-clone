@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html />
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contacts.css">
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <script src="/assets/js/contacts.js"></script>
     <title>Contacts</title>
 </head>
 
@@ -16,46 +17,26 @@
     <div class="id-body--main" id="body__css">
 
         <div class="contacts--main__left" id="id-contacts--main__left">
-            Scroll Test - ID: id-contacts--main__left
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-            Scroll Test
-            <br><br><br>
-
+            <div id="contact--UUID1" class="contact--left__card" onclick="">
+                <div class="contact--left__UserAvatar" style="background-color:#29ABE2">
+                    <span class="contact-initials">OM</span>
+                </div>
+                <div class="contact--left__UserText">
+                    <div class="contact--left__UserText--Name">Oskar Mayer</div>
+                    <div class="contact--left__UserText--EMail">oskar@meyers.foo</div>
+                </div>
+            </div>
+            <div id="contact--UUID2" class="contact--left__card" onclick="">
+                <div class="contact--left__UserAvatar" style="background-color:#29ABE2">
+                    <span class="contact-initials">HP</span>
+                </div>
+                <div class="contact--left__UserText">
+                    <div class="contact--left__UserText--Name">Hans Peter</div>
+                    <div class="contact--left__UserText--Email">hans@peter.foo</div>
+                </div>
+            </div>
         </div>
+
         <div class="contacts--main__right" id="id-contacts--main__right">
             <div class="contacts--main__rightTop" id="id-contacts--main__rightTop">
                 <div class="contacts--main__rightTop--Text1"><span>Contacts</span></div>
@@ -64,12 +45,118 @@
             </div>
             <div class="contacts--main__rightCenter" id="id-contacts--main__rightCenter">
                 Kontakte hier - ID: id-contacts--main__rightCenter
+
                 <div>
-                    <button class="contacts--main__rightBox--newContactButton" onclick="newContact()">New contact<img class="padding-5"
-                            src="/assets/img/add_user.svg" /></button>
+                    <button class="contacts--main__rightBox--newContactButton" onclick="newContactOpenOverlay()">New
+                        contact<img class="padding-5" src="/assets/img/add_user.svg" /></button>
                 </div>
             </div>
 
+        </div>
+
+        <div class="hide" id="body__css-contactsAdd">
+            <div class="contacts--addContact" id="id-contacts--addContact">
+                <div class="contacts--addContact__leftBox" id="id-contacts--addContact__leftBox">
+                    <img src="/assets/img/close-white.svg" class="closeMobile">
+                    <img src="assets/img/join-logo-white.svg" class="contacts--addContact__leftBox--image" />
+                    <span class="contacts--addContact__leftBox--textLine1">Add contact</span>
+                    <span class="contacts--addContact__leftBox--textLine2">Tasks are better with a team!</span>
+                    <svg class="contacts--svg__line">
+                        <line x1="0" y1="0" x2="75" y2="0" style="stroke:#29ABE2;stroke-width: 5;" />
+                    </svg>
+                </div>
+
+                <div class="contacts--addContact__rightBox" id="id-contacts--addContact__rightBox">
+
+                    <div class="contacts--addContact__rightBox--oben" id="id-contacts--addContact__rightBox--oben">
+                        <img class="close" src="/assets/img/close.svg" role="button" onclick="closeAddPopup()" />
+                    </div>
+
+                    <div class="contacts--addContact__rightBox--mitte" id="id-contacts--addContact__rightBox--mitte">
+
+                        <img class="contacts--addContact__rightBox--userPic" src="/assets/img/user-white.svg">
+
+                        <div>
+                            <form class="contacts--editContact__Form" id="addContactForm">
+                                <div class="contacts--addContact__rightBox--input"><span
+                                        class="addContact__rightBox-input--icons">
+                                        <i class="fa-solid fa-user"></i></span>
+                                    <div class="contacts--addContact__rightBox--input__name"><input
+                                            class="contacts--inputFields" id="id-newContact__name" type="text" size="40"
+                                            placeholder="Name" required="" /><img src="/assets/img/user.svg" alt></div>
+                                    <div class="contacts--addContact__rightBox--input__name"><input
+                                            class="contacts--inputFields" id="id-newContact__email" type="email"
+                                            size="40" placeholder="Email" required="" /><img src="/assets/img/mail.png"
+                                            alt></div>
+                                    <div class="contacts--addContact__rightBox--input__name"><input
+                                            class="contacts--inputFields" id="id-newContact__phone" type="tel" size="40"
+                                            placeholder="Phone" required="" /><img src="/assets/img/phone.png" alt>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="contacts--addContact__rightBox--unten" id="id-contacts--addContact__rightBox--unten">
+                        <button class="contacts--addContact__rightBox--closePopup" onclick="closeAddPopup()">Cancel<img
+                                class="padding-5" src="/assets/img/close2.svg" /></button>
+                        <button class="contacts--addContact__rightBox--createContact" type="submit"
+                            form="addContactForm">Create
+                            contact<img class="padding-5" src="/assets/img/create.png" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hide" id="body__css-contactsEdit">
+            <div class="contacts--addContact" id="id-contacts--addContact">
+                <div class="contacts--addContact__leftBox" id="id-contacts--addContact__leftBox">
+                    <img src="/assets/img/close-white.svg" class="closeMobile" onclick="closeEditPopup()">
+                    <img src="assets/img/join-logo-white.svg" class="contacts--addContact__leftBox--image" />
+                    <span class="contacts--editContact__leftBox--textLine1">Edit contact</span>
+                    <svg class="contacts--svg__line">
+                        <line x1="0" y1="0" x2="75" y2="0" style="stroke:#29ABE2;stroke-width: 5;" />
+                    </svg>
+                </div>
+
+                <div class="contacts--addContact__rightBox" id="id-contacts--addContact__rightBox">
+
+                    <div class="contacts--addContact__rightBox--oben" id="id-contacts--addContact__rightBox--oben">
+                        <img class="close" src="/assets/img/close.svg" role="button" onclick="closeEditPopup()"/>
+                    </div>
+
+                    <div class="contacts--addContact__rightBox--mitte" id="id-contacts--addContact__rightBox--mitte">
+
+                        <img class="contacts--addContact__rightBox--userPic" src="/assets/img/user-white.svg">
+
+
+                        <form class="contacts--editContact__Form" id="editContactForm">
+                            <div class="contacts--addContact__rightBox--input"><span
+                                    class="addContact__rightBox-input--icons">
+                                    <i class="fa-solid fa-user"></i></span>
+                                <div class="contacts--addContact__rightBox--input__name"><input
+                                        class="contacts--inputFields" id="id-editContact__name" type="text" size="40"
+                                        placeholder="Name" required="" /><img src="/assets/img/user.svg" alt></div>
+                                <div class="contacts--addContact__rightBox--input__name"><input
+                                        class="contacts--inputFields" id="id-editContact__email" type="email" size="40"
+                                        placeholder="Email" required="" /><img src="/assets/img/mail.png" alt></div>
+                                <div class="contacts--addContact__rightBox--input__name"><input
+                                        class="contacts--inputFields" id="id-editContact__phone" type="tel" size="40"
+                                        placeholder="Phone" required="" /><img src="/assets/img/phone.png" alt></div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="contacts--addContact__rightBox--unten" id="id-contacts--addContact__rightBox--unten">
+                        <button class="contacts--addContact__rightBox--closePopup" onclick="closeEditPopup()">Cancel<img
+                                class="padding-5" src="/assets/img/close2.svg" /></button>
+                        <button class="contacts--editContact__rightBox--editContact" type="submit"
+                            form="editContactForm">Save<img class="padding-5" src="/assets/img/create.png" /></button>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
 
