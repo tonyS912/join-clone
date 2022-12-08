@@ -90,24 +90,24 @@ body {
 }
 
 .impressum {
-    width: 160px;
+    width: 232px;
     height: 289px;
     left: 36px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .legal {
-    width: 160px;
+    width: 232px;
     height: 46px;
     top: 243px;
-    padding: 8px;
     gap: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -209,7 +209,6 @@ body {
 .main {
     height: 935px;
     top: 89px;
-    padding-left: 232px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -218,13 +217,42 @@ body {
 .main_summary {
     width: 679px;
     height: 73px;
-    padding-top: 82px;
-    padding-left: 123px;
+    padding-top: 89px;
     gap: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.cont_log_out {
+    display: none;
+    justify-content: flex-end;
+    position: absolute;
+    right: 33px;
+    top: 89px;
+    cursor: pointer;
+}
+
+.log_out {
+    width: 130px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0px 20px 20px;
+}
+
+.log_out a {
+    font-size: 16px;
+    text-align: center;
+    color: #CDCDCD;
+}
+
+.d-flex {
+    display: flex;
 }
 
 .text_summary {
@@ -255,6 +283,7 @@ body {
 
 .main_down {
     display: flex;
+    padding-left: 232px;
 }
 
 .main_info {

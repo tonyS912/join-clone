@@ -1,0 +1,94 @@
+.d-none {
+    display: none;
+}
+
+.margin {
+    margin-left: 57px;
+}
+
+.help_info {
+    height: 935px;
+    top: 89px;
+    padding-left: 232px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-style: normal;
+    color: #000000;
+}
+
+.help_title {
+    padding-top: 82px;
+    padding-left: 123px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont_arrow {
+    padding-bottom: 23px;
+    padding-right: 128.17px;
+}
+
+.arrow{
+    cursor: pointer;
+}
+
+.help_title span {
+    width: 371px;
+    height: 73px;
+    font-weight: 700;
+    font-size: 61px;
+}
+
+.sub_help1 {
+    padding-top: 48px;
+    padding-left: 115px;
+    padding-right: 124px;
+}
+
+.sub_help1 span {
+    height: 32px;
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.sub_help1 a {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.sub_help2 {
+    padding-top: 20px;
+    padding-left: 115px;
+    padding-right: 124px;
+}
+
+.sub_help2 span {
+    height: 32px;
+    font-weight: 700;
+    font-size: 27px;
+    padding-bottom: 35px;
+}
+
+.help_rules {
+    display: flex;
+}
+
+.padding {
+    padding-top: 20px;
+}
+
+.help_rules a {
+    width: 21px;
+    height: 32px;
+    font-weight: 700;
+    font-size: 27px;
+    padding-right: 35px;
+    padding-top: 13px;
+}
+
+.help_rules p {
+    font-family: 'poppins';
+    font-weight: 400;
+    font-size: 16px;
+}

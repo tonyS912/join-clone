@@ -33,7 +33,7 @@
                         <img class="logo_board" src="assets/img/board.svg" />
                         <a>Board</a>
                     </div>
-                    <div class="menu" id="addTask" onclick="addTask()">
+                    <div class="menu menu_dark" id="addTask" onclick="addTask()">
                         <img class="logo_task" src="assets/img/add_task.svg" />
                         <a>Add Task</a>
                     </div>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="impressum">
-                    <div class="legal" onclick="">
+                    <div class="legal" id="legal" onclick="legal()">
                         <img src="assets/img/info.svg" />
                         <a>Legal notice</a>
                     </div>
@@ -61,16 +61,23 @@
                     <div class="user">
                         <img
                             class="help"
+                            id="help"
                             src="assets/img/help.svg"
-                            onclick=""
+                            onclick="help()"
                         />
-                        <div class="cont_foto" onclick="">
+                        <div class="cont_foto">
                             <span class="border_white">
-                                <img class="foto" />
+                                <img class="foto" onclick="user()"/>
                             </span>
                         </div>
                     </div>
                 </div>
+
+                <div id="log_out" class="cont_log_out" onclick="logOut()">
+                    <div class="log_out">
+                      <a>Log out</a>
+                    </div>
+                  </div>
 
                 <div class="main">
 

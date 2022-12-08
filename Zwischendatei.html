@@ -26,7 +26,7 @@
         </div>
   
         <div class="impressum">
-          <div class="legal" onclick="">
+          <div class="legal" id="legal" onclick="legal()">
             <img src="assets/img/info.svg">
             <a>Legal notice</a>
           </div>
@@ -40,14 +40,21 @@
             <a class="kanban">Kanban Project Management Tool</a>
           </div>
           <div class="user">
-            <img class="help" src="assets/img/help.svg" onclick="">
+            <img class="help" id="help" src="assets/img/help.svg" onclick="help()">
             <div class="cont_foto" onclick="">
               <span class="border_white">
-                <img class="foto">
+                <img class="foto" onclick="user()">
               </span>
             </div>
           </div>
         </div>
+
+        <div id="log_out" class="cont_log_out" onclick="logOut()">
+          <div class="log_out">
+            <a>Log out</a>
+          </div>
+        </div>
+        
         <!--hier content hinzufügen-->
       </div>
     </div>
