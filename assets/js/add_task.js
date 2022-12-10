@@ -23,5 +23,11 @@ function loadTasks() {
 }
 
 function expandCategory() {
-  
+  document.getElementById('category').classList.add("d-none");
+  document.getElementById('category-list').classList.remove("d-none");
+}
+
+function miniCategory() {
+  document.getElementById('category').classList.remove('d-none');
+  document.getElementById('category-list').classList.add('d-none');
 }

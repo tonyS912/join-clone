@@ -97,11 +97,22 @@ body {
 }
 
 .category-list {
-    width: 380px;
+    width: 422px;
+    text-align: left;
+    overflow-y: auto;
+    transition: all 225ms;
+}
+
+.list-elemnt {
+    padding-top: 11px;
+    padding-bottom: 11px;
     padding-left: 21px;
     padding-right: 21px;
-    text-align: left;
-    margin: 0;
+}
+
+.list-elemnt:hover {
+    background-color: lightgrey;
+    border-radius: 9px;    
 }
 
 .btn {
@@ -111,6 +122,17 @@ body {
     border: 1px solid #d1d1d1;
     height: 51px;
     border-radius: 10px;
+}
+
+.list {
+    padding-left: 0px;
+    cursor: pointer;
+    background-color: white;
+    border: unset;
+    border: 1px solid #d1d1d1;
+    height: 188px;
+    border-radius: 10px;
+    list-style-type: none;
 }
 
 .popup-arrow {
@@ -181,8 +203,4 @@ body {
 
 .prio-btns button:hover {
     transform: scale(1.05);
-}
-
-.list {
-    list-style-type: none;
 }
