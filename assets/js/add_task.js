@@ -1,5 +1,5 @@
 let allTasks = [];
-let category = [];
+let category = ['New Category', 'Sales', 'Backoffice'];
 let catColor = ['#0000FF', '#00FF00', '#FF0000', '#800080', '#F0F8FF', '#FF69B4'];
 
 function addingTask() {
@@ -20,4 +20,8 @@ function addingTask() {
 function loadTasks() {
   let allTasksAsString = localStorage.getItem('allTasks');
   allTasks = JSON.parse(allTasksAsString);
+}
+
+function expandCategory() {
+  
 }

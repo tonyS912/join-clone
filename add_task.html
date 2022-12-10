@@ -111,19 +111,22 @@
                                 </div>
                                 <div>
                                     <h4 class="size light title">Category</h4>
-                                    <button class="size light category-btn btn">
+                                    <button onclick="expandCategory()" id="category" class="size light category-btn btn">
                                         Select task Category
                                         <img
                                             class="popup-arrow"
                                             src="./assets/img/dropdown-arrow.svg"
                                         />
                                     </button>
+                                    <ul id="category-list" class="list size light category-btn btn">
+                                        <li></li>
+                                    </ul>
                                 </div>
                                 <div>
                                     <h4 class="size light title">
                                         Assigned to
                                     </h4>
-                                    <button onclick="expandCategory()" class="size light category-btn btn">
+                                    <button class="size light category-btn btn">
                                         Select contacts to assign
                                         <img
                                             class="popup-arrow"

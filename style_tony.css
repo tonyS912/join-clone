@@ -12,6 +12,10 @@ body {
     justify-content: center;
 }
 
+.d-none {
+    display: none;
+}
+
 .size {
     font-size: 21px;
 }
@@ -169,4 +173,8 @@ body {
 
 .prio-btns button:hover {
     transform: scale(1.05);
+}
+
+.list {
+    list-style-type: none;
 }
