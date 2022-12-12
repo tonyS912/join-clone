@@ -8,37 +8,34 @@
   <title>Document</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
-<<<<<<< HEAD
   <link rel="stylesheet" href="assests/css/login.css">
-=======
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./assests/fonts/fonts.css">
->>>>>>> 48e41ee050b68da013d7053949e16123bc8dcf3f
   <script src="script.js" defer></script>
   <script src="assests/js/login.js"></script>
+  <script src="assests/js/signUp.js"></script>
+  <script src="mini_backend.js"></script>
 
 </head>
 
-<body>
+<body onload="load(), init()">
 
-
-  <img class="logo" src="assets/img/join-logo.svg"></img>
+  <img class="logo" src="assests/img/join-logo.svg"></img>
   <div class="signup-btn">
     <span>not a join user</span>
-    <button onclick="showSignup()">sign up</button>
+    <button onclick="showSignup(); return false">sign up</button>
   </div>
   
   <div class="login-container">
     <div class="login-box">
       <h1>Log In</h1>
       <div class="line"></div>
-      <form onsubmit="log-In">
+      <form onsubmit="logIn(); return false">
         <div class="form-style">
-          <input required type="email" placeholder="Email" id="email-login">
+          <input required type="email" placeholder="Email" id="email">
           <img src="assests/img/letter.svg" alt="">
         </div>
         <div class="form-style">
-          <input required type="password" name="" id="password-login" minlength="6">
+          <input required type="password" name="" id="password" minlength="6">
           <img src="assests/img/lock.svg" alt="">
         </div>
         <div class="password-note">
@@ -47,7 +44,7 @@
             <span>Remember me</span>
           </div>
           <div class="forgot-password">
-            <a onclick="showFormToResetPassword">Forgot my password</a>
+            <a onclick="resetPasswordForm()">Forgot my password</a>
           </div>
         </div>
         <div class="login-btns">
@@ -56,10 +53,10 @@
         </div>
       </form>
     </div>
+    <div id="msgBox"></div>
   </div>
   </div>
-
-
+ 
 </body>
 
 </html>
