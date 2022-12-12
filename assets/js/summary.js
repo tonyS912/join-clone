@@ -4,6 +4,7 @@ function summary() {
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
     document.getElementById('contacts').classList.remove('menu_dark');
+    window.location.href = 'summary.html';
 }
 
 
@@ -13,6 +14,7 @@ function board() {
     document.getElementById('summary').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
     document.getElementById('contacts').classList.remove('menu_dark');
+    window.location.href = 'board.html';
 }
 
 
@@ -22,6 +24,7 @@ function addTask() {
     document.getElementById('summary').classList.remove('menu_dark');
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('contacts').classList.remove('menu_dark');
+    window.location.href = 'add_task.html';
 }
 
 
@@ -31,4 +34,35 @@ function contacts() {
     document.getElementById('summary').classList.remove('menu_dark');
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
+    window.location.href = 'contacts.html';
+}
+
+
+//open legal notice
+function legal() {
+    document.getElementById('legal').classList.add('menu_dark');
+    document.getElementById('contacts').classList.remove('menu_dark');
+    document.getElementById('summary').classList.remove('menu_dark');
+    document.getElementById('board').classList.remove('menu_dark');
+    document.getElementById('addTask').classList.remove('menu_dark');
+    window.location.href = 'legal.html';
+}
+
+
+//open hel site
+function help() {
+    document.getElementById('help').classList.add('d-none');
+    window.location.href = 'help.html';
+}
+
+
+//show log out
+function user() {
+    document.getElementById('log_out').classList.add('d-flex');
+}
+
+
+//user log out
+function logOut() {
+    window.location.href = 'index.html'
 }

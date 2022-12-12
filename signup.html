@@ -7,18 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="assests/css/login.css">
+  <link rel="stylesheet" href="assets/css/login.css">
   <script src="script.js" defer></script>
-  <script src="assests/js/login.js"></script>
-  <script src="mini_backend.js"></script>
-
-  <script src="assests/js/signUp.js"></script>
+  <script src="assets/js/mini_backend.js"></script>
+  <script src="assets/js/signUp.js"></script>
+  <script src="assets/js/login.js"></script>
 
 </head>
 
 <body onload="init()">
 
-  <img class="logo" src="assests/img/join-logo.svg"></img>
+  <img class="logo" src="assets/img/join-logo.svg"></img>
   <div class="signup-btn">
     <span>not a join user</span>
     <button onclick="showSignup()">sign up</button>
@@ -28,20 +27,20 @@
     <div class="login-box">
       <h1>Sign up</h1>
       <div class="line"></div>
-      <img onclick="backToLogin()" class="arrowSignup" src="assests/img/arrow-left.svg" alt="">
+      <img onclick="backToLogin()" class="arrowSignup" src="assets/img/arrow-left.svg" alt="">
 
       <form onsubmit="signUp(); return false">
         <div class="form-style">
-          <input required type="text" placeholder="Benutzername" id="name">
-          <img src="assests/img/user.svg" alt="">
+            <input required type="email" placeholder="Benutzername" id="email-login">
+            <img src="assets/img/user.svg" alt="">
         </div>
         <div class="form-style">
-          <input required type="email" placeholder="Email" id="email">
-          <img src="assests/img/letter.svg" alt="">
+          <input required type="email" placeholder="Email" id="email-login">
+          <img src="assets/img/letter.svg" alt="">
         </div>
         <div class="form-style">
-          <input required type="password" name="" id="password" minlength="6">
-          <img src="assests/img/lock.svg" alt="">
+          <input required type="password" name="" id="password-login" minlength="6">
+          <img src="assets/img/lock.svg" alt="">
         </div>
 
         <div class="login-btns">

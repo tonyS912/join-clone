@@ -4,9 +4,72 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Join</title>
+
+  <link rel="stylesheet" href="summary.css">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+
+  <script src="assets/js/summary.js"></script>
 </head>
 <body>
-  
+  <div class="webpage">
+    <div class="left">
+
+      <div class="logo">
+        <img src="assets/img/join-logo2.svg">
+      </div>
+
+      <div class="menu_left">
+        <div class="menu" id="summary" onclick="summary()">
+          <img class="logo_summary" src="assets/img/summary.svg">
+          <a>Summary</a>
+        </div>
+        <div class="menu menu_dark" id="board" onclick="board()">
+          <img class="logo_board" src="assets/img/board.svg">
+          <a>Board</a>
+        </div>
+        <div class="menu" id="addTask" onclick="addTask()">
+          <img class="logo_task" src="assets/img/add_task.svg">
+          <a>Add Task</a>
+        </div>
+        <div class="menu" id="contacts" onclick="contacts()">
+          <img class="logo_contacts" src="assets/img/contacts.svg">
+          <a>Contacts</a>
+        </div>
+      </div>
+
+      <div class="impressum">
+        <div class="legal" id="legal" onclick="legal()">
+          <img src="assets/img/info.svg">
+          <a>Legal notice</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+
+      <div class="header">
+        <div class="title">
+          <a class="kanban">Kanban Project Management Tool</a>
+        </div>
+        <div class="user">
+          <img class="help" id="help" src="assets/img/help.svg" onclick="help()">
+          <div class="cont_foto" onclick="">
+            <span class="border_white">
+              <img class="foto" onclick="user()">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="log_out" class="cont_log_out" onclick="logOut()">
+        <div class="log_out">
+          <a>Log out</a>
+        </div>
+      </div>
+      
+      <!--hier content hinzufügen-->
+    </div>
+  </div>
 </body>
 </html>

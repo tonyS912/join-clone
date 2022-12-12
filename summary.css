@@ -4,8 +4,8 @@ body {
 }
 
 .webpage {
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     position: relative;
     background: #F6F7F8;
 }
@@ -90,24 +90,24 @@ body {
 }
 
 .impressum {
-    width: 160px;
+    width: 232px;
     height: 289px;
     left: 36px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .legal {
-    width: 160px;
+    width: 232px;
     height: 46px;
     top: 243px;
-    padding: 8px;
     gap: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -126,19 +126,15 @@ body {
 
 /*website right*/
 .right {
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px, 36px, 20px, 348px;
 }
 
 /*header*/
 .header {
-    position: absolute;
-    width: 1208px;
     height: 89px;
-    left: 232px;
     top: 0;
     display: flex;
     flex-direction: row;
@@ -150,11 +146,10 @@ body {
 }
 
 .kanban {
-    position: absolute;
     width: 335px;
     height: 25px;
     top: 32px;
-    left: 116px;
+    padding-left: 348px;
     color: black;
     font-size: 21px;
     line-height: 120%
@@ -206,29 +201,58 @@ body {
     width: 49px;
     height: 49px;
     border-radius: 559px;
-    background: url(assests/img/foto_user.jpg);
+    background: url(assets/img/foto_user.jpg);
 }
 
 /*contain right*/
 
 .main {
-    width: 1208px;
     height: 935px;
     top: 89px;
-    left: 232px;
-    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .main_summary {
     width: 679px;
     height: 73px;
-    padding-top: 82px;
-    padding-left: 123px;
+    padding-top: 89px;
     gap: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.cont_log_out {
+    display: none;
+    justify-content: flex-end;
+    position: absolute;
+    right: 33px;
+    top: 89px;
+    cursor: pointer;
+}
+
+.log_out {
+    width: 130px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0px 20px 20px;
+}
+
+.log_out a {
+    font-size: 16px;
+    text-align: center;
+    color: #CDCDCD;
+}
+
+.d-flex {
+    display: flex;
 }
 
 .text_summary {
@@ -259,6 +283,7 @@ body {
 
 .main_down {
     display: flex;
+    padding-left: 232px;
 }
 
 .main_info {
@@ -458,21 +483,21 @@ body {
 .pencil {
     width: 70px;
     height: 70px;
-    background: url(assests/img/pencil.svg)
+    background: url(assets/img/pencil.svg)
 }
 
 .todo_box:hover .pencil {
-    background: url(assests/img/pencil_3.svg);
+    background: url(assets/img/pencil_3.svg);
 }
 
 .done {
     width: 70px;
     height: 70px;
-    background: url(assests/img/correct.svg)
+    background: url(assets/img/correct.svg)
 }
 
 .todo_box:hover .done {
-    background: url(assests/img/correct2.svg);
+    background: url(assets/img/correct2.svg);
 }
 
 .todo_info {
