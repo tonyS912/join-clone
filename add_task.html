@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" href="style_tony.css" />
         <script src="./assets/js/add_task.js"></script>
+        <script src="./assets/js/add_task_templates.js"></script>
         <script src="./assets/js/mini_backend.js"></script>
         <script src="./script.js"></script>
         <link rel="stylesheet" href="summary.css" />
@@ -33,7 +34,11 @@
                         <img class="logo_board" src="assets/img/board.svg" />
                         <a>Board</a>
                     </div>
-                    <div class="menu menu_dark" id="addTask" onclick="addTask()">
+                    <div
+                        class="menu menu_dark"
+                        id="addTask"
+                        onclick="addTask()"
+                    >
                         <img class="logo_task" src="assets/img/add_task.svg" />
                         <a>Add Task</a>
                     </div>
@@ -67,7 +72,7 @@
                         />
                         <div class="cont_foto">
                             <span class="border_white">
-                                <img class="foto" onclick="user()"/>
+                                <img class="foto" onclick="user()" />
                             </span>
                         </div>
                     </div>
@@ -75,12 +80,11 @@
 
                 <div id="log_out" class="cont_log_out" onclick="logOut()">
                     <div class="log_out">
-                      <a>Log out</a>
+                        <a>Log out</a>
                     </div>
-                  </div>
+                </div>
 
                 <div class="main">
-
                     <div class="add-task">
                         <div>
                             <h1>Add Task</h1>
@@ -111,18 +115,24 @@
                                 </div>
                                 <div>
                                     <h4 class="size light title">Category</h4>
-                                    <button onclick="expandCategory()" id="category" class="size light category-btn btn">
+                                    <button
+                                        onclick="expandCategory()"
+                                        id="category"
+                                        class="size light category-btn btn"
+                                    >
                                         Select task Category
                                         <img
                                             class="popup-arrow"
                                             src="./assets/img/dropdown-arrow.svg"
                                         />
                                     </button>
-                                    <ul id="category-list" class="d-none list size light category-list">
-                                        <li onclick="miniCategory()" class="list-elemnt">Select task Category</li>
-                                        <li onclick="changeCategory()" class="list-elemnt">New Category</li>
-                                        
-                                    </ul>
+                                    <ul
+                                        id="category-list"
+                                        class="d-none list size light category-list"
+                                    >
+                                    <!-- <li id="addOneCat" onclick="changeCategory()" class="list-elemnt"><input id="newCat" class="visibility unsetBorder light size list-elemnt"/>
+                                        <img onclick="deleteInput()" class="cross" src="./assets/img/cross.svg"><img onclick="addCat()" class="newCategory" src="./assets/img/newCategory.svg"></li> -->
+                                </ul>
                                 </div>
                                 <div>
                                     <h4 class="size light title">
@@ -135,7 +145,6 @@
                                             src="./assets/img/dropdown-arrow.svg"
                                         />
                                     </button>
-                                    
                                 </div>
                             </div>
                             <div class="right-container">
@@ -190,10 +199,17 @@
                                             class="subtask-img"
                                             src="./assets/img/plus_2.svg"
                                         />
-                                        
                                     </div>
                                     <div class="subtasks">
-                                        <input class="checkbox" type="checkbox" name="Subtasks" id=""><p class="light padding-10">Subtask 1</p>
+                                        <input
+                                            class="checkbox"
+                                            type="checkbox"
+                                            name="Subtasks"
+                                            id=""
+                                        />
+                                        <p class="light padding-10">
+                                            Subtask 1
+                                        </p>
                                     </div>
                                 </div>
                                 <div

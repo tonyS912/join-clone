@@ -32,6 +32,10 @@ body {
     background-color: transparent;
 }
 
+.unsetBorder {
+    border: unset;
+}
+
 .add-task {
     width: 1116px;
     height: 914px;
@@ -203,4 +207,21 @@ body {
 
 .prio-btns button:hover {
     transform: scale(1.05);
+}
+
+.visibility:focus-visible {
+    outline: none;
+}
+
+.cross {
+    top: 7px;
+    position: relative;
+    left: 40px;
+    border-right: 2px solid black;
+}
+
+.newCategory {
+    height: 18px;
+    position: relative;
+    left: 46px;
 }
