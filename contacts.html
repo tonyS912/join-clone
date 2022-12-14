@@ -16,7 +16,8 @@
     <title>Contacts</title>
 </head>
 
-<body>
+<body onload="render()">
+    <div class="hide body__overlap" id="body__overlapID"></div>
     <div class="webpage">
         <div class="left">
 
@@ -76,45 +77,42 @@
             <div class="id-body--main" id="body__css">
 
                 <div class="contacts--main__left" id="id-contacts--main__left">
-                    <div id="contact--UUID1" class="contact--left__card" onclick="">
-                        <div class="contact--left__UserAvatar" style="background-color:#29ABE2">
-                            <span class="contact-initials">OM</span>
-                        </div>
-                        <div class="contact--left__UserText">
-                            <div class="contact--left__UserText--Name">Oskar Mayer</div>
-                            <div class="contact--left__UserText--EMail">oskar@meyers.foo</div>
-                        </div>
-                    </div>
-                    <div id="contact--UUID2" class="contact--left__card" onclick="">
-                        <div class="contact--left__UserAvatar" style="background-color:#29ABE2">
-                            <span class="contact-initials">HP</span>
-                        </div>
-                        <div class="contact--left__UserText">
-                            <div class="contact--left__UserText--Name">Hans Peter</div>
-                            <div class="contact--left__UserText--Email">hans@peter.foo</div>
-                        </div>
-                    </div>
+                    <div id="id-contacts--card"></div>
                 </div>
 
                 <div class="contacts--main__right" id="id-contacts--main__right">
-                    <div class="contacts--main__rightTop" id="id-contacts--main__rightTop">
-                        <div class="contacts--main__rightTop--Text1"><span>Contacts</span></div>
-                        <div class="dp-flex margin-20"><img src="/assets/img/spacer_blue.svg"></div>
-                        <div class="contacts--main__rightTop--Text2"><span>Better with a team</span></div>
-                    </div>
-                    <div class="contacts--main__rightCenter" id="id-contacts--main__rightCenter">
-                        Kontakte hier - ID: id-contacts--main__rightCenter
-
-                        <div>
-                            <button class="contacts--main__rightBox--newContactButton"
-                                onclick="newContactOpenOverlay()">New
-                                contact<img class="padding-5" src="/assets/img/add_user.svg" /></button>
+                    <div class="contacts--main__right--container" id="id-contacts--main__right--container">
+                        <div class="contacts--main__rightTop" id="id-contacts--main__rightTop">
+                            <div class="contacts--main__rightTop--Text1"><span>Contacts</span></div>
+                            <div class="dp-flex margin-20"><img src="/assets/img/spacer_blue.svg"></div>
+                            <div class="contacts--main__rightTop--Text2"><span>Better with a team</span></div>
+                        </div>
+                        <div class="contacts--main__rightCenter" id="id-contacts--main__rightCenter">
+                            <div class="contacs--show__right--header">
+                                <div id="id-contacts__initials"class="contacs--show__right--header__userPic">UB</div>
+                                <div class="contacs--show__right--header__userNameAddTask">
+                                    <div id="id-contacts__name" class="contacs--show__right--header__userNameText">Franz Test</div>
+                                    <div>+ Add Task</div>
+                                </div>
+                            </div>
+                            <div class="contacs--show__right--contactInformation">
+                                <div class="contacs--show__right--contactInformation__Text">Contact Information</div>
+                                <div class="contacs--show__right--contactInformation__EditContact"><img src="assets/img/edit.png">Edit Contact</div>
+                            </div>
+                            <div class="contacs--show__right--ContainerBoldText">Email</div>
+                            <div id="id-contacts__email">franz@test.com</div>
+                            <div class="contacs--show__right--ContainerBoldText">Phone</div>
+                            <div id="id-contacts__phone">+49160109112</div>
+                            <div>
+                                <button class="contacts--main__rightBox--newContactButton"
+                                    onclick="newContactOpenOverlay()">New
+                                    contact<img class="padding-5" src="/assets/img/add_user.svg" /></button>
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="hide" id="body__css-contactsAdd">
+                <div class="hide body__css-contactsAdd" id="body__css-contactsAdd">
                     <div class="contacts--addContact" id="id-contacts--addContact">
                         <div class="contacts--addContact__leftBox" id="id-contacts--addContact__leftBox">
                             <img src="/assets/img/close-white.svg" class="closeMobile">

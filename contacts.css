@@ -277,6 +277,7 @@ form {
     left: 0;
     display: flex;
     width: 440px;
+    height: 100vH;
     background: #FFFFFF;
     box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
 }
@@ -311,7 +312,8 @@ form {
 }
 
 .contacts--main__rightTop--Text1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
 
 }
 
@@ -345,8 +347,8 @@ form {
 
 .contacts--main__rightBox--newContactButton {
     position: absolute;
-    bottom: 50px;
-    right: 50px;
+    top: 80%;
+    right: 5%;
     padding: 10px;
     width: 170px;
     height: 50px;
@@ -373,22 +375,50 @@ form {
 .contacts--main__left {
     display: flex;
     flex-direction: column;
-align-items: center;
+    align-items: center;
 }
 
 .contact--left__card {
     display: flex;
-    background-color: aqua;
+    /*background-color: aqua;*/
     width: 90%;
     margin-top: 10px;
     padding: 5px;
-    justify-content: space-evenly;
-    border: 2px solid rgba(0, 0, 0, 1);
-    border-radius: 5px;
+    /*border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;*/
 
 }
 
-.contact--left__UserText{
+.body__overlap {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #000000;
+    opacity: 30%;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+
+}
+
+.body__css-contactsAdd {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    z-index: 100;
+}
+
+.contact--left__card:hover {
+    background-color: #e6e6e6;
+    /*border: 2px solid rgba(0, 0, 0, 1);*/
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.contact--left__UserText {
     padding-left: 10px;
     display: flex;
     justify-content: center;
@@ -416,17 +446,79 @@ align-items: center;
     font-size: 1.2rem;
 }
 
+.contacts--main__rightCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 10px;
+}
 
+.contacs--show__right--header {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
 
+.contacs--show__right--contactInformation {
+    display: flex;
+    justify-content: left;
+    padding-top: 30px;
+}
 
+.contacs--show__right--Email {
+    display: flex;
+    padding: 10px;
+}
 
+.contacs--show__right--Phone {
+    display: flex;
+    padding: 10px;
+}
 
+.contacs--show__right--header__userPic {
+    display: flex;
+    border-radius: 50%;
+    background-color: #ff8f63;
+    height: 120px;
+    width: 120px;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
 
+}
 
+.contacs--show__right--header__userNameAddTask {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+}
 
+.contacs--show__right--header__userNameText {
+    font-size: 2.5em;
+    padding-bottom: 15px;
+}
 
+.contacs--show__right--contactInformation__Text {
+    font-size: 1.2em;
 
+}
 
+.contacs--show__right--contactInformation__EditContact {
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+}
+
+.contacs--show__right--contactInformation__EditContact img {
+height: 25px;
+margin-right: 5px;
+}
+
+.contacs--show__right--ContainerBoldText {
+    margin-top: 25px;
+    font-weight: 700;
+}
 
 
 
