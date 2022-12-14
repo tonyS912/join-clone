@@ -161,3 +161,8 @@ function renderedHtmlContactRight(uuid) {
 </div>
 `;
 }
+
+function editContactOverlay(uuid) {
+    editContactOpenOverlay();
+
+}
