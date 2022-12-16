@@ -13,10 +13,11 @@
 
     <script src="assets/js/summary.js"></script>
     <script src="/assets/js/contacts.js"></script>
+    <script src="/assets/js/mini_backend.js"></script>
     <title>Contacts</title>
 </head>
 
-<body onload="render()">
+<body onload="render()" onload="init()">
     <div class="hide body__overlap" id="body__overlapID"></div>
     <div class="webpage">
         <div class="left">
@@ -77,7 +78,7 @@
             <div class="id-body--main" id="body__css">
 
                 <div class="contacts--main__left" id="id-contacts--main__left">
-                    <div id="id-contacts--card"></div>
+                    <div class="contacts--card__left" id="id-contacts--card"></div>
                 </div>
 
                 <div class="contacts--main__right" id="id-contacts--main__right">
