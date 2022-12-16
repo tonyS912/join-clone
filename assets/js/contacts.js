@@ -62,8 +62,14 @@ function createContactUUID() {
 
 function syncContactsToServer() {
     // Sync Contact Array to Server DB
+    setURL('https://gruppe-384.developerakademie.net/smallest_backend_ever');
     render();
     console.log("Server Sync triggered");
+    pushContacts();
+}
+
+async function pushContacts() {
+    await backend.setItem('contacts', JSON.stringify(CONTACTS)); 
 }
 
 function renderSingleContactCard(uuid) {
