@@ -108,10 +108,16 @@ body {
 }
 
 .list-elemnt {
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 21px;
     padding-right: 21px;
+}
+
+.list-elements-height {
+    display: flex;
+    align-items: center;
+    height: 37px;
 }
 
 .list-elemnt:hover {
@@ -124,7 +130,7 @@ body {
     background-color: white;
     border: unset;
     border: 1px solid #d1d1d1;
-    height: 51px;
+    height: 55px;
     border-radius: 10px;
 }
 
@@ -134,9 +140,13 @@ body {
     background-color: white;
     border: unset;
     border: 1px solid #d1d1d1;
-    height: 188px;
     border-radius: 10px;
     list-style-type: none;
+    margin-top: 5px;
+}
+
+.list-height {
+    height: 188px;
 }
 
 .popup-arrow {
@@ -216,12 +226,32 @@ body {
 .cross {
     top: 7px;
     position: relative;
-    left: 40px;
-    border-right: 2px solid black;
+    left: -75px;
+    border-right: 2px solid lightgrey;
 }
 
 .newCategory {
     height: 18px;
     position: relative;
-    left: 46px;
+    top: -37px;
+    left: 392px;
+}
+
+.filter {
+    filter: invert();
+}
+
+.prio-urgent {
+    background-color: #FF3D01;
+    color: white;
+}
+
+.prio-medium {
+    background-color: #FFA802;
+    color: white;
+}
+
+.prio-low {
+    background-color: #7AE229;
+    color: white;
 }

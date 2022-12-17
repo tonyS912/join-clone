@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="summary.css" />
         <script src="assets/js/summary.js"></script>
         <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+        <link rel="icon" type="image/icon" href="./assets/img/join-logo.svg" />
         <title>Add Task</title>
     </head>
     <body onload="loadTasks()">
@@ -128,11 +129,25 @@
                                     </button>
                                     <ul
                                         id="category-list"
-                                        class="d-none list size light category-list"
-                                    >
-                                    <!-- <li id="addOneCat" onclick="changeCategory()" class="list-elemnt"><input id="newCat" class="visibility unsetBorder light size list-elemnt"/>
-                                        <img onclick="deleteInput()" class="cross" src="./assets/img/cross.svg"><img onclick="addCat()" class="newCategory" src="./assets/img/newCategory.svg"></li> -->
-                                </ul>
+                                        class="d-none list-height list size light category-list"
+                                    ></ul>
+                                    <div id="newCategory" class="d-none">
+                                        <input
+                                            class="title-input size light"
+                                            type="text"
+                                            placeholder="New category name"
+                                            required=""
+                                        />
+                                        <img
+                                            onclick="deleteCat()"
+                                            class="cross"
+                                            src="./assets/img/cross.svg"
+                                        /><img
+                                            onclick="addCat()"
+                                            class="newCategory"
+                                            src="./assets/img/newCategory.svg"
+                                        />
+                                    </div>
                                 </div>
                                 <div>
                                     <h4 class="size light title">
@@ -165,23 +180,31 @@
                                     <div>
                                         <h4 class="size light title">Prio</h4>
                                         <div class="prio-btns">
-                                            <button class="size light btn prio">
+                                            <button onclick="switchBackground('urgent')" 
+                                            class="size light btn prio"
+                                            id="urgent">
                                                 Urgent
                                                 <img
                                                     src="./assets/img/arrows-up.svg"
-                                                    alt=""
+                                                    class=""
                                                 />
                                             </button>
-                                            <button class="size light btn prio">
+                                            <button onclick="switchBackground('medium')"
+                                            class="size light btn prio"
+                                            id="medium">
                                                 Medium
                                                 <img
                                                     src="./assets/img/equal-sign.svg"
+                                                    class=""
                                                 />
                                             </button>
-                                            <button class="size light btn prio">
+                                            <button onclick="switchBackground('low')"
+                                            class="size light btn prio"
+                                            id="low">
                                                 Low
                                                 <img
                                                     src="./assets/img/arrows-down.svg"
+                                                    class=""
                                                 />
                                             </button>
                                         </div>

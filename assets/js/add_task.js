@@ -9,6 +9,10 @@ let catColor = [
     "#FF69B4",
 ];
 
+
+/**
+ * Push Information about tasks into loacal storage
+ */
 function addingTask() {
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
@@ -29,6 +33,9 @@ function loadTasks() {
     allTasks = JSON.parse(allTasksAsString);
 }
 
+/**
+ * Open an Dropdown that you can choose a Category
+ */
 function expandCategory() {
     document.getElementById("category").classList.add("d-none");
     document.getElementById("category-list").classList.remove("d-none");
@@ -36,6 +43,9 @@ function expandCategory() {
     appendCategory();
 }
 
+/**
+ * 
+ */
 function appendCategory() {
     let cat = document.getElementById("category-list");
     cat.innerHTML = "";
@@ -50,13 +60,33 @@ function appendCategory() {
     }
 }
 
+/**
+ * minimize categorylist
+ */
 function miniCategory() {
     document.getElementById("category").classList.remove("d-none");
     document.getElementById("category-list").classList.add("d-none");
 }
 
-function changeCategory() {
-  let addCat = document.getElementById('addOneCat');
+/**
+ * minimize dropdown and shows the addCategory input
+ */
+function newCategory() {
+    miniCategory();
+    document.getElementById("category").classList.add("d-none");
+    document.getElementById("newCategory").classList.remove("d-none");
+}
 
+function switchBackground(prio) {
+    const prioList = ["urgent", "medium", "low"];
 
+    if (prioList.includes(prio) ) {
+        document.getElementById(`${prio}`).classList.add('prio-' + `${prio}`);
+        document.getElementById(`${prio}`).setAttribute("onclick", `backgroundOff("${prio}")`);
+    }
+}
+
+function backgroundOff(prio) {
+    document.getElementById(`${prio}`).classList.remove('prio-' + `${prio}`);
+    document.getElementById(`${prio}`).setAttribute("onclick", `switchBackground("${prio}")`);
 }
