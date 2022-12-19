@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="./assets/fonts/fonts.css">
 
   <script src="assets/js/summary.js"></script>
+  <script src="assets/js/login.js"></script>
 
 </head>
 
-<body>
+<body onload="greetUser()">
   <div class="webpage">
     <div class="left">
 
@@ -131,7 +132,7 @@
 
           <div class="main_user">
             <a>Good morning,</a>
-            <span>Sofia Müller</span>
+            <span id="loggedUserName"></span>
           </div>
         </div>
       </div>

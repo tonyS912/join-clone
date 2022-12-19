@@ -64,5 +64,26 @@ function user() {
 
 //user log out
 function logOut() {
-    window.location.href = 'index.html'
+    window.location.href = 'index.html';
+    localStorage.clear();
+}
+
+
+function greetUser() {
+    //greetAccordingToDayTime();
+    greetUserName();
+
+}
+
+function greetAccordingToDayTime() {
+    //greeting according to current daytime
+}
+
+function greetUserName() {
+    let loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
+    if (loggedUser) {
+        document.getElementById('loggedUserName').innerHTML = loggedUser['name'];
+    } else {
+        document.getElementById('loggedUserName').innerHTML = 'Guest';
+    }
 }
