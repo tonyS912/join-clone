@@ -1,9 +1,9 @@
 function categoryParam(elemnt, i) {
-    return /*html*/ `<li onclick="${i}" class="list-elements-height list-elemnt">${elemnt}</li>`;
+    return /*html*/ `<li onclick="showCategory(${i})" class="list-elements-height list-elemnt">${elemnt}</li>`;
 }
 
 function selectCat() {
-    return /*html*/ '<li onclick="miniCategory()" class="list-elements-height list-elemnt">Select task Category</li>';
+    return /*html*/ '<li id="selectCat" onclick="closeCat()" class="list-elements-height list-elemnt">Select task Category</li>';
 }
 
 function addOneCat() {

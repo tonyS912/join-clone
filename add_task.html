@@ -16,7 +16,7 @@
         <link rel="icon" type="image/icon" href="./assets/img/join-logo.svg" />
         <title>Add Task</title>
     </head>
-    <body onload="loadTasks()">
+    <body onload="loadTasks(); init()">
         <div class="webpage">
             <div class="left">
                 <div class="logo">
@@ -170,10 +170,11 @@
                                             Due date
                                         </h4>
                                         <input
+                                            onchange="dateChecker()"
                                             class="size light title-input"
                                             type="date"
                                             name=""
-                                            id=""
+                                            id="dueDate"
                                             placeholder="dd/mm/yyyy"
                                             required
                                         />
