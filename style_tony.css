@@ -24,6 +24,10 @@ body {
     font-family: Inter-Light;
 }
 
+.left-width {
+    width: 424px;
+}
+
 .regul {
     font-family: Inter-Regular;
 }
@@ -224,17 +228,17 @@ body {
 }
 
 .cross {
-    top: 7px;
+    top: -42px;
     position: relative;
-    left: -75px;
+    left: 350px;
     border-right: 2px solid lightgrey;
 }
 
 .newCategory {
     height: 18px;
     position: relative;
-    top: -37px;
-    left: 392px;
+    top: -50px;
+    left: 356px;
 }
 
 .filter {

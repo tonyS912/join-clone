@@ -1,5 +1,5 @@
-function categoryParam(elemnt) {
-    return /*html*/ `<li class="list-elements-height list-elemnt">${elemnt}</li>`;
+function categoryParam(elemnt, i) {
+    return /*html*/ `<li onclick="${i}" class="list-elements-height list-elemnt">${elemnt}</li>`;
 }
 
 function selectCat() {

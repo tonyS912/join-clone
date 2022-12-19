@@ -56,7 +56,7 @@ function appendCategory() {
     for (let i = 0; i < category.length; i++) {
         const elemnt = category[i];
 
-        cat.innerHTML += categoryParam(elemnt);
+        cat.innerHTML += categoryParam(elemnt, i);
     }
 }
 
@@ -66,6 +66,7 @@ function appendCategory() {
 function miniCategory() {
     document.getElementById("category").classList.remove("d-none");
     document.getElementById("category-list").classList.add("d-none");
+    document.getElementById("newCategory").classList.add("d-none");
 }
 
 /**
@@ -89,4 +90,27 @@ function switchBackground(prio) {
 function backgroundOff(prio) {
     document.getElementById(`${prio}`).classList.remove('prio-' + `${prio}`);
     document.getElementById(`${prio}`).setAttribute("onclick", `switchBackground("${prio}")`);
+}
+
+function addCat() {
+    let newCat = document.getElementById("categoryName").value;
+
+    if (newCat != "") {
+        category.push(newCat);
+        appendCategory();
+        miniCategory();
+        document.getElementById("categoryName").value = "";
+    } else {
+        miniCategory();
+    }
+
+}
+
+function deleteCat() {
+    document.getElementById("categoryName").value = "";
+    miniCategory();
+}
+
+function showCategory(i) {
+
 }
