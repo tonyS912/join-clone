@@ -1,4 +1,6 @@
+
 let allTasks = [];
+let task = [];
 let category = ["Sales", "Backoffice"];
 let catColor = [
     "#0000FF",
@@ -10,30 +12,38 @@ let catColor = [
 ];
 const prioList = ["urgent", "medium", "low"];
 
-function init() {}
+async function loadTasks() {
+    //loadCurrentDate();  load the page with the current daytime
+    await loadTasksFromBackend();
+}
 
-/**
- * Push Information about tasks into loacal storage
- */
-function addingTask() {
-    let title = document.getElementById("title").value;
-    let description = document.getElementById("description").value;
+async function loadTasksFromBackend() {
+    setURL('https://gruppe-384.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+}
 
-    let task = {
-        title: title,
-        description: description,
+async function addingTask() {
+    let title = document.getElementById('title').value;
+    let description = document.getElementById('description').value;
+    task = {
+      'title': title,
+      'description': description
     };
-
     allTasks.push(task);
-
-    let allTasksAsString = JSON.stringify(allTasks);
-    localStorage.setItem("allTasks", allTasksAsString);
+    saveTasksInBackend();
+    moveToBoard();
 }
 
-function loadTasks() {
-    let allTasksAsString = localStorage.getItem("allTasks");
-    allTasks = JSON.parse(allTasksAsString);
-}
+  async function saveTasksInBackend(){
+    setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
+    await backend.setItem('allTasks', JSON.stringify(allTasks));
+  }
+  
+  function moveToBoard(){
+    //animated message ('task added to board')
+    window.location.href = 'board.html';
+  }
 
 /**
  * Open an Dropdown that you can choose a Category
