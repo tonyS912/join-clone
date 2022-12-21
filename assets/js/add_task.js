@@ -167,4 +167,8 @@ function dateChecker() {
 
 function addSubtask() {
     let input = document.getElementById('subtaskName').value;
+    let subtask = document.getElementById('subtasks');
+
+    subtask.innerHTML = "";
+    
 }
