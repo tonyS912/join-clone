@@ -1,4 +1,3 @@
-
 let allTasks = [];
 let task = [];
 let subtasks = [];
@@ -14,45 +13,60 @@ let catColor = [
 const prioList = ["urgent", "medium", "low"];
 let priority = "";
 
+/**
+ * TODO
+ */
 async function loadTasks() {
     //loadCurrentDate();  load the page with the current daytime
     await loadTasksFromBackend();
 }
 
 async function loadTasksFromBackend() {
-    setURL('https://gruppe-384.developerakademie.net/smallest_backend_ever');
+    setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    allTasks = JSON.parse(backend.getItem("allTasks")) || [];
 }
 
+/**
+ * TODO
+ */
 async function addingTask() {
-    let title = document.getElementById('title').value;
-    let description = document.getElementById('description').value;
-    let category = document.getElementById('category').innerText;
-    let prio = priority;
-    let dueDate = document.getElementById('dueDate').value;
-    task = {
-      'title': title,
-      'description': description,
-      'category': category,
-      'prio': prio,
-      'dueDate': dueDate,
-      'subtasks': subtasks
-    };
+    saveTaskInfo();
     allTasks.push(task);
     saveTasksInBackend();
+    subtasks = [];
+    clear();
     //moveToBoard();
 }
 
-  async function saveTasksInBackend(){
+function saveTaskInfo() {
+    let title = document.getElementById("title").value;
+    let description = document.getElementById("description").value;
+    let category = document.getElementById("category").innerText;
+    let prio = priority;
+    let dueDate = document.getElementById("dueDate").value;
+    task = {
+        'title': title,
+        'description': description,
+        'category': category,
+        'prio': prio,
+        'dueDate': dueDate,
+        'subtasks': subtasks,
+    };
+}
+
+async function saveTasksInBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
-    await backend.setItem('allTasks', JSON.stringify(allTasks));
-  }
-  
-  function moveToBoard(){
+    await backend.setItem("allTasks", JSON.stringify(allTasks));
+}
+
+/**
+ * TODO
+ */
+function moveToBoard() {
     //animated message ('task added to board')
-    window.location.href = 'board.html';
-  }
+    window.location.href = "board.html";
+}
 
 /**
  * Open an Dropdown that you can choose a Category
@@ -162,17 +176,28 @@ function closeCat() {
  */
 function dateChecker() {
     let choosenDate = document.getElementById("dueDate").value;
-
-    
 }
 
-
+/**
+ * show subtask into preview and push it in own array
+ */
 function addSubtask() {
-    let input = document.getElementById('subtaskName').value;
-    let subtask = document.getElementById('subtasks');
+    let input = document.getElementById("subtaskName").value;
+    let subtask = document.getElementById("subtasks");
 
-    //subtask.innerHTML = "";
     subtask.innerHTML += addThisSubtask(input);
-    document.getElementById('subtaskName').value = "";
+    document.getElementById("subtaskName").value = "";
     subtasks.push(input);
+}
+
+/**
+ * clear task preview
+ */
+function clear() {
+    document.getElementById("title").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("category").innerText = "Select task Category";
+    backgroundOff(priority);
+    document.getElementById("dueDate").value = "";
+    document.getElementById("subtasks").innerHTML = "";
 }
