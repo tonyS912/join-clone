@@ -211,30 +211,24 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div style="margin-bottom: 12px;">
                                         <h4 class="size light title">
                                             Subtasks
                                         </h4>
                                         <input
+                                            id="subtaskName"
                                             class="title-input size light"
                                             type="text"
                                             placeholder="Add new subtask"
                                         />
                                         <img
+                                            onclick="addSubtask()"
                                             class="subtask-img"
                                             src="./assets/img/plus_2.svg"
                                         />
                                     </div>
-                                    <div class="subtasks">
-                                        <input
-                                            class="checkbox"
-                                            type="checkbox"
-                                            name="Subtasks"
-                                            id=""
-                                        />
-                                        <p class="light padding-10">
-                                            Subtask 1
-                                        </p>
+                                    <div class="subtaskArea" id="subtasks">
+                                        
                                     </div>
                                 </div>
                                 <div

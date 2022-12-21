@@ -213,6 +213,16 @@ body {
 .subtasks {
     display: flex;
     flex-direction: row;
+    height: 30px;
+    align-items: center;
+}
+
+.subtaskArea {
+    height: 176px;
+    width: 422px;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .checkbox {

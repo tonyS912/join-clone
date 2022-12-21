@@ -9,3 +9,17 @@ function selectCat() {
 function addOneCat() {
     return /*html*/ '<li onclick="newCategory()" class="list-elements-height list-elemnt">New Category</li>';
 }
+
+function addSubtask(aktion) {
+    return /*html*/ `<div class="subtasks">
+    <input
+        class="checkbox"
+        type="checkbox"
+        name="Subtasks"
+        id=""
+    />
+    <p class="light padding-10">
+        ${aktion}
+    </p>
+</div>`;
+}

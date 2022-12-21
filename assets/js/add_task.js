@@ -11,6 +11,7 @@ let catColor = [
     "#FF69B4",
 ];
 const prioList = ["urgent", "medium", "low"];
+let priority = "";
 
 async function loadTasks() {
     //loadCurrentDate();  load the page with the current daytime
@@ -26,13 +27,19 @@ async function loadTasksFromBackend() {
 async function addingTask() {
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
+    let category = document.getElementById('category').innerText;
+    let prio = priority;
+    let dueDate = document.getElementById('dueDate').value;
     task = {
       'title': title,
-      'description': description
+      'description': description,
+      'category': category,
+      'prio': prio,
+      'dueDate': dueDate
     };
     allTasks.push(task);
     saveTasksInBackend();
-    moveToBoard();
+    //moveToBoard();
 }
 
   async function saveTasksInBackend(){
@@ -98,6 +105,7 @@ function switchBackground(prio) {
     }
 
     backgroundOn(prio);
+    priority = prio;
 }
 
 function backgroundOn(prio) {
@@ -147,15 +155,16 @@ function closeCat() {
     document.getElementById("category").textContent = "Select task Category";
 }
 
+/**
+ * TODO - Check date if in future or not
+ */
 function dateChecker() {
     let choosenDate = document.getElementById("dueDate").value;
 
-    const today = new Date();
-    console.log(today);
+    
+}
 
-    if ((choosenDate = Date())) {
-        //alert("Please choose a date in the future");
-    }
 
-    Date.parse;
+function addSubtask() {
+    let input = document.getElementById('subtaskName').value;
 }
