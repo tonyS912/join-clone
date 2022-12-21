@@ -10,7 +10,7 @@ function addOneCat() {
     return /*html*/ '<li onclick="newCategory()" class="list-elements-height list-elemnt">New Category</li>';
 }
 
-function addSubtask(aktion) {
+function addThisSubtask(aktion) {
     return /*html*/ `<div class="subtasks">
     <input
         class="checkbox"

@@ -1,6 +1,7 @@
 
 let allTasks = [];
 let task = [];
+let subtasks = [];
 let category = ["Sales", "Backoffice"];
 let catColor = [
     "#0000FF",
@@ -35,7 +36,8 @@ async function addingTask() {
       'description': description,
       'category': category,
       'prio': prio,
-      'dueDate': dueDate
+      'dueDate': dueDate,
+      'subtasks': subtasks
     };
     allTasks.push(task);
     saveTasksInBackend();
@@ -169,6 +171,8 @@ function addSubtask() {
     let input = document.getElementById('subtaskName').value;
     let subtask = document.getElementById('subtasks');
 
-    subtask.innerHTML = "";
-    
+    //subtask.innerHTML = "";
+    subtask.innerHTML += addThisSubtask(input);
+    document.getElementById('subtaskName').value = "";
+    subtasks.push(input);
 }
