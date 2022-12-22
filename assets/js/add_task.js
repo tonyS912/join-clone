@@ -28,6 +28,7 @@ async function loadTasksFromBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem("allTasks")) || [];
+    category = JSON.parse(backend.getItem("category")) || ["Sales", "Backoffice", "Marketing", "Coding"];
 }
 
 /**
@@ -66,6 +67,7 @@ function saveTaskInfo() {
 async function saveTasksInBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
     await backend.setItem("allTasks", JSON.stringify(allTasks));
+    await backend.setItem("category", JSON.stringify(category));
 }
 
 /**

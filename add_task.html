@@ -92,7 +92,7 @@
                         </div>
                         <div onsubmit="addTask()" class="input-container">
                             <div class="left-container">
-                                <div>
+                                <form>
                                     <h4 class="size light title">Title</h4>
                                     <input
                                         id="title"
@@ -101,8 +101,8 @@
                                         placeholder="Enter a title"
                                         required
                                     />
-                                </div>
-                                <div>
+                                </form>
+                                <form>
                                     <h4 class="size light title">
                                         Description
                                     </h4>
@@ -113,13 +113,14 @@
                                         placeholder="Enter a Description"
                                         required
                                     ></textarea>
-                                </div>
+                                </form>
                                 <div>
                                     <h4 class="size light title">Category</h4>
                                     <button
                                         onclick="expandCategory()"
                                         id="category"
                                         class="size light category-btn btn"
+                                        type="button"
                                     >
                                         Select task Category
                                         <img
@@ -152,7 +153,10 @@
                                             class="newCategory"
                                             src="./assets/img/newCategory.svg"
                                         />
-                                        <div id="colorCode" class="colorCode"></div>
+                                        <div
+                                            id="colorCode"
+                                            class="colorCode"
+                                        ></div>
                                     </div>
                                 </div>
                                 <div>
@@ -170,7 +174,7 @@
                             </div>
                             <div class="right-container">
                                 <div>
-                                    <div>
+                                    <form>
                                         <h4 class="size light title">
                                             Due date
                                         </h4>
@@ -183,7 +187,7 @@
                                             placeholder="dd/mm/yyyy"
                                             required
                                         />
-                                    </div>
+                                    </form>
                                     <div>
                                         <h4 class="size light title">Prio</h4>
                                         <div class="prio-btns">
