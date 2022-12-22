@@ -138,6 +138,7 @@ function switchBackground(prio) {
 function backgroundOn(prio) {
     if (prioList.includes(prio)) {
         document.getElementById(`${prio}`).classList.add("prio-" + `${prio}`);
+        document.getElementById(`${prio}`).classList.add("prio-img");
         document
             .getElementById(`${prio}`)
             .setAttribute("onclick", `backgroundOff("${prio}")`);
@@ -146,6 +147,7 @@ function backgroundOn(prio) {
 
 function backgroundOff(prio) {
     document.getElementById(`${prio}`).classList.remove("prio-" + `${prio}`);
+    document.getElementById(`${prio}`).classList.remove("prio-img");
     document
         .getElementById(`${prio}`)
         .setAttribute("onclick", `switchBackground("${prio}")`);
