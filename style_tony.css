@@ -286,3 +286,15 @@ body {
 .transp img:hover {
     filter: invert(0.8);
 }
+
+.colorCode {
+    margin-top: -15px;
+    display: flex;
+}
+
+.color-btn {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+}
