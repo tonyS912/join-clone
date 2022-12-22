@@ -25,5 +25,5 @@ function addThisSubtask(aktion) {
 }
 
 function addColorbtn(color, i) {
-    return /*html*/ `<div id="color(${i})" class="color-btn" style="background-color: ${color};"></div>`;
+    return /*html*/ `<div id="color(${i})" onclick="colorAdd(${i})" class="color-btn" style="background-color: ${color};"></div>`;
 }

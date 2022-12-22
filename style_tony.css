@@ -290,6 +290,7 @@ body {
 .colorCode {
     margin-top: -15px;
     display: flex;
+    margin-left: 8px;
 }
 
 .color-btn {
@@ -297,4 +298,7 @@ body {
     width: 20px;
     border-radius: 20px;
     border: 2px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
 }

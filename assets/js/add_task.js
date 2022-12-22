@@ -119,6 +119,7 @@ function newCategory() {
     miniCategory();
     document.getElementById("category").classList.add("d-none");
     document.getElementById("newCategory").classList.remove("d-none");
+    colerCode();
 }
 
 function switchBackground(prio) {
@@ -174,6 +175,16 @@ function addCatHitEnter() {
             addCat();
         }
     })
+}
+
+function colerCode() {
+    let colors = document.getElementById('colorCode');
+    colors.innerHTML = "";
+    for (let i = 0; i < catColor.length; i++) {
+        const color = catColor[i];
+
+        colors.innerHTML += addColorbtn(color, i); 
+    }
 }
 
 function deleteCat() {
