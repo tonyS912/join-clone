@@ -36,6 +36,10 @@ body {
     background-color: transparent;
 }
 
+.transp:hover {
+    color: #29ABE2;
+}
+
 .unsetBorder {
     border: unset;
 }
@@ -205,9 +209,18 @@ body {
     cursor: pointer;
 }
 
+.window-btn:hover {
+    border: 2px solid #29ABE2;
+}
+
 .ok-btn {
     background-color: #2A3647;
     color: white;
+}
+
+.ok-btn:hover {
+    background-color: #29ABE2;
+    border: unset;
 }
 
 .subtasks {
@@ -268,4 +281,8 @@ body {
 .prio-low {
     background-color: #7AE229;
     color: white;
+}
+
+.transp img:hover {
+    filter: invert(0.8);
 }

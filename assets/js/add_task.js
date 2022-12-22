@@ -13,6 +13,9 @@ let catColor = [
 const prioList = ["urgent", "medium", "low"];
 let priority = "";
 
+window.addEventListener("keyup", addCatHitEnter);
+window.addEventListener("keyup", addSubtaskHitEnter);
+
 /**
  * TODO
  */
@@ -37,6 +40,11 @@ async function addingTask() {
     subtasks = [];
     clear();
     //moveToBoard();
+}
+
+function removeTasks() {
+    subtasks = [];
+    clear();
 }
 
 function saveTaskInfo() {
@@ -160,6 +168,14 @@ function addCat() {
     }
 }
 
+function addCatHitEnter() {
+    document.getElementById('categoryName').addEventListener('keyup', (event) => {
+        if (event.key == "Enter") {
+            addCat();
+        }
+    })
+}
+
 function deleteCat() {
     document.getElementById("categoryName").value = "";
     document.getElementById("category").textContent = "Select task Category";
@@ -185,9 +201,19 @@ function addSubtask() {
     let input = document.getElementById("subtaskName").value;
     let subtask = document.getElementById("subtasks");
 
+    if (input != "") {
     subtask.innerHTML += addThisSubtask(input);
     document.getElementById("subtaskName").value = "";
     subtasks.push(input);
+    }
+}
+
+function addSubtaskHitEnter() {
+    document.getElementById('subtaskName').addEventListener('keydown', (event) => {
+        if (event.key == "Enter") {
+            addSubtask();
+        }
+    })
 }
 
 /**

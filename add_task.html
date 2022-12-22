@@ -131,7 +131,10 @@
                                         id="category-list"
                                         class="d-none list-height list size light category-list"
                                     ></ul>
-                                    <div id="newCategory" class="left-width d-none">
+                                    <div
+                                        id="newCategory"
+                                        class="left-width d-none"
+                                    >
                                         <input
                                             id="categoryName"
                                             class="title-input size light"
@@ -144,6 +147,7 @@
                                             class="cross"
                                             src="./assets/img/cross.svg"
                                         /><img
+                                            id="addCat"
                                             onclick="addCat()"
                                             class="newCategory"
                                             src="./assets/img/newCategory.svg"
@@ -182,27 +186,33 @@
                                     <div>
                                         <h4 class="size light title">Prio</h4>
                                         <div class="prio-btns">
-                                            <button onclick="switchBackground('urgent')" 
-                                            class="size light btn prio"
-                                            id="urgent">
+                                            <button
+                                                onclick="switchBackground('urgent')"
+                                                class="size light btn prio"
+                                                id="urgent"
+                                            >
                                                 Urgent
                                                 <img
                                                     src="./assets/img/arrows-up.svg"
                                                     class=""
                                                 />
                                             </button>
-                                            <button onclick="switchBackground('medium')"
-                                            class="size light btn prio"
-                                            id="medium">
+                                            <button
+                                                onclick="switchBackground('medium')"
+                                                class="size light btn prio"
+                                                id="medium"
+                                            >
                                                 Medium
                                                 <img
                                                     src="./assets/img/equal-sign.svg"
                                                     class=""
                                                 />
                                             </button>
-                                            <button onclick="switchBackground('low')"
-                                            class="size light btn prio"
-                                            id="low">
+                                            <button
+                                                onclick="switchBackground('low')"
+                                                class="size light btn prio"
+                                                id="low"
+                                            >
                                                 Low
                                                 <img
                                                     src="./assets/img/arrows-down.svg"
@@ -211,7 +221,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div style="margin-bottom: 12px;">
+                                    <div style="margin-bottom: 12px">
                                         <h4 class="size light title">
                                             Subtasks
                                         </h4>
@@ -227,9 +237,10 @@
                                             src="./assets/img/plus_2.svg"
                                         />
                                     </div>
-                                    <div class="subtaskArea" id="subtasks">
-                                        
-                                    </div>
+                                    <div
+                                        class="subtaskArea"
+                                        id="subtasks"
+                                    ></div>
                                 </div>
                                 <div
                                     class="btn-box"
@@ -237,9 +248,11 @@
                                 >
                                     <button
                                         class="size regul window-btn transp"
-                                        onclick="TODO()"
+                                        type="submit"
+                                        onclick="removeTasks()"
                                     >
-                                        Cancel<img
+                                        Cancel
+                                        <img
                                             class="padding-10"
                                             src="/assets/img/close2.svg"
                                         />
