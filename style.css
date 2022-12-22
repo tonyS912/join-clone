@@ -1,3 +1,40 @@
 body {
     font-family: Inter-Regular;
 }
+
+.d-none{
+    display: none;
+}
+
+
+.div_log_out {
+    justify-content: flex-end;
+    position: absolute;
+    right: 33px;
+    top: 89px;
+    cursor: pointer;
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-44px);
+    }
+}
+
+@keyframes fade_out {
+    from {
+        opacity: 1;
+        transform: translateX(-44px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
