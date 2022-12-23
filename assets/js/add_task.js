@@ -1,7 +1,7 @@
 let allTasks = [];
 let task = [];
 let subtasks = [];
-let category = ["Sales", "Backoffice"];
+let category = ["Sales", "Backoffice", "Marketing", "Coding"];
 let catColor = [
     "#0000FF",
     "#00FF00",
