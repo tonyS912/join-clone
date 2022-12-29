@@ -8,7 +8,7 @@
 
 .help_info {
     height: 935px;
-    top: 89px;
+    padding-top: 89px;
     padding-left: 232px;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,10 @@
 .cont_arrow {
     padding-bottom: 23px;
     padding-right: 128.17px;
+}
+
+.cont_arrow_resp {
+    display: none;
 }
 
 .arrow{
@@ -91,4 +95,63 @@
     font-family: 'poppins';
     font-weight: 400;
     font-size: 16px;
+}
+
+@media (max-width: 950px) {
+
+    .help_info {
+        padding-top: 0;
+    }
+    .cont_arrow {
+        display: none;
+    }
+
+    .cont_arrow_resp {
+        position: absolute;
+        width: 24.67px;
+        height: 23.98px;
+        display: flex;
+        right: 35.17px;
+        top: 121.49px
+    }
+
+    .help_title {
+        padding-left: 33px;
+        padding-top: 19px;
+    }
+
+    .sub_help1 {
+        padding-left: 33px;
+        padding-right: 32px;
+        padding-top: 35px;
+    }
+
+    .sub_help2 {
+        padding-left: 35px;
+        padding-right: 32px;
+        padding-top: 35px;
+    }
+}
+
+@media (max-width: 750px) {
+    .help_info {
+        padding-left: 0;
+    }
+
+    .help_title span {
+        height: 56px;
+        font-size: 47px;
+    }
+
+    .sub_help2 {
+        padding-top: 0;
+    }
+
+    .sub_help2 span{
+        display: none;
+    }
+
+    .padding {
+        padding-top: 0;
+    }
 }

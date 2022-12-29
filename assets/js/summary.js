@@ -1,5 +1,7 @@
+var menuIsOpen = false
+
 //add background in menu summary
-function summary() {
+function summary() { 
     document.getElementById('summary').classList.add('menu_dark');
     document.getElementById('board').classList.remove('menu_dark');
     document.getElementById('addTask').classList.remove('menu_dark');
@@ -58,7 +60,16 @@ function help() {
 
 //show log out
 function user() {
-    document.getElementById('log_out').classList.add('d-flex');
+
+    if (menuIsOpen) {
+        document.getElementById('log_out').classList.add('d-none-float');
+        document.getElementById('log_out').classList.remove('d-flex-float');
+        menuIsOpen = false;
+    } else {
+        document.getElementById('log_out').classList.remove('d-none-float');
+        document.getElementById('log_out').classList.add('d-flex-float');
+        menuIsOpen = true;
+    }
 }
 
 

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="summary.css">
+  <link rel="stylesheet" href="board_j.css">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+
+  <script src="assets/js/summary.js"></script>
+  <script src="assets/js/login.js"></script>
+  <script src="assets/js/board_j.js"></script>
+</head>
+
+<body>
+  <div class="webpage">
+    <div class="left">
+
+      <div class="logo">
+        <img src="assets/img/join-logo2.svg">
+      </div>
+
+      <div class="menu_left">
+        <div class="menu" id="summary" onclick="summary()">
+          <img class="logo_summary" src="assets/img/summary.svg">
+          <a>Summary</a>
+        </div>
+        <div class="menu" id="board" onclick="board()">
+          <img class="logo_board" src="assets/img/board.svg">
+          <a>Board</a>
+        </div>
+        <div class="menu" id="addTask" onclick="addTask()">
+          <img class="logo_task" src="assets/img/add_task.svg">
+          <a>Add Task</a>
+        </div>
+        <div class="menu" id="contacts" onclick="contacts()">
+          <img class="logo_contacts" src="assets/img/contacts.svg">
+          <a>Contacts</a>
+        </div>
+      </div>
+
+      <div class="impressum">
+        <div class="legal" id="legal" onclick="legal()">
+          <img src="assets/img/info.svg">
+          <a>Legal notice</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+
+      <div class="header">
+        <div class="title">
+          <a class="kanban">Kanban Project Management Tool</a>
+        </div>
+        <div class="user">
+          <img class="help" id="help" src="assets/img/help.svg" onclick="help()">
+          <div class="cont_foto" onclick="">
+            <span class="border_white">
+              <img class="foto" onclick="user()">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="log_out" class="cont_log_out" onclick="logOut()">
+        <div class="log_out">
+          <a>Log out</a>
+        </div>
+      </div>
+
+      <div class="board_content">
+        <div class="board_main">
+          <div class="main_title">
+            <a>Board</a>
+          </div>
+          <div class="board_task">
+            <div class="board_search">
+              <input class="board_input" placeholder="Find Task">
+              <a class="board_line"></a>
+              <span>
+                <img class="board_lupe" src="assets/img/lupe.png">
+              </span>
+            </div>
+            <div class="board_butt" onclick="addTask()">
+              <span class="board_button">Add task</span>
+              <img src="assets/img/plus.png">
+            </div>
+            <div></div>
+          </div>
+        </div>
+        <div class="board_actions">
+          <div class="to-do actions" onclick="addTask()">
+            <span>
+              To do
+            </span>
+            <div class="plus_black"></div>
+          </div>
+          <div class="in_progress actions" onclick="addTask()">
+            <span>
+              In progress
+            </span>
+            <div class="plus_black"></div>
+          </div>
+          <div class="feedback actions" onclick="addTask()">
+            <span>
+              Awaiting Feedback
+            </span>
+            <div class="plus_black"></div>
+          </div>
+          <div class="board_done actions" onclick="addTask()">
+            <span>
+              Done
+            </span>
+            <div class="plus_black"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cont_floating_task" id="addTaskFloat">
+        <div class="floating_task">
+          <div class="close_float_add">
+            <img src="assets/img/close.svg" onclick="closeAddTask()">
+          </div>
+          <div class="floating_title">
+            <span class="main_title">Add Task</span>
+          </div>
+          <div class="floating_content">
+            <div class="floating_left floating_titles">
+              <div class="menu_addtask">
+                <span class="font21">Title</span>
+                <input class="enter_title font21" placeholder="Enter a title">
+              </div>
+              <div class="menu_addtask">
+                <span class="font21">Description</span>
+                <textarea class="enter_description font21" placeholder="Enter a Description"></textarea>
+              </div>
+              <div class="menu_addtask">
+                <span class="font21">Category</span>
+                <div class="button_category_simply" id="categorySimply">
+                  <button class="select font21" onclick="extendCategory()">Select task category<img src="assets/img/dropdown-arrow.svg"></button>
+                </div>
+                <div class="button_category_extend" id="categoryExtend" onclick="closeCategory()">
+                  <div>
+                    <button class="select2 font21 padding_select">Select task category<img src="assets/img/dropdown-arrow.svg"></button>
+                  </div>
+                  <div>
+                    <button class="select2 font21">New Category</a>
+                  </div>
+                  <div>
+                    <button class="select2 font21">Sales</a>
+                  </div>
+                  <div>
+                    <button class="select2 font21"> Backoffice</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="menu_addtask">
+                <span class="font21">Assigned to</span>
+                <div>
+                  <button class="select font21">Select contacts to assign<img
+                      src="assets/img/dropdown-arrow.svg"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="line_among"></div>
+            <div class="pop_up_task" id="createTask">
+              <a class="font21">Task added to board</a>
+              <img src="assets/img/board.svg">
+            </div>
+
+            <div class="floating_right floating_titles">
+              <div class="menu_addtask">
+                <span class="font21">Due date</span>
+                <input class="input_date font21" type="date">
+              </div>
+              <div class="menu_addtask">
+                <span class="font21">Prio</span>
+                <div class="types_prio">
+                  <button class="urgent add_prio">
+                    <span>Urgent</span>
+                    <div class="arrow_up"></div>
+                  </button>
+                  <button class="medium add_prio">
+                    <span>Medium</span>
+                    <div class="arrow_med"></div>
+                  </button>
+                  <button class="low add_prio">
+                    <span>Low</span>
+                    <div class="arrow_low"></div>
+                  </button>
+                </div>
+              </div>
+              <div class="menu_addtask">
+                <span class="font21">Subtasks</span>
+                <div class="subtask">
+                  <input class="add_subtask font21" placeholder="Add new subtask">
+                  <img src="assets/img/plus_2.svg">
+                </div>
+                <label class="cont_checkbox">
+                  <input type="checkbox" class="checkbox">
+                  <a>Subtask 1</a>
+                </label>
+              </div>
+
+              <div class="buttons_end">
+                <div class="task_cancel font21" onclick="closeAddTask()">Cancel
+                  <div class="close_cancel">X</div>
+                </div>
+                <button class="task_create font21" onclick="createTask()">Create Task<img
+                    src="assets/img/create.png"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--hier content hinzufügen-->
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+@media (max-width: 1300px) {
+
+    .main {
+        padding-left: 232px;
+    }
+
+    .main_down {
+        width: 679px;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding-left: 0;
+    }
+
+    .main_info {
+        padding-top: 100px;
+        padding-left: 0;
+    }
+
+    .main_user {
+        display: none
+    }
+
+    .menu_dark_resp {
+        background-color: #091931;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .header {
+        justify-content: flex-end;
+    }
+
+    .main {
+        padding-left: 75px;
+    }
+
+    .title {
+        display: none
+    }
+
+    .title_resp {
+        padding-top: 89px;
+        display: flex;
+
+    }
+
+    .kanban {
+        padding-top: 34.98px;
+        padding-left: 33px;
+    }
+
+    .main_summary {
+        flex-direction: column;
+        padding-top: 64px;
+    }
+
+    .main_responsive {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .line_blue {
+        width: 90px;
+        height: 0px;
+        border: 1px solid #29ABE2;
+    }
+
+    .main_info {
+        padding-left: 250px;
+    }
+
+    .main_tasks {
+        width: 480px;
+        height: 140px;
+        gap: 30px;
+    }
+
+    .cont_task {
+        width: 140px;
+        height: 140px;
+        border-radius: 20px;
+        gap: 10px
+    }
+
+    .cont_task:hover {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cont_task a {
+        font-size: 47px;
+    }
+
+    .cont_task span {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+
+    .urgent {
+        width: 480px;
+        height: 130px;
+        gap: 40px;
+    }
+
+    .urgent:hover {
+        width: 490px;
+        height: 140px;
+    }
+
+    .urgent_left {
+        padding-left: 40px;
+    }
+
+    .line_gray {
+        height: 90.02px;
+    }
+
+    .urgent_right {
+        padding-right: 30px;
+    }
+
+    .urgent_right a {
+        font-size: 19px;
+    }
+
+    .urgent_right span {
+        font-size: 15px;
+    }
+
+    .todo {
+        width: 480px;
+        height: 130px;
+        gap: 25px
+    }
+
+    .todo_box {
+        width: 230px;
+        height: 130px;
+    }
+
+    .todo_box:hover {
+        width: 240px;
+        height: 140px;
+    }
+
+    .pencil {
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+    }
+
+    .todo_box:hover .pencil {
+        background-size: 60px;
+    }
+
+    .todo_info a {
+        font-size: 50px;
+    }
+
+    .todo_info span {
+        font-size: 19px;
+    }
+
+
+    .done {
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+    }
+
+    .todo_box:hover .done {
+        background-size: 60px;
+    }
+}
+
+@media (max-width: 750px) {
+
+
+    .left {
+        display: none;
+    }
+
+    .bottom_resp {
+        position: fixed;
+        width: 97%;
+        height: 80px;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        background-color: #2A3647;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .menu_resp {
+        width: 75px;
+        height: 80px;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .logo_summary {
+        width: 22px;
+        height: 22px;
+        padding-left: 12px;
+    }
+
+    .logo_board {
+        width: 22px;
+        height: 26px;
+        padding-left: 0px;
+    }
+
+    .logo_task {
+        width: 26px;
+        height: 26px;
+        padding-left: 0px;
+    }
+
+    .logo_contacts {
+        width: 24px;
+        height: 28px;
+        padding-left: 0px;
+    }
+
+    .menu_resp a {
+        font-size: 16px;
+        color: #CDCDCD;
+    }
+
+    .main {
+        padding-left: 0px;
+        align-items: flex-start;
+    }
+
+    .main_info {
+        padding-left: 0px;
+    }
+
+    .main_summary {
+        width: 0;
+        padding-left: 33px;
+        align-items: flex-start;
+    }
+
+    .main_down {
+        width: 580px;
+        padding-left: 33px;
+    }
+
+    .header {
+        height: 79.02px;
+        gap: 282px;
+        justify-content: space-between;
+    }
+
+    .logo_join_resp {
+        display: flex;
+        width: 32px;
+        height: 39.02px;
+        padding-left: 25px;
+    }
+
+    .user {
+        flex-direction: row-reverse;
+        padding-right: 31px;
+    }
+
+    .help {
+        display: none;
+    }
+
+    .cont_log_out span {
+        display: flex;
+
+    }
+
+    .cont_log_out {
+        z-index: 2;
+        width: 130px;
+        height: 119px;
+        position: absolute;
+        top: 79.02px;
+        right: 33px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        background-color: #2A3647;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 20px 0px 20px 20px;
+        cursor: pointer;
+        transform: translateX(150%);
+    }
+
+    .cont_log_out div {
+        padding-bottom: 10px;
+    }
+
+    .log_out {
+        height: 33px;
+        width: 110px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    .log_out a {
+        font-size: 17px;
+        text-align: center;
+        color: #CDCDCD;
+    }
+
+    .d-flex-float {
+        transform: translateX(0%);
+        transition-duration: 0.2s;
+    }
+
+    .d-none-float {
+        transform: translateX(150%);
+        transition-duration: 0.2s;
+    }
+
+    .cont_foto {
+
+        width: 39px;
+        height: 39px;
+    }
+
+    .foto {
+        background-size: 39px;
+        width: 37px;
+        height: 37px;
+    }
+}
+
+@media (max-width: 530px) {
+
+    .kanban {
+        font-size: 16px;
+    }
+
+    .main_summary {
+        height: 101px;
+        padding-top: 19px;
+        gap: 20px;
+    }
+
+    .main_responsive {
+        padding-top: 0;
+    }
+
+    .text_summary {
+        font-size: 47px;
+        height: 56px;
+    }
+
+    .text_everything {
+        font-size: 21px;
+    }
+
+    .main_info {
+        padding-top: 73px;
+    }
+
+    .main_tasks {
+        width: 360px;
+        height: 110px;
+        gap: 15px;
+    }
+
+    .cont_task {
+        width: 110px;
+        height: 110px;
+        gap: 6px;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .cont_task:hover {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cont_task a {
+        width: 30px;
+        height: 56px;
+        font-size: 47px;
+    }
+
+    .cont_task span {
+        width: 54px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .urgent {
+        width: 360px;
+        height: 110px;
+        border-radius: 20px;
+        gap: 18px;
+    }
+
+    .urgent:hover {
+        width: 370px;
+        height: 120px;
+    }
+
+    .urgent_left {
+        width: 108px;
+        height: 73px;
+    }
+
+    .urgent_left img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .number_urgent {
+        width: 50px;
+        height: 73px;
+    }
+
+    .number_urgent span {
+        font-size: 14px;
+    }
+
+    .line_gray {
+        height: 68px;
+    }
+
+    .urgent_right {
+        width: 195px;
+        height: 44px;
+        gap: 8px;
+    }
+
+    .urgent_right a {
+        font-size: 16px;
+    }
+
+    .urgent_right span {
+        font-size: 14px;
+    }
+
+    .todo {
+        width: 363px;
+        height: 110px;
+        gap: 15px;
+    }
+
+    .todo_box {
+        width: 177.5px;
+        height: 110px;
+        gap: 10px;
+        border-radius: 20px;
+    }
+
+    .todo_box:hover {
+        width: 187.5px;
+        height: 120px;
+
+    }
+
+    .pencil {
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+    }
+
+    .todo_box:hover .pencil {
+        background-size: 40px;
+    }
+
+    .todo_info a {
+        font-size: 57px;
+    }
+
+    .todo_info span {
+        font-size: 14px;
+    }
+
+
+    .done {
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+    }
+
+    .todo_box:hover .done {
+        background-size: 40px;
+    }
+}

@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contacts.css">
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
-    <link rel="stylesheet" href="summary.css">
+    <link rel="stylesheet" href="assets/css/summary.css">
+    <link rel="stylesheet" href="assets/css/summary-resp.css">
 
     <script src="assets/js/summary.js"></script>
     <script src="/assets/js/contacts.js"></script>
@@ -18,6 +19,24 @@
 </head>
 
 <body onload="render()" onload="init()">
+
+    <header class="header">
+        <div class="logo_join_resp">
+            <img src="assets/img/join-logo.svg">
+        </div>
+        <div class="title">
+            <a class="kanban">Kanban Project Management Tool</a>
+        </div>
+        <div class="user">
+            <img class="help" id="help" src="assets/img/help.svg" onclick="help()">
+            <div class="cont_foto">
+                <span class="border_white">
+                    <img class="foto" onclick="user()">
+                </span>
+            </div>
+        </div>
+    </header>
+
     <div class="hide body__overlap" id="body__overlapID"></div>
     <div class="webpage">
         <div class="left">
@@ -53,24 +72,35 @@
             </div>
         </div>
 
+        <div class="bottom_resp">
+            <div class="menu_resp menu_dark" id="summary" onclick="summary()">
+                <img class="logo_summary" src="assets/img/summary.svg">
+                <a>Summary</a>
+            </div>
+            <div class="menu_resp" id="board" onclick="board()">
+                <img class="logo_board" src="assets/img/board.svg">
+                <a>Board</a>
+            </div>
+            <div class="menu_resp" id="addTask" onclick="addTask()">
+                <img class="logo_task" src="assets/img/add_task.svg">
+                <a>Add Task</a>
+            </div>
+            <div class="menu_resp" id="contacts" onclick="contacts()">
+                <img class="logo_contacts" src="assets/img/contacts.svg">
+                <a>Contacts</a>
+            </div>
+        </div>
+
         <div class="right">
 
-            <div class="header">
-                <div class="title">
-                    <a class="kanban">Kanban Project Management Tool</a>
-                </div>
-                <div class="user">
-                    <img class="help" id="help" src="assets/img/help.svg" onclick="help()">
-                    <div class="cont_foto" onclick="">
-                        <span class="border_white">
-                            <img class="foto" onclick="user()">
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="log_out" class="cont_log_out" onclick="logOut()">
-                <div class="log_out">
+            <div id="log_out" class="cont_log_out">
+                <span class="log_out" id="help" onclick="help()">
+                    <a>Help</a>
+                </span>
+                <span class="log_out" id="legal" onclick="legal()">
+                    <a>Legal notice</a>
+                </span>
+                <div class="log_out" id="log_out" onclick="logOut()">
                     <a>Log out</a>
                 </div>
             </div>
@@ -90,15 +120,17 @@
                         </div>
                         <div class="contacts--main__rightCenter" id="id-contacts--main__rightCenter">
                             <div class="contacs--show__right--header">
-                                <div id="id-contacts__initials"class="contacs--show__right--header__userPic">UB</div>
+                                <div id="id-contacts__initials" class="contacs--show__right--header__userPic">UB</div>
                                 <div class="contacs--show__right--header__userNameAddTask">
-                                    <div id="id-contacts__name" class="contacs--show__right--header__userNameText">Franz Test</div>
+                                    <div id="id-contacts__name" class="contacs--show__right--header__userNameText">Franz
+                                        Test</div>
                                     <div>+ Add Task</div>
                                 </div>
                             </div>
                             <div class="contacs--show__right--contactInformation">
                                 <div class="contacs--show__right--contactInformation__Text">Contact Information</div>
-                                <div class="contacs--show__right--contactInformation__EditContact"><img src="assets/img/edit.png">Edit Contact</div>
+                                <div class="contacs--show__right--contactInformation__EditContact"><img
+                                        src="assets/img/edit.png">Edit Contact</div>
                             </div>
                             <div class="contacs--show__right--ContainerBoldText">Email</div>
                             <div id="id-contacts__email">franz@test.com</div>

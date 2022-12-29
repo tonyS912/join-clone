@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
 
-    <link rel="stylesheet" href="summary.css">
-    <link rel="stylesheet" href="help.css">
+    <link rel="stylesheet" href="assets/css/summary.css">
+    <link rel="stylesheet" href="assets/css/summary-resp.css">
+    <link rel="stylesheet" href="assets/css/help.css">
     <link rel="stylesheet" href="./assets/fonts/fonts.css">
 
     <script src="assets/js/summary.js"></script>
@@ -17,11 +18,23 @@
 
 <body>
 
-</body>
+    <header class="header">
+        <div class="logo_join_resp">
+            <img src="assets/img/join-logo.svg">
+        </div>
+        <div class="title">
+            <a class="kanban">Kanban Project Management Tool</a>
+        </div>
+        <div class="user">
+            <img class="help" id="help" src="assets/img/help.svg" onclick="help()">
+            <div class="cont_foto">
+                <span class="border_white">
+                    <img class="foto" onclick="user()">
+                </span>
+            </div>
+        </div>
+    </header>
 
-</html>
-
-<body>
     <div class="webpage">
         <div class="left">
 
@@ -56,29 +69,46 @@
             </div>
         </div>
 
+        <div class="bottom_resp">
+            <div class="menu_resp menu_dark" id="summary" onclick="summary()">
+                <img class="logo_summary" src="assets/img/summary.svg">
+                <a>Summary</a>
+            </div>
+            <div class="menu_resp" id="board" onclick="board()">
+                <img class="logo_board" src="assets/img/board.svg">
+                <a>Board</a>
+            </div>
+            <div class="menu_resp" id="addTask" onclick="addTask()">
+                <img class="logo_task" src="assets/img/add_task.svg">
+                <a>Add Task</a>
+            </div>
+            <div class="menu_resp" id="contacts" onclick="contacts()">
+                <img class="logo_contacts" src="assets/img/contacts.svg">
+                <a>Contacts</a>
+            </div>
+        </div>
+
         <div class="right">
 
-            <div class="header">
-                <div class="title">
-                    <a class="kanban">Kanban Project Management Tool</a>
-                </div>
-                <div class="user">
-                    <img class="help d-none" src="assets/img/help.svg">
-                    <div class="cont_foto margin" onclick="">
-                        <span class="border_white">
-                            <img class="foto" onclick="user()">
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="log_out" class="cont_log_out" onclick="logOut()">
-                <div class="log_out">
+            <div id="log_out" class="cont_log_out">
+                <span class="log_out" id="help" onclick="help()">
+                    <a>Help</a>
+                </span>
+                <span class="log_out" id="legal" onclick="legal()">
+                    <a>Legal notice</a>
+                </span>
+                <div class="log_out" id="log_out" onclick="logOut()">
                     <a>Log out</a>
                 </div>
             </div>
 
             <div class="help_info">
+                <div class="title_resp">
+                    <a class="kanban">Kanban Project Management Tool</a>
+                    <div class="cont_arrow_resp">
+                        <img class="arrow" src="assets/img/arrow-left-dark.svg" onclick="summary()">
+                    </div>
+                </div>
                 <div class="help_title">
                     <span>Help</span>
                     <div class="cont_arrow">
@@ -119,3 +149,5 @@
         </div>
     </div>
 </body>
+
+</html>
