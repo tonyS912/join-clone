@@ -18,9 +18,9 @@
 
 </head>
 
-<body onload="animatedLogo(), init()">
+<body onload="init(), loadMessage()">
 
-  <img class="logo" src="assets/img/join-logo.svg" id="logo"></img>
+  <img class="logo_login2" src="assets/img/join-logo.svg" id="logo"></img>
   <div class="signup-btn">
     <span>Not a join user?</span>
     <button onclick="showSignup(); return false">sign up</button>
@@ -28,7 +28,7 @@
   
   <div class="login-container">
     <div class="login-box">
-      <span class="login-box-header">Log In</span>
+      <h1>Log In</h1>
       <div class="line"></div>
       <form onsubmit="logIn(); return false">
         <div class="form-style">
