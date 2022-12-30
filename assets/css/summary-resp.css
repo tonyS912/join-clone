@@ -25,6 +25,7 @@
     }
 }
 
+
 @media (max-width: 950px) {
 
     .header {
@@ -176,6 +177,197 @@
         background-size: 60px;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    .main {
+        width: 100vh;
+    }
+
+    .left {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow-y: scroll
+    }
+
+    .left::-webkit-scrollbar {
+        width: 0 importat !important;
+    }
+
+    .right {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow-y: scroll
+    }
+
+    .right::-webkit-scrollbar {
+        width: 0 importat !important;
+    }
+
+    .title_resp {
+        padding-left: 207px;
+    }
+
+    .kanban {
+        padding-top: 18px;
+        font-size: 16px;
+    }
+
+    .main_summary {
+        padding-left: 215px;
+        padding-top: 19px;
+    }
+
+    .text_summary {
+        font-size: 43px;
+    }
+
+    .main_responsive {
+        padding-top: 0;
+        gap: 0;
+    }
+
+    .text_everything {
+        font-size: 21px;
+        padding-bottom: 19px;
+    }
+
+    .main_info {
+        padding-top: 60px;
+    }
+
+    .main_tasks {
+        width: 360px;
+        height: 110px;
+        gap: 15px;
+        margin-left: 115px;
+    }
+
+    .cont_task {
+        width: 110px;
+        height: 110px;
+        gap: 6px;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .cont_task:hover {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cont_task a {
+        width: 30px;
+        height: 56px;
+        font-size: 47px;
+    }
+
+    .cont_task span {
+        width: 54px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .urgent {
+        width: 360px;
+        height: 110px;
+        border-radius: 20px;
+        gap: 18px;
+        margin-left: 115px;
+    }
+
+    .urgent:hover {
+        width: 370px;
+        height: 120px;
+    }
+
+    .urgent_left {
+        width: 108px;
+        height: 73px;
+    }
+
+    .urgent_left img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .number_urgent {
+        width: 50px;
+        height: 73px;
+    }
+
+    .number_urgent span {
+        font-size: 14px;
+    }
+
+    .line_gray {
+        height: 68px;
+    }
+
+    .urgent_right {
+        width: 195px;
+        height: 44px;
+        gap: 8px;
+    }
+
+    .urgent_right a {
+        font-size: 16px;
+    }
+
+    .urgent_right span {
+        font-size: 14px;
+    }
+
+    .todo {
+        width: 363px;
+        height: 110px;
+        gap: 15px;
+        margin-left: 115px;
+    }
+
+    .todo_box {
+        width: 177.5px;
+        height: 110px;
+        gap: 10px;
+        border-radius: 20px;
+    }
+
+    .todo_box:hover {
+        width: 187.5px;
+        height: 120px;
+
+    }
+
+    .pencil {
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+    }
+
+    .todo_box:hover .pencil {
+        background-size: 40px;
+    }
+
+    .todo_info a {
+        font-size: 57px;
+    }
+
+    .todo_info span {
+        font-size: 14px;
+    }
+
+    .done {
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+    }
+
+    .todo_box:hover .done {
+        background-size: 40px;
+    }
+}
+
 
 @media (max-width: 750px) {
 
@@ -505,5 +697,187 @@
 
     .todo_box:hover .done {
         background-size: 40px;
+    }
+}
+
+@media (max-width:480px) {
+
+    html,body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+
+    .header {
+        width: 320px;
+        gap: 126px
+    }
+
+    .main {
+        width: 320px;
+    }
+
+    .title_resp {
+        width: 320px;
+        padding-left: 0;
+    }
+
+    .main_down {
+        width: 320px;
+        padding-left: 0;
+    }
+
+    .main_info {
+        width: 320px;
+        height: auto;
+        padding-top: 40px;
+        gap: 20px;
+        padding-left: 25px;
+    }
+
+    .main_tasks {
+        margin-left: 0;
+        width: 300px;
+        height: 80px;
+    }
+
+    .cont_task {
+        width: 80px;
+        height: 80px;
+    }
+    .cont_task:hover {
+        width: 85px;
+        height: 85px;
+    }
+
+    .cont_task a{
+        font-size: 28px;
+        margin-top: -16px;
+    }
+
+    .cont_task span{
+        font-size: 11px;
+        margin-top: -12px;
+    }
+
+    .urgent {
+        margin-left: 0;
+        width: 270px;
+        height: 80px;
+    }
+
+    .urgent {
+        width: 271px;
+        height: 85px;
+    }
+
+    .urgent_left {
+        width: 80px;
+        height: 80px;
+        padding-left: 20px;
+        gap: 9px;
+    }
+
+    .urgent_left img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .number_urgent a{
+        height: 45px;
+        width: 35px;
+        font-size: 33px;
+    }
+
+    .number_urgent span{
+        font-size: 13px;
+    }
+
+    .line_gray {
+        height: 50px;
+    }
+
+    .urgent_right {
+        padding-right: 15px;
+    }
+
+    .urgent_right a{
+        font-size: 13px;
+    }
+
+    .urgent_right span{
+        font-size: 12px;
+    }
+
+    .todo {
+        width: 300px;
+        height: 80px;
+        margin-left: 0;
+    }
+
+    .todo_box {
+        width: 127px;
+        height: 80px
+    }
+
+    .pencil {
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+    }
+
+    .todo_box:hover .pencil {
+        background-size: 30px;
+    }
+
+    .todo_info {
+        width: 50px;
+        height: 80px;
+    }
+
+    .todo_info a {
+        height: 55px;
+        font-size: 33px;
+        margin-top: -9px;
+    }
+
+    .done {
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+    }
+
+    .todo_box:hover .done {
+        background-size: 30px;
+    }
+
+    .menu_resp a{
+        font-size: 12px;
+    }
+
+    .logo_summary {
+        width: 20px;
+        height: 20px;
+        padding-left: 0;
+    }
+
+    .cont_log_out {
+        width: 100px;
+        height: 80px;
+    }
+
+    .log_out {
+        width: 100px;
+        height: 20px;
+        gap: 12px;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: none;
+    }
+
+    .log_out a {
+        font-size: 12px;
     }
 }
