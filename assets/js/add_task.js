@@ -1,66 +1,45 @@
-let allTasks = [];
-let task = [];
-let subtasks = [];
-let category = ["Sales", "Backoffice", "Marketing", "Coding"];
-let catColor = [
-    "#0000FF",
-    "#00FF00",
-    "#FF0000",
-    "#800080",
-    "#F0F8FF",
-    "#FF69B4",
-];
-const prioList = ["urgent", "medium", "low"];
-let priority = "";
-
-window.addEventListener("keyup", addCatHitEnter);
-window.addEventListener("keyup", addSubtaskHitEnter);
-
 /**
- * TODO
- */
-async function loadTasks() {
-    //loadCurrentDate();  load the page with the current daytime
-    await loadTasksFromBackend();
-}
-
-async function loadTasksFromBackend() {
-    setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
-    await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem("allTasks")) || [];
-    category = JSON.parse(backend.getItem("category")) || ["Sales", "Backoffice", "Marketing", "Coding"];
-}
-
-/**
- * TODO
+ * TODO - after click on addingTask we need moveToBoard (for faster coding commented out)
  */
 async function addingTask() {
-    saveTaskInfo();
-    allTasks.push(task);
-    saveTasksInBackend();
-    subtasks = [];
-    clear();
-    //moveToBoard();
+    checkInput();
+    if (checkUp == true) {
+        saveTaskInfo();
+        allTasks.push(task);
+        saveTasksInBackend();
+        subtasks = [];
+        assigne = [];
+        clear();
+        //moveToBoard();
+    }
 }
 
-function removeTasks() {
-    subtasks = [];
-    clear();
+function checkInput() {
+    let title = document.getElementById("title").value
+    let description = document.getElementById("description").value;
+    let date = document.getElementById("dueDate").value
+    
+    if (title == "", description == "", priority == "", date == "") {
+        alert("Please enter a Title, Description, Date and Prio")
+        checkUp = false;
+    } else {
+        checkUp = true;
+    }
 }
 
 function saveTaskInfo() {
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
     let category = document.getElementById("category").innerText;
-    let prio = priority;
     let dueDate = document.getElementById("dueDate").value;
     task = {
-        'title': title,
-        'description': description,
-        'category': category,
-        'prio': prio,
-        'dueDate': dueDate,
-        'subtasks': subtasks,
+        title: title,
+        description: description,
+        category: category,
+        prio: priority,
+        dueDate: dueDate,
+        subtasks: subtasks,
+        assignes : assigne,
     };
 }
 
@@ -70,8 +49,28 @@ async function saveTasksInBackend() {
     await backend.setItem("category", JSON.stringify(category));
 }
 
+function removeTasks() {
+    subtasks = [];
+    assigne = [];
+    clear();
+}
+
 /**
- * TODO
+ * clear task preview
+ */
+function clear() {
+    document.getElementById("title").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("category").innerText = "Select task Category";
+    document.getElementById("category").innerHTML += addImg();
+    backgroundOff(priority);
+    document.getElementById("dueDate").value = "";
+    document.getElementById("subtaskName").value = "";
+    document.getElementById("subtasks").innerHTML = "";
+}
+
+/**
+ * TODO - go to board send user feedback message
  */
 function moveToBoard() {
     //animated message ('task added to board')
@@ -79,51 +78,27 @@ function moveToBoard() {
 }
 
 /**
- * Open an Dropdown that you can choose a Category
+ * ----------------------- Section -------------------------------
+ * 
+ * 
  */
-function expandCategory() {
-    document.getElementById("category").classList.add("d-none");
-    document.getElementById("category-list").classList.remove("d-none");
 
-    appendCategory();
-}
+function addTitleHitEnter() {
+    let title = document.getElementById('title');
 
-/**
- *
- */
-function appendCategory() {
-    let cat = document.getElementById("category-list");
-    cat.innerHTML = "";
-
-    cat.innerHTML += selectCat();
-    cat.innerHTML += addOneCat();
-
-    for (let i = 0; i < category.length; i++) {
-        const elemnt = category[i];
-
-        cat.innerHTML += categoryParam(elemnt, i);
+    if (title.value != "") {
+        title.addEventListener("keydown", (event) => {
+                if (event.key == "Enter") {
+                    document.getElementById('description').focus();
+                }
+            });
     }
 }
 
 /**
- * minimize categorylist
+ * colorized the background-color of choosen priority button
+ * @param {string} prio
  */
-function miniCategory() {
-    document.getElementById("category").classList.remove("d-none");
-    document.getElementById("category-list").classList.add("d-none");
-    document.getElementById("newCategory").classList.add("d-none");
-}
-
-/**
- * minimize dropdown and shows the addCategory input
- */
-function newCategory() {
-    miniCategory();
-    document.getElementById("category").classList.add("d-none");
-    document.getElementById("newCategory").classList.remove("d-none");
-    colerCode();
-}
-
 function switchBackground(prio) {
     for (i = 0; i < prioList.length; i++) {
         const pref = prioList[i];
@@ -135,8 +110,12 @@ function switchBackground(prio) {
     priority = prio;
 }
 
+/**
+ * switch the background-color of choosen Priority-Button "ON"
+ * @param {string} prio
+ */
 function backgroundOn(prio) {
-    if (prioList.includes(prio)) {
+    if (prio != undefined) {
         document.getElementById(`${prio}`).classList.add("prio-" + `${prio}`);
         document.getElementById(`${prio}`).classList.add("prio-img");
         document
@@ -145,68 +124,20 @@ function backgroundOn(prio) {
     }
 }
 
-function backgroundOff(prio) {
-    document.getElementById(`${prio}`).classList.remove("prio-" + `${prio}`);
-    document.getElementById(`${prio}`).classList.remove("prio-img");
-    document
-        .getElementById(`${prio}`)
-        .setAttribute("onclick", `switchBackground("${prio}")`);
-}
-
-function showCategory(i) {
-    document.getElementById("category").textContent = category[i];
-    miniCategory();
-}
-
-function addCat() {
-    let newCat = document.getElementById("categoryName").value;
-    let i = category.length;
-
-    if (newCat != "") {
-        category.push(newCat);
-        appendCategory();
-        miniCategory();
-        document.getElementById("categoryName").value = "";
-        showCategory(i);
-    } else {
-        miniCategory();
-    }
-}
-
-function addCatHitEnter() {
-    document.getElementById('categoryName').addEventListener('keyup', (event) => {
-        if (event.key == "Enter") {
-            addCat();
-        }
-    })
-}
-
-function colerCode() {
-    let colors = document.getElementById('colorCode');
-    colors.innerHTML = "";
-    for (let i = 0; i < catColor.length; i++) {
-        const color = catColor[i];
-
-        colors.innerHTML += addColorbtn(color, i); 
-    }
-}
-
-function deleteCat() {
-    document.getElementById("categoryName").value = "";
-    document.getElementById("category").textContent = "Select task Category";
-    miniCategory();
-}
-
-function closeCat() {
-    miniCategory();
-    document.getElementById("category").textContent = "Select task Category";
-}
-
 /**
- * TODO - Check date if in future or not
+ * switch the background-color of choosen Priority-Button "OFF"
+ * @param {string} prio
  */
-function dateChecker() {
-    let choosenDate = document.getElementById("dueDate").value;
+function backgroundOff(prio) {
+    if (prio != "") {
+        document.getElementById(`${prio}`).classList.remove("prio-img");
+        document
+            .getElementById(`${prio}`)
+            .classList.remove("prio-" + `${prio}`);
+        document
+            .getElementById(`${prio}`)
+            .setAttribute("onclick", `switchBackground("${prio}")`);
+    }
 }
 
 /**
@@ -217,28 +148,27 @@ function addSubtask() {
     let subtask = document.getElementById("subtasks");
 
     if (input != "") {
-    subtask.innerHTML += addThisSubtask(input);
-    document.getElementById("subtaskName").value = "";
-    subtasks.push(input);
+        subtask.innerHTML += addThisSubtask(input);
+        document.getElementById("subtaskName").value = "";
+        subtasks.push(input);
     }
 }
 
+/**
+ * same as subtask but using with enter-key
+ */
 function addSubtaskHitEnter() {
-    document.getElementById('subtaskName').addEventListener('keydown', (event) => {
-        if (event.key == "Enter") {
-            addSubtask();
-        }
-    })
+    document
+        .getElementById("subtaskName")
+        .addEventListener("keydown", (event) => {
+            if (event.key == "Enter") {
+                addSubtask();
+            }
+        });
 }
 
-/**
- * clear task preview
- */
-function clear() {
-    document.getElementById("title").value = "";
-    document.getElementById("description").value = "";
-    document.getElementById("category").innerText = "Select task Category";
-    backgroundOff(priority);
-    document.getElementById("dueDate").value = "";
-    document.getElementById("subtasks").innerHTML = "";
+function dateChecker() {
+    let today = new Date().toISOString().split('T')[0];
+    
+    document.getElementById('dueDate').setAttribute('min', today)
 }
