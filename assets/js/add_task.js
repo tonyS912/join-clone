@@ -67,6 +67,7 @@ function clear() {
     document.getElementById("dueDate").value = "";
     document.getElementById("subtaskName").value = "";
     document.getElementById("subtasks").innerHTML = "";
+    document.getElementById("avatar").innerHTML = "";
 }
 
 /**
