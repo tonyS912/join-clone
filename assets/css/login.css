@@ -12,20 +12,78 @@ body{
     height: 100vh;
     flex-direction: column;
 }
-.logo{
+
+#passwordImg:hover{
+cursor: pointer;
+}
+.logo_login2{
+    width: 80px;
+    height: 99px;
     position: absolute;
+    left: 40px;
+    top: 17px;
+    scale: 1;
+}
+
+.resetText{
+    padding-bottom: 24px;
+}
+.logo_signUp{
+ position: absolute;
     z-index: 11;
-    left: 50px;
-    top: 25px;
-    width: 101px;
-    height: 122px;
+        left: 50px;
+    top: 43px;
+    width: 107px;
+    height: 58px;
+    scale: 1.6;
+}
+.logo{
+   
+    width: 80px;
+    height: 99px;
+    position: absolute;
+    left: 47%;
+    top: 44%;
+
+
+    
+
+    /* position: absolute;
+    
+    left: 50%;
+    top: 50%; */
+    z-index: 1;
+    scale: 1.6;
+    transition: all 1s ease-in-out;
 }
 .signup-btn{
     position: absolute;
     right: 50px;
     top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 245px;
 }
 
+.signup-btn button{
+    height: 38px;
+    width: 94px;
+    font-size: 17px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-right: 12.5px;
+    box-shadow: none;
+    background-color: #091931;
+    border: 1px solid #091931;
+    cursor: pointer;
+}
+
+.signup-btn button:hover{
+    background-color: #29abe2;
+   border: none;
+}
 .login-box{
     display: flex;
     flex-direction: column;
@@ -37,6 +95,41 @@ body{
     height: 435px;
     width: 582px;
     position: relative;
+}
+
+.sendMailBtn{
+    height: 48px;
+    width: 235px;
+    font-size: 19px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-right: 12.5px;
+    box-shadow: none;
+    background-color: #091931;
+    border: 1px solid #091931;
+    cursor: pointer;
+}
+
+.sendMailBtn:hover{
+    background-color: #29abe2;
+    border: none;
+}
+.reset-box-header{
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 47px;
+}
+
+.login-box-header{
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 60px;
+}
+.login-box span{
+    text-align: center;
 }
 
 .login-box h1{
@@ -57,16 +150,36 @@ form{
     align-items: center;
 }
 
+.signUp-box{
+    height: 478px;
+}
+
+.reset-box{
+    width: 571px;
+    height: 381px;
+    padding: 14px;
+}
+
+
+.reset-box img{
+    left: 2.67%;
+    top: 5.59%;
+}
 .form-style{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 47px;
     width: 422px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
 }
+
+.form-reset-pw{
+    margin-top: 24px;
+}
+
 .form-style input{
     border: none;
     width: 86%;
@@ -142,8 +255,8 @@ form{
 .arrowSignup{
     position: absolute;
     position: absolute;
-    left: 2.67%;
-    top: 2.59%;
+        left: 2.67%;
+    top: 5.59%;
     cursor: pointer;
 }
 
