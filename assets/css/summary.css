@@ -131,6 +131,7 @@ body {
 
 /*website right*/
 .right {
+    padding-top: 89px;
     width: 100%;
     display: flex;
     flex-direction: column;
