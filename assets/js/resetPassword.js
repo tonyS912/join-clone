@@ -1,8 +1,20 @@
-function backToLogin(){
-    window.location.href = 'index.html';
+async function init() {
+    setURL('https://gruppe-384.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    users = await JSON.parse(backend.getItem('users')) || [];
 }
 
+function backToLogin(){
+    window.location.href = 'login2.html';
+}
 
+function loadMessage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const msg = urlParams.get('msg');
+    if (msg) {
+        msgBox.innerHTML = msg;
+    }
+}
 function sendEmail(){
     let email = document.getElementById('email').value;
     let searchExistingEmail = users.find(u => u.email == email);

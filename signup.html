@@ -8,10 +8,9 @@
   <title>Document</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="assets/css/login.css">
-  <script src="script.js" defer></script>
   <script src="assets/js/mini_backend.js"></script>
   <script src="assets/js/signUp.js"></script>
-  <script src="assets/js/login.js"></script>
+  <script src="assets/js/login.js" defer></script>
 
 </head>
 
@@ -36,8 +35,8 @@
           <img src="assets/img/letter.svg" alt="">
         </div>
         <div class="form-style">
-          <input required type="password" name="" id="password" minlength="6">
-          <img src="assets/img/lock.svg" alt="">
+          <input required type="password" name="" id="password" minlength="6" placeholder="Password">
+          <img src="assets/img/lock.svg" alt="" id="passwordImg" onclick="toggleVisibility()">
         </div>
 
         <div class="login-btns">

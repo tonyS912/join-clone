@@ -35,5 +35,5 @@ function userAlreadyExists() {
 
 
 function backToLogin() {
-    window.location.href = 'index.html';
+    window.location.href = 'login2.html';
 }

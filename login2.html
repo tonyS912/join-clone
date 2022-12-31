@@ -18,17 +18,17 @@
 
 </head>
 
-<body onload="init(), loadMessage()">
+<body onload="animatedLogo(), init()">
 
   <img class="logo_login2" src="assets/img/join-logo.svg" id="logo"></img>
   <div class="signup-btn">
     <span>Not a join user?</span>
     <button onclick="showSignup(); return false">sign up</button>
   </div>
-  
+
   <div class="login-container">
     <div class="login-box">
-      <h1>Log In</h1>
+      <span class="login-box-header">Log In</span>
       <div class="line"></div>
       <form onsubmit="logIn(); return false">
         <div class="form-style">
@@ -36,7 +36,7 @@
           <img src="assets/img/letter.svg" alt="">
         </div>
         <div class="form-style">
-          <input required type="password" name="" id="password" minlength="6">
+          <input required type="password" name="" id="password" minlength="6" placeholder="Password">
           <img src="assets/img/lock.svg" alt="" onclick="toggleVisibility()" id="passwordImg">
         </div>
         <div class="password-note">
@@ -56,8 +56,11 @@
     </div>
     <div id="msgBox"></div>
   </div>
+  <div id="bgByResponse" class="bgByResponse d-none"></div>
+  <div class="login-response d-none" id="login-response">
+    <span id="login-response-text"></span>
   </div>
- 
+
 </body>
 
 </html>

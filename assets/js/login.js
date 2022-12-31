@@ -100,7 +100,7 @@ function showMessage(message) {
     document.getElementById('login-response').classList.remove('d-none');
     document.getElementById('bgByResponse').classList.remove('d-none');
 
-    setTimeout(function () { //Lets the message disappear after 1500 ms
+    setTimeout(function () { //Lets the message disappear after 1500ms
         document.getElementById('bgByResponse').classList.add('d-none');
         document.getElementById('login-response').classList.add('d-none');
     }, 1500);
