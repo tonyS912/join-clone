@@ -225,6 +225,7 @@ body {
 .main {
     height: 935px;
     top: 89px;
+    padding-top: 89px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -234,7 +235,7 @@ body {
 .main_summary {
     width: 679px;
     height: 73px;
-    padding-top: 171px;
+    padding-top: 82px;
     display: flex;
     flex-direction: row;
     justify-content: center;
