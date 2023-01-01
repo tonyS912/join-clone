@@ -269,6 +269,7 @@ form {
     display: flex;
     justify-content: flex-start;
     padding-left: 232px;
+    padding-top: 89px;
 }
 
 .contacts--main__left {
@@ -277,7 +278,7 @@ form {
     left: 0;
     display: flex;
     width: 440px;
-    height: 100vH;
+    height: calc(100vh - 89px);
     background: #FFFFFF;
     box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
 }
