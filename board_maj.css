@@ -173,9 +173,9 @@ button{
     justify-content: center;
 }
 
-/* .d-none {
+.d-none {
     display: none;
-} */
+}
 
 .size {
     font-size: 21px;
@@ -400,4 +400,26 @@ button{
 .taskUser {
     display: flex;
     margin-left: 18px;
+}
+
+.taskSubtask-progressbar {
+    margin-top: 20px;
+    width: 138px;
+    height: 8px;
+    background-color: #F4F4F4;
+}
+
+.taskSubtask {
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskSubtask p {
+    font-size: 12px;
+    padding-right: 8px;
+}
+
+.progress-color {
+    background-color: #29ABE2;
+    height: 8px;
 }
