@@ -45,6 +45,38 @@ const insertAboveTask = (zone, mouseY) => {
   return closestTask;
 };
 
+async function loadTasks() {
+  await loadTasksFromBackend();
+}
+
+async function loadTasksFromBackend() {
+  setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
+  await downloadFromServer();
+  allTasks = JSON.parse(backend.getItem("allTasks")) || [];
+  category = JSON.parse(backend.getItem("category")) || [
+      "Sales",
+      "Backoffice",
+      "Marketing",
+      "Coding",
+  ];
+  users = JSON.parse(backend.getItem("contacts")) || [
+      {
+          uuid: "8942e28a-4448-4c07-9ee9-0ae04e32557e",
+          name: "Hans Peter",
+          email: "hans@peter.foo",
+          phone: "01601023123",
+          color: "f0d311",
+      },
+      {
+          uuid: "8942e28a-3442-4c07-9ee9-0ae04e32557e",
+          name: "Senior Erpel",
+          email: "erpel@teasd.de",
+          phone: "01601022343123",
+          color: "a0a311",
+      },
+  ];
+}
+
 
 
 
