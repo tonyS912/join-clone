@@ -1,3 +1,6 @@
+const barNames = ["To do", "in progress", "Awaiting feedback", "Done"];
+let taskPosition = [];
+
 const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".column");
 
@@ -47,6 +50,7 @@ const insertAboveTask = (zone, mouseY) => {
 
 async function loadTasks() {
   await loadTasksFromBackend();
+  //renderTask();
 }
 
 async function loadTasksFromBackend() {
@@ -78,7 +82,19 @@ async function loadTasksFromBackend() {
 }
 
 
-
+/**
+ * render Tasks
+ */
+function renderTask() {
+  let todo = document.getElementById("todo");
+  todo.innerHTML = "";
+  todo.innerHTML += barTitle(barNames[0])
+  
+  for (let i = 0; i < allTasks.length; i++) {
+    const tasks = allTasks[i];
+    todo.innerHTML += task(tasks.title, tasks.description, tasks.category);
+  }
+}
 
 
 

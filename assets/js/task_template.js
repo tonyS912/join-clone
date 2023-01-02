@@ -1,13 +1,13 @@
-function task(title, description, category, catColor, ready, todo) {
-    return /*html*/ `<div class="task" draggable="true" onclick="TODO()">
-  <div class="taskCategoryView" style="background-color: ${catColor}">${category}</div>
+function task(title, description, category) {
+    return /*html*/ `<div class="task" draggable="true">
+  <div class="taskCategoryView" style="background-color: orange">${category}</div>
   <p class="taskTitle">${title}</p>
   <span class="taskDescription">${description}</span>
   <div id="taskSubtasks" class="taskSubtask d-none">
     <div class="taskSubtask-progressbar">
       <div class="progress-color" style="width: 15%;"></div>
     </div>
-    <p>${ready}/${todo} Done</p> 
+    <p>0/0 Done</p> 
   </div>
   <div id="taskUser" class="taskUser">
     <div class="contact--left__UserAvatar margin-10r" style="background-color: #a0a311 !Important">
@@ -17,5 +17,16 @@ function task(title, description, category, catColor, ready, todo) {
       <span class="contact-initials">SE</span>
     </div>
   </div>
+</div>`;
+}
+
+
+function barTitle(title) {
+  return /*html*/ `<div class="column_header">
+  <h4 class="heading">${title}</h4>
+  <div
+      class="plus_icon"
+      onclick="showAddTaskForm()"
+  ></div>
 </div>`;
 }

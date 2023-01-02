@@ -8,10 +8,9 @@
         <link rel="stylesheet" href="./assets/fonts/fonts.css" />
         <link rel="stylesheet" href="./assets/css/add_task.css" />
         <link rel="stylesheet" href="./assets/css/summary.css" />
-        <link rel="stylesheet" href="assets/css/summary-resp.css">
+        <link rel="stylesheet" href="assets/css/summary-resp.css" />
         <link rel="icon" type="image/icon" href="./assets/img/join-logo.svg" />
-        <link rel="stylesheet" href="/board_maj.css">
-
+        <link rel="stylesheet" href="/board_maj.css" />
 
         <script src="script.js"></script>
         <script src="/board_maj.js" defer></script>
@@ -64,7 +63,8 @@
                     </div>
                 </div>
             </section>
-            <div class="right">‚
+            <div class="right">
+                ‚
                 <div class="header">
                     <div class="title">
                         <a class="kanban">Kanban Project Management Tool</a>
@@ -90,178 +90,333 @@
                     </div>
                 </div>
 
-                
-                    <div class="content">
-                        <div class="headline">
-                          <h1 class="font-headline" >Board</h1>
-                          <div class="findAndAddTask">
+                <div class="content">
+                    <div class="headline">
+                        <h1 class="font-headline">Board</h1>
+                        <div class="findAndAddTask">
                             <div class="findTask">
-                              <input placeholder="Find Task" class="findTaskInput" id="findTask" onkeyup="findTask()">
-                    
-                              <img src="./assets/img/magnifier.svg" alt="">
-                            </div>
-                    
-                            <button class="addTask_btn" onclick="showAddTaskForm()">add task +</button>
-                    
-                    
-                          </div>
-                        </div>
-                        <div class="add_task_overlap_window d-none" id="addTask_overlap" onclick="closeWindow()">
-                          <div class="add-task"  id="add_task_window" onclick="doNotCloseWindow(event)">
-                            <div>
-                              <h1>Add Task</h1>
-                            </div>
-                            <div onsubmit="addTask()" class="input-container">
-                              <div class="left-container">
-                                <div>
-                                  <h4 class="size light title">Title</h4>
-                                  <input id="title" class="title-input size light" type="text" placeholder="Enter a title" required />
-                                </div>
-                                <div>
-                                  <h4 class="size light title">
-                                    Description
-                                  </h4>
-                                  <textarea class="size light description-area" name="description" id="description"
-                                    placeholder="Enter a Description" required></textarea>
-                                </div>
-                                <div>
-                                  <h4 class="size light title">Category</h4>
-                                  <button onclick="expandCategory()" id="category" class="size light category-btn btn">
-                                    Select task Category
-                                    <img class="popup-arrow" src="./assets/img/dropdown-arrow.svg" />
-                                  </button>
-                                  <ul id="category-list" class="d-none list-height list size light category-list"></ul>
-                                  <div id="newCategory" class="left-width d-none">
-                                    <input id="categoryName" class="title-input size light" type="text" placeholder="New category name"
-                                      required="" />
-                                    <img onclick="deleteCat()" class="cross" src="./assets/img/cross.svg" /><img id="addCat"
-                                      onclick="addCat()" class="newCategory" src="./assets/img/newCategory.svg" />
-                                    <div id="colorCode" class="colorCode"></div>
-                                  </div>
-                                </div>
-                                <div>
-                                  <h4 class="size light title">
-                                    Assigned to
-                                  </h4>
-                                  <button class="size light category-btn btn">
-                                    Select contacts to assign
-                                    <img class="popup-arrow" src="./assets/img/dropdown-arrow.svg" />
-                                  </button>
-                                </div>
-                              </div>
-                              <div class="right-container">
-                                <div>
-                                  <div>
-                                    <h4 class="size light title">
-                                      Due date
-                                    </h4>
-                                    <input onchange="dateChecker()" class="size light title-input" type="date" name="" id="dueDate"
-                                      placeholder="dd/mm/yyyy" required />
-                                  </div>
-                                  <div>
-                                    <h4 class="size light title">Prio</h4>
-                                    <div class="prio-btns">
-                                      <button onclick="switchBackground('urgent')" class="size light btn prio" id="urgent">
-                                        Urgent
-                                        <img src="./assets/img/arrows-up.svg" class="" />
-                                      </button>
-                                      <button onclick="switchBackground('medium')" class="size light btn prio" id="medium">
-                                        Medium
-                                        <img src="./assets/img/equal-sign.svg" class="" />
-                                      </button>
-                                      <button onclick="switchBackground('low')" class="size light btn prio" id="low">
-                                        Low
-                                        <img src="./assets/img/arrows-down.svg" class="" />
-                                      </button>
-                                    </div>
-                                  </div>
-                                  <div style="margin-bottom: 12px">
-                                    <h4 class="size light title">
-                                      Subtasks
-                                    </h4>
-                                    <input id="subtaskName" class="title-input size light" type="text" placeholder="Add new subtask" />
-                                    <img onclick="addSubtask()" class="subtask-img" src="./assets/img/plus_2.svg" />
-                                  </div>
-                                  <div class="subtaskArea" id="subtasks"></div>
-                                </div>
-                                <div class="btn-box" id="id-contacts--addContact__rightBox--unten">
-                                  <button class="size regul window-btn transp" type="submit" onclick="closeWindow()">
-                                    Cancel
-                                    <img class="padding-10" src="/assets/img/close2.svg" />
-                                  </button>
-                                  <button class="size regul window-btn ok-btn" type="submit" onclick="addingTask()">
-                                    Add Task<img class="padding-10" src="/assets/img/create.png" />
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    
-                        <div class="kanban_board">
-                    
-                          <div class="column" id="todo">
-                            <div class="column_header">
-                              <h4 class="heading">To do</h4>
-                              <div class="plus_icon" onclick="showAddTaskForm()"></div>
+                                <input
+                                    placeholder="Find Task"
+                                    class="findTaskInput"
+                                    id="findTask"
+                                    onkeyup="findTask()"
+                                />
+
+                                <img src="./assets/img/magnifier.svg" alt="" />
                             </div>
 
-                            <div class="task" draggable="true" onclick="TODO()">
-                              <div class="taskCategoryView">Design</div>
-                              <p class="taskTitle">Website redesign</p>
-                              <span class="taskDescription">this ist the small description about the task</span>
-                              <div id="taskSubtasks" class="taskSubtask d-none">
-                                <div class="taskSubtask-progressbar">
-                                  <div class="progress-color" style="width: 15%;"></div>
-                                </div>
-                                <p>3/20 Done</p> 
-                              </div>
-                              <div id="taskUser" class="taskUser">
-                                <div class="contact--left__UserAvatar margin-10r" style="background-color: #a0a311 !Important">
-                                  <span class="contact-initials">SE</span>
-                                </div>
-                                <div class="contact--left__UserAvatar margin-10r" style="background-color: #a0a311 !Important">
-                                  <span class="contact-initials">SE</span>
-                                </div>
-                              </div>
+                            <button
+                                class="addTask_btn"
+                                onclick="showAddTaskForm()"
+                            >
+                                add task +
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="add_task_overlap_window d-none"
+                        id="addTask_overlap"
+                        onclick="closeWindow()"
+                    >
+                        <div
+                            class="add-task"
+                            id="add_task_window"
+                            onclick="doNotCloseWindow(event)"
+                        >
+                            <div>
+                                <h1>Add Task</h1>
                             </div>
-                            
-                            <p class="task" draggable="true">Einkaufen</p>
-                            <p class="task" draggable="true">lernen</p>
-                            <p class="task" draggable="true">duschen</p>
-                          </div>
-                    
-                          <div class="column">
+                            <div onsubmit="addTask()" class="input-container">
+                                <div class="left-container">
+                                    <div>
+                                        <h4 class="size light title">Title</h4>
+                                        <input
+                                            id="title"
+                                            class="title-input size light"
+                                            type="text"
+                                            placeholder="Enter a title"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <h4 class="size light title">
+                                            Description
+                                        </h4>
+                                        <textarea
+                                            class="size light description-area"
+                                            name="description"
+                                            id="description"
+                                            placeholder="Enter a Description"
+                                            required
+                                        ></textarea>
+                                    </div>
+                                    <div>
+                                        <h4 class="size light title">
+                                            Category
+                                        </h4>
+                                        <button
+                                            onclick="expandCategory()"
+                                            id="category"
+                                            class="size light category-btn btn"
+                                        >
+                                            Select task Category
+                                            <img
+                                                class="popup-arrow"
+                                                src="./assets/img/dropdown-arrow.svg"
+                                            />
+                                        </button>
+                                        <ul
+                                            id="category-list"
+                                            class="d-none list-height list size light category-list"
+                                        ></ul>
+                                        <div
+                                            id="newCategory"
+                                            class="left-width d-none"
+                                        >
+                                            <input
+                                                id="categoryName"
+                                                class="title-input size light"
+                                                type="text"
+                                                placeholder="New category name"
+                                                required=""
+                                            />
+                                            <img
+                                                onclick="deleteCat()"
+                                                class="cross"
+                                                src="./assets/img/cross.svg"
+                                            /><img
+                                                id="addCat"
+                                                onclick="addCat()"
+                                                class="newCategory"
+                                                src="./assets/img/newCategory.svg"
+                                            />
+                                            <div
+                                                id="colorCode"
+                                                class="colorCode"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="size light title">
+                                            Assigned to
+                                        </h4>
+                                        <button
+                                            class="size light category-btn btn"
+                                        >
+                                            Select contacts to assign
+                                            <img
+                                                class="popup-arrow"
+                                                src="./assets/img/dropdown-arrow.svg"
+                                            />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="right-container">
+                                    <div>
+                                        <div>
+                                            <h4 class="size light title">
+                                                Due date
+                                            </h4>
+                                            <input
+                                                onchange="dateChecker()"
+                                                class="size light title-input"
+                                                type="date"
+                                                name=""
+                                                id="dueDate"
+                                                placeholder="dd/mm/yyyy"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <h4 class="size light title">
+                                                Prio
+                                            </h4>
+                                            <div class="prio-btns">
+                                                <button
+                                                    onclick="switchBackground('urgent')"
+                                                    class="size light btn prio"
+                                                    id="urgent"
+                                                >
+                                                    Urgent
+                                                    <img
+                                                        src="./assets/img/arrows-up.svg"
+                                                        class=""
+                                                    />
+                                                </button>
+                                                <button
+                                                    onclick="switchBackground('medium')"
+                                                    class="size light btn prio"
+                                                    id="medium"
+                                                >
+                                                    Medium
+                                                    <img
+                                                        src="./assets/img/equal-sign.svg"
+                                                        class=""
+                                                    />
+                                                </button>
+                                                <button
+                                                    onclick="switchBackground('low')"
+                                                    class="size light btn prio"
+                                                    id="low"
+                                                >
+                                                    Low
+                                                    <img
+                                                        src="./assets/img/arrows-down.svg"
+                                                        class=""
+                                                    />
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom: 12px">
+                                            <h4 class="size light title">
+                                                Subtasks
+                                            </h4>
+                                            <input
+                                                id="subtaskName"
+                                                class="title-input size light"
+                                                type="text"
+                                                placeholder="Add new subtask"
+                                            />
+                                            <img
+                                                onclick="addSubtask()"
+                                                class="subtask-img"
+                                                src="./assets/img/plus_2.svg"
+                                            />
+                                        </div>
+                                        <div
+                                            class="subtaskArea"
+                                            id="subtasks"
+                                        ></div>
+                                    </div>
+                                    <div
+                                        class="btn-box"
+                                        id="id-contacts--addContact__rightBox--unten"
+                                    >
+                                        <button
+                                            class="size regul window-btn transp"
+                                            type="submit"
+                                            onclick="closeWindow()"
+                                        >
+                                            Cancel
+                                            <img
+                                                class="padding-10"
+                                                src="/assets/img/close2.svg"
+                                            />
+                                        </button>
+                                        <button
+                                            class="size regul window-btn ok-btn"
+                                            type="submit"
+                                            onclick="addingTask()"
+                                        >
+                                            Add Task<img
+                                                class="padding-10"
+                                                src="/assets/img/create.png"
+                                            />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kanban_board">
+                        <div class="column"  id="todo">
                             <div class="column_header">
-                              <h4 class="heading">In progress</h4>
-                              <div class="plus_icon" onclick="showAddTaskForm()"></div>
+                                <h4 class="heading">To do</h4>
+                                <div
+                                    class="plus_icon"
+                                    onclick="showAddTaskForm()"
+                                ></div>
+                            </div>
+                                
+                                <div
+                                    class="task"
+                                    draggable="true"
+                                    onclick="TODO()"
+                                >
+                                    <div class="taskCategoryView">Design</div>
+                                    <p class="taskTitle">Website redesign</p>
+                                    <span class="taskDescription"
+                                        >this ist the small description about
+                                        the task</span
+                                    >
+                                    <div
+                                        id="taskSubtasks"
+                                        class="taskSubtask d-none"
+                                    >
+                                        <div class="taskSubtask-progressbar">
+                                            <div
+                                                class="progress-color"
+                                                style="width: 15%"
+                                            ></div>
+                                        </div>
+                                        <p>3/20 Done</p>
+                                    </div>
+                                    <div id="taskUser" class="taskUser">
+                                        <div
+                                            class="contact--left__UserAvatar margin-10r"
+                                            style="
+                                                background-color: #a0a311 !important;
+                                            "
+                                        >
+                                            <span class="contact-initials"
+                                                >SE</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="contact--left__UserAvatar margin-10r"
+                                            style="
+                                                background-color: #a0a311 !important;
+                                            "
+                                        >
+                                            <span class="contact-initials"
+                                                >SE</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="task" draggable="true">Einkaufen</p>
+                                <p class="task" draggable="true">lernen</p>
+                                <p class="task" draggable="true">duschen</p>
+                            
+                        </div>
+
+                        <div class="column" id="inProgress">
+                            <div class="column_header">
+                                <h4 class="heading">In progress</h4>
+                                <div
+                                    class="plus_icon"
+                                    onclick="showAddTaskForm()"
+                                ></div>
                             </div>
                             <p class="task" draggable="true">essen</p>
-                          </div>
-                    
-                          <div class="column">
-                            <div class="column_header">
-                              <h4 class="heading">Awaiting feedback</h4>
-                              <div class="plus_icon" onclick="showAddTaskForm()"></div>
-                            </div>
-                            <p class="task" draggable="true">
-                              Sport treiben
-                            </p>
-                          </div>
-                    
-                          <div class="column">
-                            <div class="column_header">
-                              <h4 class="heading">Done</h4>
-                              <div class="plus_icon" onclick="showAddTaskForm()"></div>
-                            </div>
-                            
-                            <p class="task" draggable="true">
-                              Pause machen
-                            </p>
-                          </div>
                         </div>
-                      </div>
-                
+
+                        <div class="column" id="awaitFeedback">
+                            <div class="column_header">
+                                <h4 class="heading">Awaiting feedback</h4>
+                                <div
+                                    class="plus_icon"
+                                    onclick="showAddTaskForm()"
+                                ></div>
+                            </div>
+                            <p class="task" draggable="true">Sport treiben</p>
+                        </div>
+
+                        <div class="column" id="done">
+                            <div class="column_header">
+                                <h4 class="heading">Done</h4>
+                                <div
+                                    class="plus_icon"
+                                    onclick="showAddTaskForm()"
+                                ></div>
+                            </div>
+
+                            <p class="task" draggable="true">Pause machen</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
