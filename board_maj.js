@@ -1,10 +1,10 @@
 const barNames = ["To do", "in progress", "Awaiting feedback", "Done"];
 let taskPosition = [];
 
+
+setTimeout(function() {
 const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".column");
-
-
 
 draggables.forEach((task) => {
   task.addEventListener("dragstart", () => {
@@ -28,7 +28,8 @@ droppables.forEach((zone) => {
       zone.insertBefore(curTask, bottomTask); // insert the current task before bottomTask
     }
   });
-});
+})
+}, 2100);
 
 const insertAboveTask = (zone, mouseY) => {
   const taskNotDragging = zone.querySelectorAll(".task:not(.is-dragging)"); 
@@ -49,7 +50,6 @@ const insertAboveTask = (zone, mouseY) => {
 
   return closestTask;
 };
-
 
 
 async function loadTasksFromBackend() {
@@ -94,11 +94,10 @@ function renderTask() {
   todo.innerHTML += barTitle(barNames[0])
   
   for (let i = 0; i < allTasks.length; i++) {
-    const tasks = allTasks[i];
-    todo.innerHTML += task(tasks.title, tasks.description, tasks.category);
+    const testTasks = allTasks[i];
+    todo.innerHTML += taskings(testTasks.title, testTasks.description, testTasks.category);
   }
 }
-
 
 function showAddTaskForm(){
   let addTask_overlap = document.getElementById('addTask_overlap');

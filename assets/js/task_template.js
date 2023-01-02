@@ -1,4 +1,4 @@
-function task(title, description, category) {
+function taskings(title, description, category) {
     return /*html*/ `<div class="task" draggable="true">
   <div class="taskCategoryView" style="background-color: orange">${category}</div>
   <p class="taskTitle">${title}</p>
