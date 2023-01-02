@@ -64,6 +64,18 @@ button{
 
 }
 
+.column_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus_icon {
+    background: url(assets/img/plus_black.svg);
+    height: 30px;
+    width: 30px;
+    
+}
 
 .kanban_board {
     display: flex;
