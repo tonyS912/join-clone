@@ -4,6 +4,11 @@ let taskPosition = [];
 const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".column");
 
+async function loadTasks() {
+  await loadTasksFromBackend();
+  //renderTask();
+}
+
 draggables.forEach((task) => {
   task.addEventListener("dragstart", () => {
     task.classList.add("is-dragging"); // Add a custom class to the element being dragged to give it some visual styling
@@ -48,10 +53,7 @@ const insertAboveTask = (zone, mouseY) => {
   return closestTask;
 };
 
-async function loadTasks() {
-  await loadTasksFromBackend();
-  //renderTask();
-}
+
 
 async function loadTasksFromBackend() {
   setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
