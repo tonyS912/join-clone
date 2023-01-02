@@ -123,7 +123,8 @@ button{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   
     padding: 12px;
-    border-radius: 4px;
+    padding-left: 18px;
+    border-radius: 30px;
   
     font-size: 16px;
     cursor: move;
@@ -144,6 +145,27 @@ button{
     align-items: center;
     height: 100vh;
     background-color: #F5F5F5;
+}
+
+
+/* TODO - Remove background-color, need to be direct in rendering as stlye */
+.taskCategoryView {
+    background-color: orange;
+    width: fit-content;
+    padding: 4px 18px 4px 18px;
+    color: white;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.taskTitle {
+    font-size: 16px;
+    font-family: Inter-Bold;
+}
+
+.taskDescription {
+    color: #ABABAB;
+    font-family: Inter-Light;
 }
 
 .main {
