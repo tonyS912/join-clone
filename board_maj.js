@@ -4,10 +4,7 @@ let taskPosition = [];
 const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".column");
 
-async function loadTasks() {
-  await loadTasksFromBackend();
-  //renderTask();
-}
+
 
 draggables.forEach((task) => {
   task.addEventListener("dragstart", () => {
@@ -83,6 +80,10 @@ async function loadTasksFromBackend() {
   ];
 }
 
+async function loadTasks() {
+  await loadTasksFromBackend();
+  renderTask();
+}
 
 /**
  * render Tasks
@@ -97,8 +98,6 @@ function renderTask() {
     todo.innerHTML += task(tasks.title, tasks.description, tasks.category);
   }
 }
-
-
 
 
 function showAddTaskForm(){
