@@ -13,6 +13,10 @@
 button{
     cursor: pointer;
 }
+.heading {
+    font-size: 21px;
+    font-family: Inter-Bold;
+}
 
 .findTask{
     background-color: white;
@@ -92,14 +96,11 @@ button{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-
-    padding: 24px 32px;
-
-    
+    padding-right: 32px;
     height: 100%;
 }
 
-
+/* TODO - remove box shadow if ready */
 .column {
     display: flex;
     flex-direction: column;
