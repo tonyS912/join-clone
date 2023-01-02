@@ -107,7 +107,7 @@ button{
     gap: 12px;
 
    
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25); */
 
     padding: 12px;
     border-radius: 4px;
@@ -380,4 +380,24 @@ button{
 .content{
     padding-left: 301px;
     padding-top: 126px;
+}
+
+.contact--left__UserAvatar {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: -18px;
+}
+
+.taskUser {
+    display: flex;
+    margin-left: 18px;
 }
