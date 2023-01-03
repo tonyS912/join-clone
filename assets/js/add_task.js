@@ -47,6 +47,7 @@ async function saveTasksInBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
     await backend.setItem("allTasks", JSON.stringify(allTasks));
     await backend.setItem("category", JSON.stringify(category));
+    await backend.setItem("choosenColor",JSON.stringify(choosenColor));
 }
 
 function removeTasks() {

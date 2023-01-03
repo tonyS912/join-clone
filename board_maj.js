@@ -5,6 +5,15 @@ let subtasksLength = "";
 const urgent = "./assets/img/arrows-up.svg"
 const medium = "./assets/img/equal-sign.svg"
 const low = "./assets/img/arrows-down.svg"
+const catColor = [
+  "#8AA4FF",
+  "#FF0000",
+  "#2AD300",
+  "#FF8A00",
+  "#E200BE",
+  "#0038FF",
+];
+let choosenCatColor = "";
 
 setTimeout(function () {
     const draggables = document.querySelectorAll(".task");
@@ -61,6 +70,7 @@ async function loadTasksFromBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem("allTasks")) || [];
+    choosenColor = JSON.parse(backend.getItem("choosenColor")) || [1, 4, 2, 5];
     category = JSON.parse(backend.getItem("category")) || [
         "Sales",
         "Backoffice",
@@ -102,12 +112,14 @@ function renderTask() {
     for (let i = 0; i < allTasks.length; i++) {
         const testTasks = allTasks[i];
         renderSubtasks(i);
+        chooseColor(i);
         todo.innerHTML += taskings(
             i,
             testTasks.title,
             testTasks.description,
             testTasks.category,
-            subtasksLength
+            subtasksLength,
+            choosenCatColor
         );
         showSubtasks(i); //Shows Subtask if subtask are in the array
         renderUsers(i); //Shows user they invited for this task
@@ -122,7 +134,16 @@ function renderBarTitle() {
     bar.innerHTML = "";
     bar.innerHTML += barTitle(barName)
   }
-  
+}
+
+function chooseColor(num) {
+  let cat = allTasks[num].category;
+  for (let i =  0; i < category.length; i++) {
+    const element = category[i];
+    if (cat == element) {
+      choosenCatColor = catColor[choosenColor[i]]
+    }
+  }
 }
 
 function renderSubtasks(num) {

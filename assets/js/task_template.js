@@ -1,11 +1,11 @@
-function taskings(num, title, description, category, length) {
+function taskings(num, title, description, category, length, color) {
     return /*html*/ `<div class="task" draggable="true" onclick="showThisTask(${num})">
-  <div class="taskCategoryView" style="background-color: orange">${category}</div>
+  <div class="taskCategoryView" style="background-color: ${color}">${category}</div>
   <p class="taskTitle">${title}</p>
   <span class="taskDescription">${description}</span>
   <div id="taskSubtasks${num}" class="taskSubtask d-none">
     <div class="taskSubtask-progressbar">
-      <div class="progress-color" style="width: 15%;"></div>
+      <div class="progress-color" style="width: 0%;"></div>
     </div>
     <p>0/${length}</p> 
   </div>

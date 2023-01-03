@@ -185,11 +185,11 @@ function checkAssigne() {
 
 function addAssignetoTask(num) {
     let name = users[num].name;
-    let initials = users[num].name.substring(0, 2).toUpperCase();
+    //let initials = users[num].name.substring(0, 2).toUpperCase();
     if (assigne.includes(name)) {
         checkAssigne();
     } else {
-        assigne.push(initials);
+        assigne.push(name);
         checkAssigne();
     }
 }

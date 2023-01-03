@@ -28,6 +28,7 @@ async function loadTasksFromBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem("allTasks")) || [];
+    choosenColor = JSON.parse(backend.getItem("choosenColor")) || [1, 4, 2, 5];
     category = JSON.parse(backend.getItem("category")) || [
         "Sales",
         "Backoffice",
