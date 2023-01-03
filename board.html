@@ -16,11 +16,20 @@
         <script src="/board_maj.js" defer></script>
         <script src="./assets/js/task_template.js"></script>
         <script src="./assets/js/summary.js"></script>
+        <script src="./assets/js/board-popup.js"></script>
         <script src="./assets/js/mini_backend.js"></script>
 
         <title>Board</title>
     </head>
     <body onload="loadTasks()">
+        <div id="taskDetail" class="pop-up d-none" onclick="closePopUp()"></div>
+        <div class="window d-none" id="taskDetails">
+            <div class="taskCategoryView catPopUp" style="background-color: orange">Coding</div>
+            <h4 class="popUpHeadline">Title text</h4>
+            <span class="text">w oeuihoweh ofiwejh eofiwoie hfowe jhfoiu whei fhbweiouhiouwf hieuhfwiouehu fiuweh fiuweh </span>
+            <div style="display: flex;"><p class="text bold">Due Date:</p><p class="text paddingL20">2022-08-21</p></div>
+        </div>
+        
         <div class="webpage">
             <section class="left">
                 <div class="logo">

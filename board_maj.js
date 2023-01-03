@@ -125,6 +125,13 @@ function showSubtasks(num) {
     }
 }
 
+/**
+ * TODO - need to be updated after checkbox.checked
+ */
+function updateSubtasks() {
+
+}
+
 function showAddTaskForm() {
     let addTask_overlap = document.getElementById("addTask_overlap");
     addTask_overlap.classList.remove("d-none");
@@ -138,8 +145,6 @@ function assignesInvite(num) {
   const thisTask = allTasks[num];
 }
 
-
-
 function renderUsers(num) {
   let member = document.getElementById(`taskUser${num}`);
   member.innerHTML = "";
@@ -151,11 +156,18 @@ function renderUsers(num) {
   }
 }
 
-function addAvatar(num) {
-  let name = users[num].name.substring(0, 2).toUpperCase();
-  let color = users[num].color
+function showThisTask(num) {
+  document.getElementById("taskDetail").classList.remove('d-none');
+  document.getElementById("taskDetails").classList.remove('d-none')
+}
 
-  document.getElementById('avatar').innerHTML += avatar(name, color);
+function closePopUp() {
+  document.getElementById("taskDetail").classList.add('d-none');
+  document.getElementById("taskDetails").classList.add('d-none')
+}
+
+function renderTaskDetails(num) {
+
 }
 
 function closeWindow() {

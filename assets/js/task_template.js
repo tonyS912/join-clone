@@ -1,5 +1,5 @@
 function taskings(num, title, description, category, length) {
-    return /*html*/ `<div class="task" draggable="true">
+    return /*html*/ `<div class="task" draggable="true" onclick="showThisTask(${num})">
   <div class="taskCategoryView" style="background-color: orange">${category}</div>
   <p class="taskTitle">${title}</p>
   <span class="taskDescription">${description}</span>
