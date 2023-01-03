@@ -83,14 +83,14 @@ async function loadTasksFromBackend() {
             name: "Hans Peter",
             email: "hans@peter.foo",
             phone: "01601023123",
-            color: "f0d311",
+            color: "00d311",
         },
         {
             uuid: "8942e28a-3442-4c07-9ee9-0ae04e32557e",
             name: "Senior Erpel",
             email: "erpel@teasd.de",
             phone: "01601022343123",
-            color: "a0a311",
+            color: "a0abf1",
         },
     ];
 }
