@@ -198,8 +198,6 @@ function renderUsers(num) {
 }
 
 function showThisTask(num) {
-  let windHeight = document.getElementById("content").scrollHeight;
-  document.getElementById('taskDetail').style.height = windHeight + "px";
   document.getElementById("taskDetail").classList.remove("d-none");
   document.getElementById("taskDetails").classList.remove("d-none");
 }
