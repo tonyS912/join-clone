@@ -185,8 +185,14 @@ function renderUsers(num) {
 
   for (let i = 0; i < allTasks[num].assignes.length; i++ ) {
     const assigne = allTasks[num].assignes[i];
-    
-    member.innerHTML += taskUser(assigne, users[i].color)
+    for (let j = 0; j < users.length; j++) {
+      const thisUser = users[j];
+      if (thisUser.name == assigne) {
+        let userColor = thisUser.color
+        let name = assigne.substring(0, 2).toUpperCase();
+        member.innerHTML += taskUser(name, userColor)
+      }
+    }
   }
 }
 
