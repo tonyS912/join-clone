@@ -22,7 +22,7 @@
         <title>Board</title>
     </head>
     <body onload="loadTasks()">
-        <div id="taskDetail" class="pop-up d-none" onclick="closePopUp()"></div>
+        <div id="taskDetail" class="pop-up d-none" style="height: max-content;" onclick="closePopUp()"></div>
         <div class="window d-none" id="taskDetails">
             <div class="taskCategoryView catPopUp" style="background-color: orange">Coding</div>
             <h4 class="popUpHeadline">Title text</h4>
@@ -99,7 +99,7 @@
                     </div>
                 </div>
 
-                <div class="content">
+                <div class="content" id="content">
                     <div class="headline">
                         <h1 class="font-headline">Board</h1>
                         <div class="findAndAddTask">
