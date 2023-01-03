@@ -1,4 +1,5 @@
 const barNames = ["To do", "in progress", "Awaiting feedback", "Done"];
+const barIDs = ["todo", "inProgress", "awaitFeedback", "done"]
 let taskPosition = [];
 let subtasksLength = "";
 const urgent = "./assets/img/arrows-up.svg"
@@ -86,6 +87,7 @@ async function loadTasksFromBackend() {
 
 async function loadTasks() {
     await loadTasksFromBackend();
+    renderBarTitle();
     renderTask();
 }
 
@@ -94,8 +96,8 @@ async function loadTasks() {
  */
 function renderTask() {
     let todo = document.getElementById("todo");
-    todo.innerHTML = "";
-    todo.innerHTML += barTitle(barNames[0]);
+    //todo.innerHTML = "";
+    //todo.innerHTML += barTitle(barNames[0]);
 
     for (let i = 0; i < allTasks.length; i++) {
         const testTasks = allTasks[i];
@@ -110,6 +112,17 @@ function renderTask() {
         showSubtasks(i); //Shows Subtask if subtask are in the array
         renderUsers(i); //Shows user they invited for this task
     }
+}
+
+function renderBarTitle() {
+  for (let i = 0; i < barNames.length; i++) {
+    const barName = barNames[i];
+    const barID = barIDs[i];
+    let bar = document.getElementById(barID)
+    bar.innerHTML = "";
+    bar.innerHTML += barTitle(barName)
+  }
+  
 }
 
 function renderSubtasks(num) {
