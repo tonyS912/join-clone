@@ -1,5 +1,5 @@
-let CONTACTS = [["8942e28a-4448-4c07-9ee9-0ae04e32557e", "Hans Peter", "hans@peter.foo", "01601023123", "f0a311"],["8942e28a-3442-4c07-9ee9-0ae04e32557e", "Senior Erpel", "erpel@teasd.de", "01601022343123", "d0a311"]]; // [UUID, name, email, phone, color]
-let renderedhtml = ""
+let CONTACTS = [["8942e28a-4448-4c07-9ee9-0ae04e32557e", "Hans Peter", "hans@peter.foo", "01601023123", "f0a311"], ["8942e28a-3442-4c07-9ee9-0ae04e32557e", "Senior Erpel", "erpel@teasd.de", "01601022343123", "d0a311"]]; // [UUID, name, email, phone, color]
+let renderedhtml = "";
 
 // CSS Classes Manipulation
 function newContactOpenOverlay() {
@@ -47,6 +47,27 @@ function pushNewContact() {
     syncContactsToServer();
 }
 
+
+function arrayToJson() {
+    let CONTACTSJSON = [];
+    for (let i = 0; i < CONTACTS.length; i++) {
+        let contactUuid = CONTACTS[i][0];
+        let contactName = CONTACTS[i][1];
+        let contactEmail = CONTACTS[i][2];
+        let contactPhone = CONTACTS[i][3];
+        let contactColor = CONTACTS[i][4];
+        pushContactData = {
+            'uuid': contactUuid,
+            'name': contactName,
+            'email': contactEmail,
+            'phone': contactPhone,
+            'color': contactColor
+        };
+        CONTACTSJSON.push(pushContactData)
+    }
+    return CONTACTSJSON;
+}
+
 //hex color generator
 function createColor() {
     return Math.floor(Math.random() * 16777215).toString(16);
@@ -69,7 +90,9 @@ function syncContactsToServer() {
 }
 
 async function pushContacts() {
-    await backend.setItem('contacts', JSON.stringify(CONTACTS)); 
+    const ParsedJson = arrayToJson()
+    console.log(ParsedJson);
+    await backend.setItem('contacts', JSON.stringify(ParsedJson));
 }
 
 function renderSingleContactCard(uuid) {
@@ -131,7 +154,7 @@ function renderedHtmlContactRight(uuid) {
     let contactColor = "";
     let contactName = "";
     let contactEmail = "";
-    let contactPhone ="";
+    let contactPhone = "";
 
     for (let i = 0; i < CONTACTS.length; i++) {
         if (CONTACTS[i][0] == uuid) {
