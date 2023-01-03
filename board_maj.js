@@ -1,21 +1,21 @@
 const barNames = ["To do", "in progress", "Awaiting feedback", "Done"];
-const barIDs = ["todo", "inProgress", "awaitFeedback", "done"]
+const barIDs = ["todo", "inProgress", "awaitFeedback", "done"];
 let taskPosition = [];
 let subtasksLength = "";
-const urgent = "./assets/img/arrows-up.svg"
-const medium = "./assets/img/equal-sign.svg"
-const low = "./assets/img/arrows-down.svg"
+const urgent = "./assets/img/arrows-up.svg";
+const medium = "./assets/img/equal-sign.svg";
+const low = "./assets/img/arrows-down.svg";
 const catColor = [
-  "#8AA4FF",
-  "#FF0000",
-  "#2AD300",
-  "#FF8A00",
-  "#E200BE",
-  "#0038FF",
+    "#8AA4FF",
+    "#FF0000",
+    "#2AD300",
+    "#FF8A00",
+    "#E200BE",
+    "#0038FF",
 ];
 let choosenCatColor = "";
 
-setTimeout(function () {
+function dragandDrop() {
     const draggables = document.querySelectorAll(".task");
     const droppables = document.querySelectorAll(".column");
 
@@ -44,7 +44,7 @@ setTimeout(function () {
             }
         });
     });
-}, 2200);
+}
 
 const insertAboveTask = (zone, mouseY) => {
     const taskNotDragging = zone.querySelectorAll(".task:not(.is-dragging)");
@@ -99,6 +99,7 @@ async function loadTasks() {
     await loadTasksFromBackend();
     renderBarTitle();
     renderTask();
+    dragandDrop();
 }
 
 /**
@@ -127,23 +128,23 @@ function renderTask() {
 }
 
 function renderBarTitle() {
-  for (let i = 0; i < barNames.length; i++) {
-    const barName = barNames[i];
-    const barID = barIDs[i];
-    let bar = document.getElementById(barID)
-    bar.innerHTML = "";
-    bar.innerHTML += barTitle(barName)
-  }
+    for (let i = 0; i < barNames.length; i++) {
+        const barName = barNames[i];
+        const barID = barIDs[i];
+        let bar = document.getElementById(barID);
+        bar.innerHTML = "";
+        bar.innerHTML += barTitle(barName);
+    }
 }
 
 function chooseColor(num) {
-  let cat = allTasks[num].category;
-  for (let i =  0; i < category.length; i++) {
-    const element = category[i];
-    if (cat == element) {
-      choosenCatColor = catColor[choosenColor[i]]
+    let cat = allTasks[num].category;
+    for (let i = 0; i < category.length; i++) {
+        const element = category[i];
+        if (cat == element) {
+            choosenCatColor = catColor[choosenColor[i]];
+        }
     }
-  }
 }
 
 function renderSubtasks(num) {
@@ -155,16 +156,16 @@ function showSubtasks(num) {
     const singleTask = allTasks[num].subtasks;
 
     if (singleTask.length > 0) {
-        document.getElementById(`taskSubtasks${num}`).classList.remove("d-none");
+        document
+            .getElementById(`taskSubtasks${num}`)
+            .classList.remove("d-none");
     }
 }
 
 /**
  * TODO - need to be updated after checkbox.checked
  */
-function updateSubtasks() {
-
-}
+function updateSubtasks() {}
 
 function showAddTaskForm() {
     let addTask_overlap = document.getElementById("addTask_overlap");
@@ -176,39 +177,37 @@ function showAddTaskForm() {
  * Render task users
  */
 function assignesInvite(num) {
-  const thisTask = allTasks[num];
+    const thisTask = allTasks[num];
 }
 
 function renderUsers(num) {
-  let member = document.getElementById(`taskUser${num}`);
-  member.innerHTML = "";
+    let member = document.getElementById(`taskUser${num}`);
+    member.innerHTML = "";
 
-  for (let i = 0; i < allTasks[num].assignes.length; i++ ) {
-    const assigne = allTasks[num].assignes[i];
-    for (let j = 0; j < users.length; j++) {
-      const thisUser = users[j];
-      if (thisUser.name == assigne) {
-        let userColor = thisUser.color
-        let name = assigne.substring(0, 2).toUpperCase();
-        member.innerHTML += taskUser(name, userColor)
-      }
+    for (let i = 0; i < allTasks[num].assignes.length; i++) {
+        const assigne = allTasks[num].assignes[i];
+        for (let j = 0; j < users.length; j++) {
+            const thisUser = users[j];
+            if (thisUser.name == assigne) {
+                let userColor = thisUser.color;
+                let name = assigne.substring(0, 2).toUpperCase();
+                member.innerHTML += taskUser(name, userColor);
+            }
+        }
     }
-  }
 }
 
 function showThisTask(num) {
-  document.getElementById("taskDetail").classList.remove('d-none');
-  document.getElementById("taskDetails").classList.remove('d-none')
+    document.getElementById("taskDetail").classList.remove("d-none");
+    document.getElementById("taskDetails").classList.remove("d-none");
 }
 
 function closePopUp() {
-  document.getElementById("taskDetail").classList.add('d-none');
-  document.getElementById("taskDetails").classList.add('d-none')
+    document.getElementById("taskDetail").classList.add("d-none");
+    document.getElementById("taskDetails").classList.add("d-none");
 }
 
-function renderTaskDetails(num) {
-
-}
+function renderTaskDetails(num) {}
 
 function closeWindow() {
     let addTask_overlap = document.getElementById("addTask_overlap");
