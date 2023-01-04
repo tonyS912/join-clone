@@ -14,6 +14,7 @@ const catColor = [
     "#0038FF",
 ];
 let choosenCatColor = "";
+let priority = "";
 
 function dragandDrop() {
     const draggables = document.querySelectorAll(".task");
@@ -120,7 +121,8 @@ function renderTask() {
             testTasks.description,
             testTasks.category,
             subtasksLength,
-            choosenCatColor
+            choosenCatColor,
+            prio = priority
         );
         showSubtasks(i); //Shows Subtask if subtask are in the array
         renderUsers(i); //Shows user they invited for this task

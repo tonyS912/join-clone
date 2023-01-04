@@ -1,4 +1,4 @@
-function taskings(num, title, description, category, length, color) {
+function taskings(num, title, description, category, length, color, prio) {
     return /*html*/ `<div class="task" draggable="true" onclick="showThisTask(${num})">
   <div class="taskCategoryView" style="background-color: ${color}">${category}</div>
   <p class="taskTitle">${title}</p>
@@ -10,15 +10,7 @@ function taskings(num, title, description, category, length, color) {
     <p>0/${length}</p> 
   </div>
   <div id="taskUser${num}" class="taskUser">
-    <div class="contact--left__UserAvatar margin-10r" style="background-color: #a0a311 !Important">
-      <span class="contact-initials">SE</span>
-    </div>
-    <div class="contact--left__UserAvatar margin-10r d-none" style="background-color: #a0a311 !Important">
-      <span class="contact-initials">SE</span>
-    </div>
-    <div class="contact--left__UserAvatar margin-10r d-none" style="background-color: #a0a311 !Important">
-      <span class="contact-initials">SE</span>
-    </div>
+    
   </div>
 </div>`;
 }
