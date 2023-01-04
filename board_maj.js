@@ -115,6 +115,7 @@ function renderTask() {
         const testTasks = allTasks[i];
         renderSubtasks(i);
         chooseColor(i);
+        userPrio(i);
         todo.innerHTML += taskings(
             i,
             testTasks.title,
@@ -136,6 +137,16 @@ function renderBarTitle() {
         let bar = document.getElementById(barID);
         bar.innerHTML = "";
         bar.innerHTML += barTitle(barName);
+    }
+}
+
+function userPrio(num) {
+    if (allTasks[num].prio == "urgent") {
+        priority = urgent;
+    } else if (allTasks[num].prio == "medium") {
+        priority = medium
+    } else {
+        priority = low
     }
 }
 

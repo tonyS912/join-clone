@@ -9,15 +9,17 @@ function taskings(num, title, description, category, length, color, prio) {
     </div>
     <p>0/${length}</p> 
   </div>
+  <div class="userTab">
   <div id="taskUser${num}" class="taskUser">
     
   </div>
+  <img style="padding-top: 20px;" src="${prio}">
+</div>
 </div>`;
 }
 
-
 function barTitle(title) {
-  return /*html*/ `<div class="column_header">
+    return /*html*/ `<div class="column_header">
   <h4 class="heading">${title}</h4>
   <div
       class="plus_icon"
@@ -27,7 +29,7 @@ function barTitle(title) {
 }
 
 function taskUser(initials, color) {
-  return /*html*/ `<div class="contact--left__UserAvatar margin-10r" style="background-color: #${color} !Important">
+    return /*html*/ `<div class="contact--left__UserAvatar margin-10r" style="background-color: #${color} !Important">
   <span class="contact-initials">${initials}</span>
 </div>`;
 }

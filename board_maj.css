@@ -480,3 +480,10 @@ button{
 .paddingL20 {
     padding-left: 20px;
 }
+
+.userTab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 25px;
+}
