@@ -315,3 +315,49 @@ button{
 .d-none{
     display: none;
 }
+
+
+/**responsiv**/
+
+@media (max-width : 770px){
+    .remember-password{
+        margin-bottom: 10px;
+    }
+    .forgot-password{
+        margin-bottom: 12px;
+    }
+    .password-note{
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-left: 32px;
+    }
+    .signup-btn{
+        margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 37px;
+    top: unset;
+    }
+    .login-box{
+        height: 556px;
+    width: 505px;
+    }
+    .form-style{
+        height: 47px;
+    width: 334px;
+    margin-bottom: 40px;
+    }
+    .login-btns{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+    .login-btns button{
+        margin: 0;
+    margin-bottom: 22px;
+    }
+    .logo{
+        width: 120px;
+    height: 102px;
+    }
+}
