@@ -141,12 +141,15 @@ function renderBarTitle() {
 }
 
 function userPrio(num) {
-    if (allTasks[num].prio == "urgent") {
-        priority = urgent;
-    } else if (allTasks[num].prio == "medium") {
-        priority = medium
-    } else {
-        priority = low
+    switch (allTasks[num].prio) {
+        case "urgent":
+            priority = urgent;
+            break;
+        case "medium":
+            priority = medium;
+            break;
+        default:
+            priority = low;
     }
 }
 
