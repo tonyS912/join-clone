@@ -1,4 +1,5 @@
-let CONTACTS = [["8942e28a-4448-4c07-9ee9-0ae04e32557e", "Hans Peter", "hans@peter.foo", "01601023123", "f0a311"], ["8942e28a-3442-4c07-9ee9-0ae04e32557e", "Senior Erpel", "erpel@teasd.de", "01601022343123", "d0a311"]]; // [UUID, name, email, phone, color]
+let CONTACTS = [];
+let CONTACTSPARSED = [];
 let renderedhtml = "";
 
 // CSS Classes Manipulation
@@ -47,6 +48,19 @@ function pushNewContact() {
     syncContactsToServer();
 }
 
+function contactsJsonToArray() {
+    for (let i = 0; i < CONTACTSPARSED.length; i++) {
+        let contactString = JSON.stringify(CONTACTSPARSED[i]);
+        let contactsParsed = JSON.parse(contactString)
+        let contactUuid = contactsParsed['uuid'];
+        let contactName = contactsParsed['name'];
+        let contactEmail = contactsParsed['email'];
+        let contactPhone = contactsParsed['phone'];
+        let contactColor = contactsParsed['color'];
+        CONTACTS.push([contactUuid, contactName, contactEmail, contactPhone, contactColor]);
+    };
+}
+
 
 function arrayToJson() {
     let CONTACTSJSON = [];
@@ -81,22 +95,19 @@ function createContactUUID() {
     });
 }
 
-function syncContactsToServer() {
+async function syncContactsToServer() {
     // Sync Contact Array to Server DB
     setURL('https://gruppe-384.developerakademie.net/smallest_backend_ever');
-    render();
-    console.log("Server Sync triggered");
     pushContacts();
+    await render();
 }
 
 async function pushContacts() {
     const ParsedJson = arrayToJson()
-    console.log(ParsedJson);
     await backend.setItem('contacts', JSON.stringify(ParsedJson));
 }
 
 function renderSingleContactCard(uuid) {
-    console.log(uuid);
     let contactColor = "";
     let contactName = "";
     let contactEmail = "";
@@ -106,7 +117,6 @@ function renderSingleContactCard(uuid) {
             contactName = CONTACTS[i][1]
             contactEmail = CONTACTS[i][2]
             contactColor = CONTACTS[i][4]
-            console.log(contactColor);
         }
     }
 
@@ -129,6 +139,18 @@ function renderLeft(uuid) {
     renderedHtmlTemp = renderSingleContactCard(uuid);
     renderedhtml += renderedHtmlTemp;
     document.getElementById('id-contacts--card').innerHTML = renderedhtml;
+}
+
+async function getContactsFromDb() {
+    setURL('https://gruppe-384.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    CONTACTSPARSED = await JSON.parse(backend.getItem('contacts')) || [];
+    contactsJsonToArray();
+}
+
+async function startupContacts() {
+    await getContactsFromDb();
+    render();
 }
 
 function render() {
