@@ -22,7 +22,7 @@ function dragandDrop() {
 
     draggables.forEach((task) => {
         task.addEventListener("dragstart", () => {
-            task.classList.add("is-dragging"); // Add a custom class to the element being dragged to give it some visual styling
+            task.classList.add("is-dragging"); // Add a custom class to the task being dragged to give it some visual styling
         });
         task.addEventListener("dragend", () => {
             task.classList.remove("is-dragging");
@@ -156,8 +156,8 @@ function userPrio(num) {
 function chooseColor(num) {
     let cat = allTasks[num].category;
     for (let i = 0; i < category.length; i++) {
-        const element = category[i];
-        if (cat == element) {
+        const task = category[i];
+        if (cat == task) {
             choosenCatColor = catColor[choosenColor[i]];
         }
     }
@@ -181,7 +181,7 @@ function showSubtasks(num) {
 /**
  * TODO - need to be updated after checkbox.checked
  */
-function updateSubtasks() {}
+function updateSubtasks() { }
 
 function showAddTaskForm() {
     let addTask_overlap = document.getElementById("addTask_overlap");
@@ -214,8 +214,8 @@ function renderUsers(num) {
 }
 
 function showThisTask(num) {
-  document.getElementById("taskDetail").classList.remove("d-none");
-  document.getElementById("taskDetails").classList.remove("d-none");
+    document.getElementById("taskDetail").classList.remove("d-none");
+    document.getElementById("taskDetails").classList.remove("d-none");
 }
 
 function closePopUp() {
@@ -223,7 +223,7 @@ function closePopUp() {
     document.getElementById("taskDetails").classList.add("d-none");
 }
 
-function renderTaskDetails(num) {}
+function renderTaskDetails(num) { }
 
 function closeWindow() {
     let addTask_overlap = document.getElementById("addTask_overlap");
@@ -232,4 +232,20 @@ function closeWindow() {
 
 function doNotCloseWindow(event) {
     event.stopPropagation();
+}
+
+
+function findTask() {
+    let search = document.getElementById('searched_input').value;
+    search = search.toLowerCase().trim();
+    const boardTasks = document.querySelectorAll(".task"); 
+    for (let j = 0; j < boardTasks.length; j++) {
+        const div = boardTasks[j];
+        const pElement = div.querySelector("p");
+        if (pElement.innerHTML.includes(search)) {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+    }
 }
