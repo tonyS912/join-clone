@@ -242,7 +242,8 @@ function findTask() {
     for (let j = 0; j < boardTasks.length; j++) {
         const div = boardTasks[j];
         const pElement = div.querySelector("p");
-        if (pElement.innerHTML.includes(search)) {
+        let P_innerHTML = pElement.innerHTML.toLowerCase();
+        if (P_innerHTML.includes(search)) {
             div.style.display = "block";
         } else {
             div.style.display = "none";
