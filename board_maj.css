@@ -487,3 +487,20 @@ button{
     align-items: center;
     padding-right: 25px;
 }
+
+.editIcon{
+    position: absolute;
+    right: 52px;
+    bottom: 35px;
+}
+
+.editIcon img{
+    background: #2a3647;
+    border-radius: 10px;
+}
+
+.closeIcon{
+    position: absolute;
+    top: 19px;
+    right: 17px;
+}

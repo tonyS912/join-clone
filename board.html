@@ -28,11 +28,21 @@
     <body onload="loadTasks()">
         <div id="taskDetail" class="pop-up d-none" onclick="closePopUp()"></div>
         <div class="window d-none" id="taskDetails">
+            <div class="closeIcon" onclick="closePopUp()">
+                <img src="assets/img/close.svg" alt="" style="height: 36px;">
+            </div>
             <div class="taskCategoryView catPopUp" style="background-color: orange">Coding</div>
             <h4 class="popUpHeadline">Title text</h4>
             <span class="text">w oeuihoweh ofiwejh eofiwoie hfowe jhfoiu whei fhbweiouhiouwf hieuhfwiouehu fiuweh fiuweh </span>
             <div style="display: flex;"><p class="text bold">Due Date:</p><p class="text paddingL20">2022-08-21</p></div>
+            <div style="display: flex;">
+                <p class="text bold"> Priority:</p>
+            </div>
+            <div class="editIcon" onclick="editCurrentTask()">
+                <img src="assets/img/pencil.svg" alt="">
+            </div>
         </div>
+        
         
         <div class="webpage">
             <section class="left">
@@ -406,3 +416,4 @@
         </div>
     </body>
 </html>
+
