@@ -5,16 +5,16 @@ let subtasksLength = "";
 const urgent = "./assets/img/arrows-up.svg";
 const medium = "./assets/img/equal-sign.svg";
 const low = "./assets/img/arrows-down.svg";
-const catColor = [
-    "#8AA4FF",
-    "#FF0000",
-    "#2AD300",
-    "#FF8A00",
-    "#E200BE",
-    "#0038FF",
-];
+// const catColor = [
+//     "#8AA4FF",
+//     "#FF0000",
+//     "#2AD300",
+//     "#FF8A00",
+//     "#E200BE",
+//     "#0038FF",
+// ];
 let choosenCatColor = "";
-let priority = "";
+// let priority = "";
 
 function dragandDrop() {
     const draggables = document.querySelectorAll(".task");
@@ -103,32 +103,26 @@ function readPosition() {
     }
 }
 
-
 /**
  * render Tasks with subtasks
  */
 function renderTask(section, testTasks, i) {
     let todo = document.getElementById(`${section}`);
-    //todo.innerHTML = "";
-    //todo.innerHTML += barTitle(barNames[0]);
-
-    // for (let i = 0; i < allTasks.length; i++) {
-    //     const testTasks = allTasks[i];
-        renderSubtasks(i);
-        chooseColor(i);
-        userPrio(i);
-        todo.innerHTML += taskings(
-            i,
-            testTasks.title,
-            testTasks.description,
-            testTasks.category,
-            subtasksLength,
-            choosenCatColor,
-            prio = priority
-        );
-        showSubtasks(i); //Shows Subtask if subtask are in the array
-        renderUsers(i); //Shows user they invited for this task
-    //}
+    
+    renderSubtasks(i);
+    chooseColor(i);
+    userPrio(i);
+    todo.innerHTML += taskings(
+        i,
+        testTasks.title,
+        testTasks.description,
+        testTasks.category,
+        subtasksLength,
+        choosenCatColor,
+        prio = priority
+    );
+    showSubtasks(i); //Shows Subtask if subtask are in the array
+    renderUsers(i); //Shows user they invited for this task
 }
 
 function renderBarTitle() {
@@ -187,7 +181,6 @@ function updateSubtasks() { }
 function showAddTaskForm() {
     let addTask_overlap = document.getElementById("addTask_overlap");
     addTask_overlap.classList.remove("d-none");
-    console.log("klick");
 }
 
 /**

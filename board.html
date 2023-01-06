@@ -16,6 +16,9 @@
         <script src="/board_maj.js" defer></script>
         <script src="./assets/js/task_template.js"></script>
         <script src="./assets/js/add_task.js"></script>
+        <script src="./assets/js/add_task_dropdown.js"></script>
+        <script src="./assets/js/add_task_dynamic_html.js"></script>
+        <script src="./assets/js/add_task_overview.js"></script>
         <script src="./assets/js/summary.js"></script>
         <script src="./assets/js/board-popup.js"></script>
         <script src="./assets/js/mini_backend.js"></script>
@@ -137,192 +140,222 @@
                                 <h1>Add Task</h1>
                             </div>
                             <div onsubmit="addTask()" class="input-container">
-                                <div class="left-container">
-                                    <div>
-                                        <h4 class="size light title">Title</h4>
-                                        <input
-                                            id="title"
-                                            class="title-input size light"
-                                            type="text"
-                                            placeholder="Enter a title"
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <h4 class="size light title">
-                                            Description
-                                        </h4>
-                                        <textarea
-                                            class="size light description-area"
-                                            name="description"
-                                            id="description"
-                                            placeholder="Enter a Description"
-                                            required
-                                        ></textarea>
-                                    </div>
-                                    <div>
-                                        <h4 class="size light title">
-                                            Category
-                                        </h4>
-                                        <button
-                                            onclick="expandCategory()"
-                                            id="category"
-                                            class="size light category-btn btn"
-                                        >
-                                            Select task Category
-                                            <img
-                                                class="popup-arrow"
-                                                src="./assets/img/dropdown-arrow.svg"
-                                            />
-                                        </button>
-                                        <ul
-                                            id="category-list"
-                                            class="d-none list-height list size light category-list"
-                                        ></ul>
-                                        <div
-                                            id="newCategory"
-                                            class="left-width d-none"
-                                        >
+                                <div onsubmit="addTask()" class="input-container">
+                                    <div class="left-container">
+                                        <form>
+                                            <h4 class="size light title">Title</h4>
                                             <input
-                                                id="categoryName"
+                                                id="title"
                                                 class="title-input size light"
                                                 type="text"
-                                                placeholder="New category name"
-                                                required=""
-                                            />
-                                            <img
-                                                onclick="deleteCat()"
-                                                class="cross"
-                                                src="./assets/img/cross.svg"
-                                            /><img
-                                                id="addCat"
-                                                onclick="addCat()"
-                                                class="newCategory"
-                                                src="./assets/img/newCategory.svg"
-                                            />
-                                            <div
-                                                id="colorCode"
-                                                class="colorCode"
-                                            ></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="size light title">
-                                            Assigned to
-                                        </h4>
-                                        <button
-                                            class="size light category-btn btn"
-                                        >
-                                            Select contacts to assign
-                                            <img
-                                                class="popup-arrow"
-                                                src="./assets/img/dropdown-arrow.svg"
-                                            />
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="right-container">
-                                    <div>
-                                        <div>
-                                            <h4 class="size light title">
-                                                Due date
-                                            </h4>
-                                            <input
-                                                onchange="dateChecker()"
-                                                class="size light title-input"
-                                                type="date"
-                                                name=""
-                                                id="dueDate"
-                                                placeholder="dd/mm/yyyy"
+                                                placeholder="Enter a title"
                                                 required
                                             />
+                                        </form>
+                                        <form>
+                                            <h4 class="size light title">
+                                                Description
+                                            </h4>
+                                            <textarea
+                                                class="size light description-area"
+                                                name="description"
+                                                id="description"
+                                                placeholder="Enter a Description"
+                                                required
+                                            ></textarea>
+                                        </form>
+                                        <div style="width: 426px;">
+                                            <h4 class="size light title">Category</h4>
+                                            <div
+                                                onclick="expandMenu(this.id)"
+                                                id="category"
+                                                class="size light cat-btn btn"
+                                                type="button"
+                                            >
+                                                Select task Category
+                                                <img
+                                                    class="popup-arrow"
+                                                    src="./assets/img/dropdown-arrow.svg"
+                                                />
+                                            </div>
+                                            <ul
+                                                id="category-list"
+                                                class="d-none list-height list size light category-list"
+                                            ></ul>
+                                            <div
+                                                id="new-category"
+                                                class="left-width d-none"
+                                            >
+                                                <input
+                                                    id="categoryName"
+                                                    class="title-input size light"
+                                                    type="text"
+                                                    placeholder="New category name"
+                                                    required=""
+                                                />
+                                                <img
+                                                    onclick="deleteCat()"
+                                                    class="cross"
+                                                    src="./assets/img/cross.svg"
+                                                /><img
+                                                    id="addCat"
+                                                    onclick="addCat()"
+                                                    class="newCategory"
+                                                    src="./assets/img/newCategory.svg"
+                                                />
+                                                <div
+                                                    id="colorCode"
+                                                    class="colorCode"
+                                                ></div>
+                                            </div>
                                         </div>
                                         <div>
                                             <h4 class="size light title">
-                                                Prio
+                                                Assigned to
                                             </h4>
-                                            <div class="prio-btns">
-                                                <button
-                                                    onclick="switchBackground('urgent')"
-                                                    class="size light btn prio"
-                                                    id="urgent"
-                                                >
-                                                    Urgent
-                                                    <img
-                                                        src="./assets/img/arrows-up.svg"
-                                                        class=""
-                                                    />
-                                                </button>
-                                                <button
-                                                    onclick="switchBackground('medium')"
-                                                    class="size light btn prio"
-                                                    id="medium"
-                                                >
-                                                    Medium
-                                                    <img
-                                                        src="./assets/img/equal-sign.svg"
-                                                        class=""
-                                                    />
-                                                </button>
-                                                <button
-                                                    onclick="switchBackground('low')"
-                                                    class="size light btn prio"
-                                                    id="low"
-                                                >
-                                                    Low
-                                                    <img
-                                                        src="./assets/img/arrows-down.svg"
-                                                        class=""
-                                                    />
-                                                </button>
+                                            <button
+                                                onclick="expandMenu(this.id)"
+                                                id="assigne" 
+                                                class="size light category-btn btn">
+                                                Select contacts to assign
+                                                <img
+                                                    class="popup-arrow"
+                                                    src="./assets/img/dropdown-arrow.svg"
+                                                />
+                                            </button>
+                                            <ul
+                                                id="assigne-list"
+                                                class="d-none list-height list size light category-list"
+                                            ></ul>
+                                            <div
+                                                id="new-assigne"
+                                                class="left-width d-none"
+                                            >
+                                                <input
+                                                    id="categoryName"
+                                                    class="title-input size light"
+                                                    type="text"
+                                                    placeholder="Contact email"
+                                                    required=""
+                                                />
+                                                <img
+                                                    onclick=""
+                                                    class="cross"
+                                                    src="./assets/img/cross.svg"
+                                                /><img
+                                                    id="addCat"
+                                                    onclick=""
+                                                    class="newCategory"
+                                                    src="./assets/img/newCategory.svg"
+                                                />
+                                            </div>
+                                            <div class="avatar" id="avatar">
+                                                
                                             </div>
                                         </div>
-                                        <div style="margin-bottom: 12px">
-                                            <h4 class="size light title">
-                                                Subtasks
-                                            </h4>
-                                            <input
-                                                id="subtaskName"
-                                                class="title-input size light"
-                                                type="text"
-                                                placeholder="Add new subtask"
-                                            />
-                                            <img
-                                                onclick="addSubtask()"
-                                                class="subtask-img"
-                                                src="./assets/img/plus_2.svg"
-                                            />
+                                    </div>
+                                    <div class="left-container">
+                                        <div>
+                                            <form>
+                                                <h4 class="size light title">
+                                                    Due date
+                                                </h4>
+                                                <input
+                                                    class="size light title-input"
+                                                    type="date"
+                                                    name=""
+                                                    id="dueDate"
+                                                    placeholder="dd/mm/yyyy"
+                                                    required
+                                                    min=""
+                                                    onclick="dateChecker()"
+                                                />
+                                            </form>
+                                            <div >
+                                                <h4 class="size light title">Prio</h4>
+                                                <div class="prio-btns">
+                                                    <button
+                                                        onclick="switchBackground('urgent')"
+                                                        class="size light btn prio"
+                                                        id="urgent"
+                                                    >
+                                                        Urgent
+                                                        <img
+                                                            src="./assets/img/arrows-up.svg"
+                                                            class=""
+                                                        />
+                                                    </button>
+                                                    <button
+                                                        onclick="switchBackground('medium')"
+                                                        class="size light btn prio"
+                                                        id="medium"
+                                                    >
+                                                        Medium
+                                                        <img
+                                                            src="./assets/img/equal-sign.svg"
+                                                            class=""
+                                                        />
+                                                    </button>
+                                                    <button
+                                                        onclick="switchBackground('low')"
+                                                        class="size light btn prio"
+                                                        id="low"
+                                                    >
+                                                        Low
+                                                        <img
+                                                            src="./assets/img/arrows-down.svg"
+                                                            class=""
+                                                        />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div style="margin-bottom: 12px">
+                                                <h4 class="size light title">
+                                                    Subtasks
+                                                </h4>
+                                                <input
+                                                    id="subtaskName"
+                                                    class="title-input size light"
+                                                    type="text"
+                                                    placeholder="Add new subtask"
+                                                />
+                                                <img
+                                                    onclick="addSubtask()"
+                                                    class="subtask-img"
+                                                    src="./assets/img/plus_2.svg"
+                                                />
+                                            </div>
+                                            <div
+                                                class="subtaskArea"
+                                                id="subtasks"
+                                            ></div>
                                         </div>
                                         <div
-                                            class="subtaskArea"
-                                            id="subtasks"
-                                        ></div>
-                                    </div>
-                                    <div
-                                        class="btn-box"
-                                        id="id-contacts--addContact__rightBox--unten"
-                                    >
-                                        <button
-                                            class="size regul window-btn transp"
-                                            type="submit"
-                                            onclick="closeWindow()"
+                                            class="btn-box"
+                                            id="id-contacts--addContact__rightBox--unten"
                                         >
-                                            Cancel
-                                            <img
-                                                class="padding-10"
-                                                src="/assets/img/close2.svg"
-                                            />
-                                        </button>
-                                        <button
-                                            class="size regul window-btn ok-btn"
-                                            type="submit"
-                                            onclick="addingTask()"
-                                        >
-                                            Add Task<img
-                                                class="padding-10"
-                                                src="/assets/img/create.png"
-                                            />
-                                        </button>
+                                            <button
+                                                class="size regul window-btn transp"
+                                                type="submit"
+                                                onclick="removeTasks()"
+                                            >
+                                                Cancel
+                                                <img
+                                                    class="padding-10"
+                                                    src="/assets/img/close2.svg"
+                                                />
+                                            </button>
+                                            <button
+                                                class="size regul window-btn ok-btn"
+                                                type="submit"
+                                                onclick="addingTask()"
+                                            >
+                                                Add Task<img
+                                                    class="padding-10"
+                                                    src="/assets/img/create.png"
+                                                />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
