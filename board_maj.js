@@ -63,9 +63,15 @@ const insertAboveTask = (zone, mouseY) => {
             closestTask = task;
         }
     });
-
     return closestTask;
 };
+
+async function updateTask(id) {
+    const pos = document.getElementById(`${id}`).parentNode.id;
+    allTasks[id].position = `${pos}`;
+    await saveTasksInBackend();
+    await loadTasksFromBackend();
+}
 
 async function loadTasksFromBackend() {
     setURL("https://gruppe-384.developerakademie.net/smallest_backend_ever");
@@ -78,41 +84,36 @@ async function loadTasksFromBackend() {
         "Marketing",
         "Coding",
     ];
-    users = JSON.parse(backend.getItem("contacts")) || [
-        {
-            uuid: "8942e28a-4448-4c07-9ee9-0ae04e32557e",
-            name: "Hans Peter",
-            email: "hans@peter.foo",
-            phone: "01601023123",
-            color: "00d311",
-        },
-        {
-            uuid: "8942e28a-3442-4c07-9ee9-0ae04e32557e",
-            name: "Senior Erpel",
-            email: "erpel@teasd.de",
-            phone: "01601022343123",
-            color: "a0abf1",
-        },
-    ];
+    users = JSON.parse(backend.getItem("contacts")) || [];
 }
 
 async function loadTasks() {
     await loadTasksFromBackend();
     renderBarTitle();
-    renderTask();
+    readPosition();
     dragandDrop();
 }
+
+function readPosition() {
+    for (i = 0; i < allTasks.length; i++) {
+        const section = allTasks[i].position;
+        const task = allTasks[i];
+
+        renderTask(section, task, i);
+    }
+}
+
 
 /**
  * render Tasks with subtasks
  */
-function renderTask() {
-    let todo = document.getElementById("todo");
+function renderTask(section, testTasks, i) {
+    let todo = document.getElementById(`${section}`);
     //todo.innerHTML = "";
     //todo.innerHTML += barTitle(barNames[0]);
 
-    for (let i = 0; i < allTasks.length; i++) {
-        const testTasks = allTasks[i];
+    // for (let i = 0; i < allTasks.length; i++) {
+    //     const testTasks = allTasks[i];
         renderSubtasks(i);
         chooseColor(i);
         userPrio(i);
@@ -127,7 +128,7 @@ function renderTask() {
         );
         showSubtasks(i); //Shows Subtask if subtask are in the array
         renderUsers(i); //Shows user they invited for this task
-    }
+    //}
 }
 
 function renderBarTitle() {

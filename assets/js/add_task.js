@@ -40,6 +40,7 @@ function saveTaskInfo() {
         dueDate: dueDate,
         subtasks: subtasks,
         assignes : assigne,
+        position : "todo"
     };
 }
 
