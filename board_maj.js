@@ -108,7 +108,7 @@ function readPosition() {
  */
 function renderTask(section, testTasks, i) {
     let todo = document.getElementById(`${section}`);
-    
+
     renderSubtasks(i);
     chooseColor(i);
     userPrio(i);
@@ -210,7 +210,28 @@ function renderUsers(num) {
 function showThisTask(num) {
     document.getElementById("taskDetail").classList.remove("d-none");
     document.getElementById("taskDetails").classList.remove("d-none");
+    renderCurTask(allTasks[num]);
 }
+
+function renderCurTask(curTask) {
+    document.getElementById('category').innerHTML = curTask['category'];
+    document.getElementById('title').innerHTML = curTask['title'];
+    document.getElementById('description').innerHTML = curTask['description'];
+    document.getElementById('date').innerHTML = curTask['dueDate'];
+    document.getElementById('prio').innerHTML = curTask['prio'];
+    renderAssignes(curTask);
+}
+
+function renderAssignes(curTask){
+    for (let i = 1; i <= 3; i++) {
+        if (curTask['assignes'] && curTask['assignes'][i - 1]) {
+            document.getElementById(`assign${i}`).innerHTML = curTask['assignes'][i - 1];
+        } else {
+            document.getElementById(`assign${i}`).innerHTML = '';
+        }
+    }
+}
+
 
 function closePopUp() {
     document.getElementById("taskDetail").classList.add("d-none");
@@ -232,7 +253,7 @@ function doNotCloseWindow(event) {
 function findTask() {
     let search = document.getElementById('searched_input').value;
     search = search.toLowerCase().trim();
-    const boardTasks = document.querySelectorAll(".task"); 
+    const boardTasks = document.querySelectorAll(".task");
     for (let j = 0; j < boardTasks.length; j++) {
         const div = boardTasks[j];
         const pElement = div.querySelector("p");

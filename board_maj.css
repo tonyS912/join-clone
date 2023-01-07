@@ -499,6 +499,14 @@ button{
     border-radius: 10px;
 }
 
+#prio{
+    margin-left: 20px;
+}
+.assignes{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .closeIcon{
     position: absolute;
     top: 19px;
