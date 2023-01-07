@@ -223,7 +223,7 @@ function renderCurTask(curTask) {
 }
 
 function renderAssignes(curTask){
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= curTask['assignes'].length; i++) {
         if (curTask['assignes'] && curTask['assignes'][i - 1]) {
             document.getElementById(`assign${i}`).innerHTML = curTask['assignes'][i - 1];
         } else {
