@@ -53,11 +53,77 @@
             <div class="assignes" style="display: flex;">
             </div>
         </div>
-        <div class="editIcon" onclick="editCurrentTask(id)">
+        <div class="editIcon" id="edit-btn">
             <img src="assets/img/pencil.svg" alt="">
         </div>
     </div>
+    <div onsubmit="editTask()" class="input-container d-none window" style="overflow: auto;" id="editTaskWindow">
+        <div class="left-container">
+            <form>
+                <h4 class="size light title">Title</h4>
+                <input id="editTitle" class="title-input size light" type="text"  required="">
+            </form>
+            <form>
+                <h4 class="size light title">
+                    Description
+                </h4>
+                <textarea class="size light description-area" name="description" id="editDescription" placeholder="Enter a Description" required=""></textarea>
+            </form>
+            
+            <div>
+                <h4 class="size light title">
+                    Assigned to
+                </h4>
+                <button onclick="expandMenu(this.id)" id="assigne" class="size light category-btn btn">
+                    Select contacts to assign
+                    <img class="popup-arrow" src="./assets/img/dropdown-arrow.svg">
+                </button>
+                <ul id="assigne-list" class="d-none list-height list size light category-list">
+                </ul>
+                <div id="new-assigne" class="left-width d-none">
+                    <input id="categoryName" class="title-input size light" type="text" placeholder="Contact email" required="">
+                    <img onclick="" class="cross" src="./assets/img/cross.svg"><img id="addCat" onclick="" class="newCategory" src="./assets/img/newCategory.svg">
+                </div>
+                <div class="avatar" id="avatar">
 
+                </div>
+            </div>
+        </div>
+        <div class="left-container">
+            <div>
+                <form>
+                    <h4 class="size light title">
+                        Due date
+                    </h4>
+                    <input class="size light title-input" type="date" name="" id="editDate" placeholder="dd/mm/yyyy" required="" min="" onclick="dateChecker()">
+                </form>
+                <div>
+                    <h4 class="size light title">Prio</h4>
+                    <div class="prio-btns">
+                        <button onclick="switchBackground('urgent')" class="size light btn prio" id="urgent">
+                            Urgent
+                            <img src="./assets/img/arrows-up.svg" class="">
+                        </button>
+                        <button onclick="switchBackground('medium')" class="size light btn prio" id="medium">
+                            Medium
+                            <img src="./assets/img/equal-sign.svg" class="">
+                        </button>
+                        <button onclick="switchBackground('low')" class="size light btn prio" id="low">
+                            Low
+                            <img src="./assets/img/arrows-down.svg" class="">
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="btn-box" id="id-contacts--addContact__rightBox--unten">
+                
+                <button class="size regul window-btn ok-btn" type="submit" onclick="addingTask()">
+                    Ok<img class="padding-10" src="/assets/img/create.png">
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="webpage">
         <section class="left">

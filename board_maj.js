@@ -220,8 +220,23 @@ function renderCurTask(curTask) {
     document.getElementById('date').innerHTML = curTask['dueDate'];
     document.getElementById('prio').innerHTML = curTask['prio'];
     renderAssignes(curTask);
+    editCurTask(curTask);
 }
 
+function editCurTask(curTask) {
+    document.getElementById('edit-btn').onclick = function () {
+        document.getElementById('editTaskWindow').classList.remove('d-none');
+        document.getElementById("taskDetails").classList.add("d-none");
+        renderEditTaskForm(curTask);
+    }
+}
+
+function renderEditTaskForm(curTask) {
+    document.getElementById('editTitle').value = curTask['title'];
+    document.getElementById('editDescription').value = curTask['description'];
+    document.getElementById('editDate').value = curTask['dueDate'];
+    console.log('valueText', curTask['title']);
+}
 
 //nur so viele <p>-Tags werden generiert, wie im curTask['assignes']-Array enthalten sind
 function renderAssignes(curTask) {
@@ -230,18 +245,19 @@ function renderAssignes(curTask) {
     container.innerHTML = '';  // Clear any existing paragraphs
 
     for (let i = 0; i < curTask['assignes'].length; i++) {
-      const newP = p.cloneNode();
-      newP.id = `assign${i}`;
-      newP.innerHTML = curTask['assignes'][i];
-      newP.classList.add('text', 'paddingL20');
-      container.appendChild(newP);
+        const newP = p.cloneNode();
+        newP.id = `assign${i}`;
+        newP.innerHTML = curTask['assignes'][i];
+        newP.classList.add('text', 'paddingL20');
+        container.appendChild(newP);
     }
-  }
+}
 
-  
+
 function closePopUp() {
     document.getElementById("taskDetail").classList.add("d-none");
     document.getElementById("taskDetails").classList.add("d-none");
+    document.getElementById("editTaskWindow").classList.add("d-none");
 }
 
 function renderTaskDetails(num) { }
