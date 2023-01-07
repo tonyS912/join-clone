@@ -222,17 +222,23 @@ function renderCurTask(curTask) {
     renderAssignes(curTask);
 }
 
-function renderAssignes(curTask){
-    for (let i = 1; i <= curTask['assignes'].length; i++) {
-        if (curTask['assignes'] && curTask['assignes'][i - 1]) {
-            document.getElementById(`assign${i}`).innerHTML = curTask['assignes'][i - 1];
-        } else {
-            document.getElementById(`assign${i}`).innerHTML = '';
-        }
+
+//nur so viele <p>-Tags werden generiert, wie im curTask['assignes']-Array enthalten sind
+function renderAssignes(curTask) {
+    const container = document.querySelector('.assignes');
+    const p = document.createElement('p');
+    container.innerHTML = '';  // Clear any existing paragraphs
+
+    for (let i = 0; i < curTask['assignes'].length; i++) {
+      const newP = p.cloneNode();
+      newP.id = `assign${i}`;
+      newP.innerHTML = curTask['assignes'][i];
+      newP.classList.add('text', 'paddingL20');
+      container.appendChild(newP);
     }
-}
+  }
 
-
+  
 function closePopUp() {
     document.getElementById("taskDetail").classList.add("d-none");
     document.getElementById("taskDetails").classList.add("d-none");
