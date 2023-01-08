@@ -65,6 +65,7 @@ function clear() {
     document.getElementById("description").value = "";
     document.getElementById("category").innerText = "Select task Category";
     document.getElementById("category").innerHTML += addImg();
+    miniMenu("assigne");
     backgroundOff(priority);
     document.getElementById("dueDate").value = "";
     document.getElementById("subtaskName").value = "";

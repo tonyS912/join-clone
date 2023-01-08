@@ -103,6 +103,12 @@ function renderTask(section, testTasks, i) {
     renderSubtasks(i);
     chooseColor(i);
     userPrio(i);
+    innerHTMLCheck(todo, testTasks);
+    showSubtasks(i); //Shows Subtask if subtask are in the array
+    renderUsers(i); //Shows user they invited for this task
+}
+
+function innerHTMLCheck(todo, testTasks) {
     todo.innerHTML += taskings(
         i,
         testTasks.title,
@@ -112,8 +118,6 @@ function renderTask(section, testTasks, i) {
         choosenCatColor,
         prio = priority
     );
-    showSubtasks(i); //Shows Subtask if subtask are in the array
-    renderUsers(i); //Shows user they invited for this task
 }
 
 function renderBarTitle() {
@@ -219,6 +223,7 @@ function renderCurTask(curTask) {
     document.getElementById('description').innerHTML = curTask['description'];
     document.getElementById('date').innerHTML = curTask['dueDate'];
     document.getElementById('prio').innerHTML = curTask['prio'];
+    //document.getElementById('prio').innerHTML += /*html*/ `<img src="./assets/img/arrows-down.svg" class="paddingL20">`;
     renderAssignes(curTask);
     editCurTask(curTask);
 }
