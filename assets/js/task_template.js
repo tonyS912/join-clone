@@ -33,3 +33,9 @@ function taskUser(initials, color) {
   <span class="contact-initials">${initials}</span>
 </div>`;
 }
+
+function taskUserwithName(initials, color, name) {
+  return /*html*/ `<div style="display: flex;align-items: center;"><div class="contact--left__UserAvatar2 margin-10r" style="background-color: #${color} !Important">
+  <span class="contact-initials">${initials}</span>
+</div><p id="assign0" class="text">${name}</p></div>`;
+}

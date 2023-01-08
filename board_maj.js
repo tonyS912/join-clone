@@ -5,16 +5,7 @@ let subtasksLength = "";
 const urgent = "./assets/img/arrows-up.svg";
 const medium = "./assets/img/equal-sign.svg";
 const low = "./assets/img/arrows-down.svg";
-// const catColor = [
-//     "#8AA4FF",
-//     "#FF0000",
-//     "#2AD300",
-//     "#FF8A00",
-//     "#E200BE",
-//     "#0038FF",
-// ];
 let choosenCatColor = "";
-// let priority = "";
 
 function dragandDrop() {
     const draggables = document.querySelectorAll(".task");
@@ -173,38 +164,47 @@ function showSubtasks(num) {
     }
 }
 
-/**
- * TODO - need to be updated after checkbox.checked
- */
-function updateSubtasks() { }
-
 function showAddTaskForm() {
     let addTask_overlap = document.getElementById("addTask_overlap");
     addTask_overlap.classList.remove("d-none");
 }
 
-/**
- * Render task users
- */
-function assignesInvite(num) {
-    const thisTask = allTasks[num];
-}
-
 function renderUsers(num) {
     let member = document.getElementById(`taskUser${num}`);
     member.innerHTML = "";
+    let counter = 0;
 
     for (let i = 0; i < allTasks[num].assignes.length; i++) {
         const assigne = allTasks[num].assignes[i];
-        for (let j = 0; j < users.length; j++) {
-            const thisUser = users[j];
-            if (thisUser.name == assigne) {
-                let userColor = thisUser.color;
-                let name = assigne.substring(0, 2).toUpperCase();
-                member.innerHTML += taskUser(name, userColor);
-            }
+        if (counter < 2) {
+            renderAllUser(assigne, member);
+            counter++
+        } else if (counter == 2) {
+            renderOnlyTwoUser(member, num);
+            counter++
+        } else if (counter > 3) {
+            break
         }
     }
+}
+
+function renderOnlyTwoUser(member, num) {
+    let number = allTasks[num].assignes.length - 2;
+    let name = `${number}+`
+    let userColor = "000000"
+    member.innerHTML += taskUser(name, userColor);
+}
+
+function renderAllUser(assigne, member) {
+    for (let i = 0; i < users.length; i++) {
+        let thisUser = users[i];
+        if (thisUser.name == assigne) {
+            let userColor = thisUser.color;
+            let name = assigne.substring(0, 2).toUpperCase();
+            member.innerHTML += taskUser(name, userColor);
+        }
+    }
+
 }
 
 function showThisTask(num) {
@@ -241,15 +241,22 @@ function renderEditTaskForm(curTask) {
 //nur so viele <p>-Tags werden generiert, wie im curTask['assignes']-Array enthalten sind
 function renderAssignes(curTask) {
     const container = document.querySelector('.assignes');
-    const p = document.createElement('p');
-    container.innerHTML = '';  // Clear any existing paragraphs
+    container.innerHTML = "";  // Clear any existing paragraphs
 
-    for (let i = 0; i < curTask['assignes'].length; i++) {
-        const newP = p.cloneNode();
-        newP.id = `assign${i}`;
-        newP.innerHTML = curTask['assignes'][i];
-        newP.classList.add('text', 'paddingL20');
-        container.appendChild(newP);
+    for (let i = 0; i < curTask.assignes.length; i++) {
+        const name = curTask.assignes[i];
+        const initials = name.substring(0, 2).toUpperCase();
+        let color = findUserColor(name);
+        container.innerHTML += taskUserwithName(initials, color, name);
+    }
+}
+
+function findUserColor(name) {
+    for (let i = 0; i < users.length; i++) {
+        const userName = users[i].name;
+        if (userName == name) {
+            return color = users[i].color;
+        }
     }
 }
 
@@ -259,8 +266,6 @@ function closePopUp() {
     document.getElementById("taskDetails").classList.add("d-none");
     document.getElementById("editTaskWindow").classList.add("d-none");
 }
-
-function renderTaskDetails(num) { }
 
 function closeWindow() {
     let addTask_overlap = document.getElementById("addTask_overlap");

@@ -512,3 +512,17 @@ button{
     top: 19px;
     right: 17px;
 }
+
+.contact--left__UserAvatar2 {
+    Display: flex;
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+}
