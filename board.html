@@ -33,17 +33,17 @@
         <div class="closeIcon" onclick="closePopUp()">
             <img src="assets/img/close.svg" alt="" style="height: 36px;">
         </div>
-        <div class="taskCategoryView catPopUp" style="background-color: orange" id="category"></div>
-        <h4 class="popUpHeadline" id="title">Title text</h4>
-        <span class="text" id="description">w oeuihoweh ofiwejh eofiwoie hfowe jhfoiu whei fhbweiouhiouwf hieuhfwiouehu
+        <div class="taskCategoryView catPopUp" style="background-color: orange" id="popUp-category"></div>
+        <h4 class="popUpHeadline" id="popUp-title">Title text</h4>
+        <span class="text" id="popUp-description">w oeuihoweh ofiwejh eofiwoie hfowe jhfoiu whei fhbweiouhiouwf hieuhfwiouehu
             fiuweh fiuweh </span>
         <div style="display: flex;">
             <p class="text bold">Due Date:</p>
-            <p class="text paddingL20" id="date">2022-08-21</p>
+            <p class="text paddingL20" id="popUp-date">2022-08-21</p>
         </div>
         <div style="display: flex; align-items: center;">
             <p class="text bold"> Priority:</p>
-            <button class="size light btn prio" id="prio">
+            <button class="size light btn prio" id="popUp-prio">
                 <img src="./assets/img/arrows-down.svg" class="">
             </button>
         </div>
@@ -60,13 +60,13 @@
         <div class="left-container">
             <form>
                 <h4 class="size light title">Title</h4>
-                <input id="editTitle" class="title-input size light" type="text"  required="">
+                <input id="title" class="title-input size light" type="text"  required="">
             </form>
             <form>
                 <h4 class="size light title">
                     Description
                 </h4>
-                <textarea class="size light description-area" name="description" id="editDescription" placeholder="Enter a Description" required=""></textarea>
+                <textarea class="size light description-area" name="description" id="description" placeholder="Enter a Description" required=""></textarea>
             </form>
             
             <div>
@@ -94,7 +94,7 @@
                     <h4 class="size light title">
                         Due date
                     </h4>
-                    <input class="size light title-input" type="date" name="" id="editDate" placeholder="dd/mm/yyyy" required="" min="" onclick="dateChecker()">
+                    <input class="size light title-input" type="date" name="" id="dueDate" placeholder="dd/mm/yyyy" required="" min="" onclick="dateChecker()">
                 </form>
                 <div>
                     <h4 class="size light title">Prio</h4>

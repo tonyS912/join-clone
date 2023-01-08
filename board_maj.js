@@ -218,11 +218,11 @@ function showThisTask(num) {
 }
 
 function renderCurTask(curTask) {
-    document.getElementById('category').innerHTML = curTask['category'];
-    document.getElementById('title').innerHTML = curTask['title'];
-    document.getElementById('description').innerHTML = curTask['description'];
-    document.getElementById('date').innerHTML = curTask['dueDate'];
-    document.getElementById('prio').innerHTML = curTask['prio'];
+    document.getElementById('popUp-category').innerHTML = curTask['category'];
+    document.getElementById('popUp-title').innerHTML = curTask['title'];
+    document.getElementById('popUp-description').innerHTML = curTask['description'];
+    document.getElementById('popUp-date').innerHTML = curTask['dueDate'];
+    document.getElementById('popUp-prio').innerHTML = curTask['prio'];
     //document.getElementById('prio').innerHTML += /*html*/ `<img src="./assets/img/arrows-down.svg" class="paddingL20">`;
     renderAssignes(curTask);
     editCurTask(curTask);
@@ -237,9 +237,9 @@ function editCurTask(curTask) {
 }
 
 function renderEditTaskForm(curTask) {
-    document.getElementById('editTitle').value = curTask['title'];
-    document.getElementById('editDescription').value = curTask['description'];
-    document.getElementById('editDate').value = curTask['dueDate'];
+    document.getElementById('title').value = curTask['title'];
+    document.getElementById('description').value = curTask['description'];
+    document.getElementById('dueDate').value = curTask['dueDate'];
     console.log('valueText', curTask['title']);
 }
 
