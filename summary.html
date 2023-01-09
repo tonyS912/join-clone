@@ -141,7 +141,15 @@
               </div>
               <a class="line_gray"></a>
               <div class="urgent_right">
-                <a>October 16, 2022</a>
+                <a>
+                  <script>
+                    const monthNames = ["January", "February", "March", "April", "May", "June",
+                      "July", "August", "September", "October", "November", "December"
+                    ];
+                    var date = new Date();
+                    document.write(monthNames[date.getMonth()] + " " + date.getDate() + "," + " " + date.getFullYear());
+                  </script>
+                </a>
                 <span>Upcoming Deadline</span>
               </div>
             </div>

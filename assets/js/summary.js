@@ -1,5 +1,6 @@
 var menuIsOpen = false
 
+
 //add background in menu summary
 function summary() { 
     document.getElementById('summary').classList.add('menu_dark');
@@ -98,3 +99,4 @@ function greetUserName() {
         document.getElementById('loggedUserName').innerHTML = 'Guest';
     }
 }
+
