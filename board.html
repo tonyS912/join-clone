@@ -52,21 +52,22 @@
             <div class="assignes" style="overflow-y: auto; height: 270px;">
             </div>
         </div>
+        <div class="taskCategoryView catPopUp d-none" style="background-color: orange" id="edit-category"></div>
         <div class="editIcon" id="edit-btn">
             <img src="assets/img/pencil.svg" alt="">
         </div>
     </div>
-    <div onsubmit="editTask()" class="input-container d-none window" style="overflow: auto;" id="editTaskWindow">
+    <div  class="input-container d-none window" style="overflow: auto;" id="editTaskWindow">
         <div class="left-container">
             <form>
                 <h4 class="size light title">Title</h4>
-                <input id="title" class="title-input size light" type="text"  required="">
+                <input id="edit-title" class="title-input size light" type="text"  required="">
             </form>
             <form>
                 <h4 class="size light title">
                     Description
                 </h4>
-                <textarea class="size light description-area" name="description" id="description" placeholder="Enter a Description" required=""></textarea>
+                <textarea class="size light description-area" name="description" id="edit-description" placeholder="Enter a Description" required=""></textarea>
             </form>
             
             <div>
@@ -94,7 +95,7 @@
                     <h4 class="size light title">
                         Due date
                     </h4>
-                    <input class="size light title-input" type="date" name="" id="dueDate" placeholder="dd/mm/yyyy" required="" min="" onclick="dateChecker()">
+                    <input class="size light title-input" type="date" name="" id="edit-dueDate" placeholder="dd/mm/yyyy" required="" min="" onclick="dateChecker()">
                 </form>
                 <div>
                     <h4 class="size light title">Prio</h4>
@@ -117,7 +118,7 @@
             </div>
             <div class="btn-box" id="id-contacts--addContact__rightBox--unten">
                 
-                <button class="size regul window-btn ok-btn" type="submit" onclick="addingTask()">
+                <button class="size regul window-btn ok-btn" type="submit" id="ok">
                     Ok<img class="padding-10" src="/assets/img/create.png">
                 </button>
             </div>

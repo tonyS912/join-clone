@@ -214,37 +214,52 @@ function renderAllUser(assigne, member) {
 function showThisTask(num) {
     document.getElementById("taskDetail").classList.remove("d-none");
     document.getElementById("taskDetails").classList.remove("d-none");
-    renderCurTask(allTasks[num]);
-}
+    renderCurTask(num);
+ }
 
-function renderCurTask(curTask) {
+function renderCurTask(num) {
+    let curTask = allTasks[num];
     document.getElementById('popUp-category').innerHTML = curTask['category'];
     document.getElementById('popUp-title').innerHTML = curTask['title'];
     document.getElementById('popUp-description').innerHTML = curTask['description'];
     document.getElementById('popUp-date').innerHTML = curTask['dueDate'];
     document.getElementById('popUp-prio').innerHTML = curTask['prio'];
     //document.getElementById('prio').innerHTML += /*html*/ `<img src="./assets/img/arrows-down.svg" class="paddingL20">`;
-    renderAssignes(curTask);
-    editCurTask(curTask);
+    renderAssignes(num);
+    editCurTask(num);
+    
+    
 }
 
-function editCurTask(curTask) {
+
+function editCurTask(num) {
     document.getElementById('edit-btn').onclick = function () {
         document.getElementById('editTaskWindow').classList.remove('d-none');
         document.getElementById("taskDetails").classList.add("d-none");
-        renderEditTaskForm(curTask);
+        renderEditTaskForm(num);
     }
 }
 
-function renderEditTaskForm(curTask) {
-    document.getElementById('title').value = curTask['title'];
-    document.getElementById('description').value = curTask['description'];
-    document.getElementById('dueDate').value = curTask['dueDate'];
-    console.log('valueText', curTask['title']);
+ function renderEditTaskForm(num) {
+    let curTask = allTasks[num];
+    document.getElementById('edit-title').value = curTask['title'];
+    document.getElementById('edit-description').value = curTask['description'];
+    document.getElementById('edit-dueDate').value = curTask['dueDate'];
+    document.getElementById('ok').onclick = function(){
+         getNewValueForCurTask(num);
+    }
+   
+}
+
+function getNewValueForCurTask(num){
+   let deleted = allTasks.splice(num, 1);
+   console.log('deleted', deleted);
+   editTask();
 }
 
 //nur so viele <p>-Tags werden generiert, wie im curTask['assignes']-Array enthalten sind
-function renderAssignes(curTask) {
+function renderAssignes(num) {
+    let curTask = allTasks[num];
     const container = document.querySelector('.assignes');
     container.innerHTML = "";  // Clear any existing paragraphs
 

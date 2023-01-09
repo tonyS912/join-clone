@@ -14,6 +14,31 @@ async function addingTask() {
     }
 }
 
+async function editTask(){
+    checkInputEditTask();
+    if (checkUp == true) {
+        saveTaskNewInfo();
+        allTasks.push(task);
+        saveTasksInBackend();
+        subtasks = [];
+        assigne = [];
+        clear();
+        //moveToBoard();
+    }
+}
+function checkInputEditTask(){
+    let title = document.getElementById("edit-title").value
+    let description = document.getElementById("edit-description").value;
+    let date = document.getElementById("edit-dueDate").value
+    
+    if (title == "", description == "", priority == "", date == "") {
+        alert("Please enter a Title, Description, Date and Prio")
+        checkUp = false;
+    } else {
+        checkUp = true;
+    }
+}
+
 function checkInput() {
     let title = document.getElementById("title").value
     let description = document.getElementById("description").value;
@@ -32,6 +57,23 @@ function saveTaskInfo() {
     let description = document.getElementById("description").value;
     let category = document.getElementById("category").innerText;
     let dueDate = document.getElementById("dueDate").value;
+    task = {
+        title: title,
+        description: description,
+        category: category,
+        prio: priority,
+        dueDate: dueDate,
+        subtasks: subtasks,
+        assignes : assigne,
+        position : "todo"
+    };
+}
+
+function saveTaskNewInfo(){
+    let title = document.getElementById("edit-title").value;
+    let description = document.getElementById("edit-description").value;
+    let category = document.getElementById("edit-category").innerText;
+    let dueDate = document.getElementById("edit-dueDate").value;
     task = {
         title: title,
         description: description,
