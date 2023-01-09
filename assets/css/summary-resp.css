@@ -212,6 +212,7 @@
     .kanban {
         padding-top: 18px;
         font-size: 16px;
+        padding-left: 0px;
     }
 
     .main_summary {
@@ -446,7 +447,7 @@
 
     .main_summary {
         width: 0;
-        padding-left: 33px;
+        padding-left: 207px;
         align-items: flex-start;
     }
 
@@ -565,6 +566,10 @@
 
     .text_everything {
         font-size: 21px;
+    }
+
+    .main_down {
+        width: 450px;
     }
 
     .main_info {
@@ -711,7 +716,6 @@
     }
 
     .header {
-        width: 320px;
         gap: 126px
     }
 
@@ -721,7 +725,11 @@
 
     .title_resp {
         width: 320px;
-        padding-left: 0;
+        padding-left: 33px;
+    }
+
+    .main_summary {
+        padding-left: 33px;
     }
 
     .main_down {
