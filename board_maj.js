@@ -168,9 +168,11 @@ function showSubtasks(num) {
     }
 }
 
-function showAddTaskForm() {
+function showAddTaskForm(param) {
     let addTask_overlap = document.getElementById("addTask_overlap");
     addTask_overlap.classList.remove("d-none");
+
+    //priority = param
 }
 
 function renderUsers(num) {
@@ -226,19 +228,23 @@ function renderCurTask(num) {
     document.getElementById('popUp-prio').innerHTML = curTask['prio'];
     //document.getElementById('prio').innerHTML += /*html*/ `<img src="./assets/img/arrows-down.svg" class="paddingL20">`;
     renderAssignes(num);
-    editCurTask(num);
+    //editCurTask(num);
     
     
 }
 
 
-function editCurTask(num) {
-    document.getElementById('edit-btn').onclick = function () {
-        document.getElementById('editTaskWindow').classList.remove('d-none');
-        document.getElementById("taskDetails").classList.add("d-none");
-        renderEditTaskForm(num);
-    }
-}
+/**
+ * TODO- wirklich nötig?
+ * @param {string} num 
+ */
+//function editCurTask(num) {
+//    document.getElementById('edit-btn').onclick = function () {
+//        document.getElementById('editTaskWindow').classList.remove('d-none');
+//        document.getElementById("taskDetails").classList.add("d-none");
+//        renderEditTaskForm(num);
+//    }
+//}
 
  function renderEditTaskForm(num) {
     let curTask = allTasks[num];

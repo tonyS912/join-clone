@@ -18,23 +18,6 @@ function expandMenu(id) {
     }
 }
 
-function expandMenuPopUp(id) {
-    let button = document.getElementById(id);
-
-    if (button.id == "popUpCategory") {
-        button.classList.add("d-none");
-        document.getElementById("popUpCategory-list").classList.remove("d-none");
-        appendCategory("popUpCategory-list");
-        miniMenu("popUpAssigne");
-    } else {
-        button.classList.add("d-none");
-        document.getElementById("popUpAssigne-list").classList.remove("d-none");
-        appendAssignes("popUpAssigne-list");
-        checkAssigne();
-        miniMenu("popUpCategory");
-    }
-}
-
 function closeMenu(param) {
     miniMenu(param);
 
