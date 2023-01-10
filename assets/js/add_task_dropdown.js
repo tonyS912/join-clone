@@ -59,6 +59,7 @@ function closeMenu(param) {
  */
 function appendCategory(id) {
     let cat = document.getElementById(id);
+    
     cat.innerHTML = "";
 
     cat.innerHTML += selectCat();
