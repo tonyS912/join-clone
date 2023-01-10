@@ -210,3 +210,22 @@ function addAvatar(num) {
 
   document.getElementById('avatar').innerHTML += avatar(name, color);
 }
+
+function removeTasksPopUp() {
+  subtasks = [];
+  assigne = [];
+  clearPopUp();
+}
+
+function clearPopUp() {
+  document.getElementById("title").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("popUpCategory").innerText = "Select task Category";
+  document.getElementById("popUpCategory").innerHTML += addImg();
+  miniMenuPopUp("popUpAssigne");
+  //backgroundOff(priority);
+  document.getElementById("dueDate").value = "";
+  document.getElementById("subtaskName").value = "";
+  document.getElementById("subtasks").innerHTML = "";
+  document.getElementById("avatar").innerHTML = "";
+}
