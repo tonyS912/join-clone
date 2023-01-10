@@ -7,14 +7,31 @@ function expandMenu(id) {
     if (button.id == "category") {
         button.classList.add("d-none");
         document.getElementById("category-list").classList.remove("d-none");
-        appendCategory();
+        appendCategory("category-list");
         miniMenu("assigne");
     } else {
         button.classList.add("d-none");
         document.getElementById("assigne-list").classList.remove("d-none");
-        appendAssignes();
+        appendAssignes("assigne-list");
         checkAssigne();
         miniMenu("category");
+    }
+}
+
+function expandMenuPopUp(id) {
+    let button = document.getElementById(id);
+
+    if (button.id == "popUpCategory") {
+        button.classList.add("d-none");
+        document.getElementById("popUpCategory-list").classList.remove("d-none");
+        appendCategory("popUpCategory-list");
+        miniMenu("popUpAssigne");
+    } else {
+        button.classList.add("d-none");
+        document.getElementById("popUpAssigne-list").classList.remove("d-none");
+        appendAssignes("popUpAssigne-list");
+        checkAssigne();
+        miniMenu("popUpCategory");
     }
 }
 
@@ -40,8 +57,8 @@ function closeMenu(param) {
 /**
  *
  */
-function appendCategory() {
-    let cat = document.getElementById("category-list");
+function appendCategory(id) {
+    let cat = document.getElementById(id);
     cat.innerHTML = "";
 
     cat.innerHTML += selectCat();
@@ -140,8 +157,8 @@ function colorAdd(num) {
  * --------------------- Assigned to Section ----------------------------
  */
 
-function appendAssignes() {
-    let assigne = document.getElementById("assigne-list");
+function appendAssignes(id) {
+    let assigne = document.getElementById(id);
     assigne.innerHTML = "";
     assigne.innerHTML += selectAssigne();
 

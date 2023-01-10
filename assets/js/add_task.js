@@ -161,7 +161,7 @@ function switchBackground(prio) {
  * @param {string} prio
  */
 function backgroundOn(prio) {
-    if (prio != undefined) {
+    if (prio != "") {
         document.getElementById(`${prio}`).classList.add("prio-" + `${prio}`);
         document.getElementById(`${prio}`).classList.add("prio-img");
         document

@@ -201,8 +201,8 @@
                             <h1>Add Task</h1>
                         </div>
                         <div onsubmit="addTask()" class="input-container">
-                            <div onsubmit="addTask()" class="input-container">
-                                <div class="left-container">
+                            <div onsubmit="addTask()" style="display: flex;">
+                                <div class="left-container" style="border-right: 2px solid #D1D1D1;">
                                     <form>
                                         <h4 class="size light title">Title</h4>
                                         <input id="title" class="title-input size light" type="text"
@@ -217,14 +217,14 @@
                                     </form>
                                     <div style="width: 426px;">
                                         <h4 class="size light title">Category</h4>
-                                        <div onclick="expandMenu(this.id)" id="category" class="size light cat-btn btn"
+                                        <div onclick="expandMenuPopUp(this.id)" id="popUpCategory" class="size light cat-btn btn"
                                             type="button">
                                             Select task Category
                                             <img class="popup-arrow" src="./assets/img/dropdown-arrow.svg" />
                                         </div>
-                                        <ul id="category-list" class="d-none list-height list size light category-list">
+                                        <ul id="popUpCategory-list" class="d-none list-height list size light category-list">
                                         </ul>
-                                        <div id="new-category" class="left-width d-none">
+                                        <div id="new-popUpCategory" class="left-width d-none">
                                             <input id="categoryName" class="title-input size light" type="text"
                                                 placeholder="New category name" required="" />
                                             <img onclick="deleteCat()" class="cross" src="./assets/img/cross.svg" /><img
@@ -237,14 +237,14 @@
                                         <h4 class="size light title">
                                             Assigned to
                                         </h4>
-                                        <button onclick="expandMenu(this.id)" id="assigne"
+                                        <button onclick="expandMenuPopUp(this.id)" id="popUpAssigne"
                                             class="size light category-btn btn">
                                             Select contacts to assign
                                             <img class="popup-arrow" src="./assets/img/dropdown-arrow.svg" />
                                         </button>
-                                        <ul id="assigne-list" class="d-none list-height list size light category-list">
+                                        <ul id="popUpAssigne-list" class="d-none list-height list size light category-list">
                                         </ul>
-                                        <div id="new-assigne" class="left-width d-none">
+                                        <div id="new-popUpAssigne" class="left-width d-none">
                                             <input id="categoryName" class="title-input size light" type="text"
                                                 placeholder="Contact email" required="" />
                                             <img onclick="" class="cross" src="./assets/img/cross.svg" /><img
@@ -256,7 +256,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="left-container">
+                                <div class="right-container">
                                     <div>
                                         <form>
                                             <h4 class="size light title">
