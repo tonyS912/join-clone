@@ -72,7 +72,7 @@ function saveTaskInfo() {
 function saveTaskNewInfo(){
     let title = document.getElementById("edit-title").value;
     let description = document.getElementById("edit-description").value;
-    let category = document.getElementById("edit-category").innerText;
+    let category = document.getElementById("PopUp-category").innerText;
     let dueDate = document.getElementById("edit-dueDate").value;
     task = {
         title: title,
